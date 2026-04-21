@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>HackTheBox Labs — Evanildo Ribeiro | Inside Cyber Defense</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/bootstrap.min.css">
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/fonts/font-awesome.min.css">
+    <!-- Icons -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/fonts/simple-line-icons.css">
+    <!-- Slicknav (required for mobile menu via main.js) -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/slicknav.css">
+    <!-- Nivo Lightbox -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/nivo-lightbox.css">
+    <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/animate.css">
+    <!-- Main Theme Style -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/main.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/responsive.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/custom.css">
+    <!-- Project Pages Styles -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/project-pages.css">
+  </head>
+
+  <body class="page-htb">
+
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
+    <header id="header-wrap">
+      <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"
+              aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              <span class="icon-menu"></span>
+              <span class="icon-menu"></span>
+              <span class="icon-menu"></span>
+            </button>
+            <a href="index.html" class="navbar-brand">
+              <!-- PLACEHOLDER: replace 2.png with final logo file — recommended 200×60px PNG with transparent bg -->
+              <img src="meetme/assets/img/Logo.png" alt="Inside Cyber Defense">
+            </a>
+          </div>
+          <div class="collapse navbar-collapse" id="main-navbar">
+            <ul class="onepage-nev navbar-nav mr-auto w-100 justify-content-end align-items-center clearfix">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+              <li class="nav-item"><a class="nav-link" href="index.html#resume">Resume</a></li>
+              <li class="nav-item"><a class="nav-link" href="index.html#certifications">Certifications</a></li>
+              <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="index.html#portfolios" id="projectsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-projects" aria-labelledby="projectsDropdown">
+            <a class="dropdown-item" href="anomaly-detection.html">Anomaly Detection</a>
+            <a class="dropdown-item" href="detection-as-code.html">Detection-as-Code</a>
+            <a class="dropdown-item" href="incident-response.html">Incident Response</a>
+            <a class="dropdown-item" href="network-security.html">Network Security</a>
+            <a class="dropdown-item" href="network-setup.html">Network Setup &amp; Config</a>
+            <a class="dropdown-item" href="network-traffic-analysis.html">Network Traffic Analysis</a>
+            <a class="dropdown-item" href="packet-analysis.html">Packet Analysis</a>
+            <a class="dropdown-item" href="pentesting.html">Pentesting &amp; Ethical Hacking</a>
+            <a class="dropdown-item" href="rsa-cryptography.html">RSA Cryptography</a>
+            <a class="dropdown-item" href="threat-enrichment.html">Automated Threat Enrichment</a>
+            <a class="dropdown-item" href="vulnerability-assessment.html">Vulnerability Assessment</a>
+              </div>
+            </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="index.html#labs-teaser" id="labsDropdown" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Labs</a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="labsDropdown">
+                  <a class="dropdown-item" href="hackthebox.html">
+                    <span style="color:#9FEF00; font-weight:700;">&#9670;</span> HackTheBox
+                  </a>
+                  <a class="dropdown-item" href="tryhackme.html">
+                    <span style="color:#C11111; font-weight:700;">&#9670;</span> TryHackMe
+                  </a>
+                  <a class="dropdown-item" href="catch-the-flag.html">
+                    <span style="color:#ffc800; font-weight:700;">&#9670;</span> CTF &amp; Pentesting
+                  </a>
+                </div>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+
+            </ul>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <ul class="onepage-nev mobile-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#certifications">Certifications</a></li>
+          <li><a href="index.html#portfolios">Projects</a>
+          <ul>
+              <li><a href="anomaly-detection.html">Anomaly Detection</a></li>
+              <li><a href="detection-as-code.html">Detection-as-Code</a></li>
+              <li><a href="incident-response.html">Incident Response</a></li>
+              <li><a href="network-security.html">Network Security</a></li>
+              <li><a href="network-setup.html">Network Setup &amp; Config</a></li>
+              <li><a href="network-traffic-analysis.html">Network Traffic Analysis</a></li>
+              <li><a href="packet-analysis.html">Packet Analysis</a></li>
+              <li><a href="pentesting.html">Pentesting &amp; Ethical Hacking</a></li>
+              <li><a href="rsa-cryptography.html">RSA Cryptography</a></li>
+              <li><a href="threat-enrichment.html">Automated Threat Enrichment</a></li>
+              <li><a href="vulnerability-assessment.html">Vulnerability Assessment</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#labs-teaser">Labs</a>
+            <ul>
+              <li><a href="hackthebox.html">HackTheBox</a></li>
+              <li><a href="tryhackme.html">TryHackMe</a></li>
+              <li><a href="catch-the-flag.html">CTF &amp; Pentesting</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- =====================================================
+           HERO — HackTheBox branding
+           ===================================================== -->
+      <div id="hero-area" class="hero-area-bg hero-htb">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <div class="contents">
+                <!-- PLACEHOLDER: HackTheBox logo/banner 400×100px, official brand asset
+                     from hackthebox.com — place above title if desired -->
+                <h5 class="script-font wow fadeInUp" data-wow-delay="0.2s">
+                  HackTheBox Labs
+                </h5>
+                <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">
+                  Offensive &amp; Defensive Challenges
+                </h2>
+                <div class="hero-rule wow fadeInUp" data-wow-delay="0.35s"></div>
+                <p class="script-font wow fadeInUp" data-wow-delay="0.6s">
+                  Practising real-world attack and defence techniques through structured machine and challenge labs
+                </p>
+                <div class="header-button wow fadeInUp" data-wow-delay="0.8s">
+                  <a href="index.html#labs-teaser" class="btn btn-common">&#8592; Back to Profile</a>
+                  <!-- PLACEHOLDER: replace # with your public HTB profile URL -->
+                  <a href="https://app.hackthebox.com/public/users/2452811" id="htb-profile-btn" class="btn btn-border" style="margin-left:10px;" target="_blank" rel="noopener">
+                    HTB Profile &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </header>
+
+    <!-- =====================================================
+         LIVE STATS BAR
+         ===================================================== -->
+    <section class="lab-stats-section">
+      <div class="container">
+
+        <!-- Live HTB badge — auto-synced by HackTheBox, no token needed -->
+        <div class="htb-badge-hero wow fadeInUp" data-wow-delay="0.15s" id="htb-badge-hero">
+          <a id="htb-profile-link" href="https://app.hackthebox.com/public/users/2452811" target="_blank" rel="noopener">
+            <img id="htb-badge-img" src="" alt="HackTheBox live profile badge" class="htb-live-badge"
+                 onerror="document.getElementById('htb-badge-hero').style.display='none'">
+          </a>
+          <p class="htb-badge-live-note" id="htb-badge-live-note" style="display:none">
+            &#128279; Auto-synced by HackTheBox &mdash;
+            <a id="htb-profile-btn2" href="#" target="_blank" rel="noopener">view full profile &rarr;</a>
+          </p>
+          <p class="htb-setup-hint" id="htb-config-hint">
+            Set <code>HTB_USER_ID</code> in the page source to display live badge and stats.
+          </p>
+        </div>
+
+        <!-- Stat cards — populated from HTB public profile API (no token required) -->
+        <div class="row text-center">
+
+          <div class="col-6 col-md-2 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="lab-stat-card">
+              <div class="stat-icon" style="color:#9FEF00;">&#9650;</div>
+              <div class="stat-number stat-number-htb" id="htb-stat-rank"><span class="stat-loading">—</span></div>
+              <div class="stat-label">Global Rank</div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-2 wow fadeInUp" data-wow-delay="0.25s">
+            <div class="lab-stat-card">
+              <div class="stat-icon" style="color:#9FEF00;"><i class="icon-star"></i></div>
+              <div class="stat-number stat-number-htb" id="htb-stat-points"><span class="stat-loading">—</span></div>
+              <div class="stat-label">Points</div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-2 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="lab-stat-card">
+              <div class="stat-icon" style="color:#9FEF00;"><i class="icon-user"></i></div>
+              <div class="stat-number stat-number-htb" id="htb-stat-user-owns"><span class="stat-loading">—</span></div>
+              <div class="stat-label">User Owns</div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-2 wow fadeInUp" data-wow-delay="0.35s">
+            <div class="lab-stat-card">
+              <div class="stat-icon" style="color:#9FEF00;"><i class="icon-screen-desktop"></i></div>
+              <div class="stat-number stat-number-htb" id="htb-stat-root-owns"><span class="stat-loading">—</span></div>
+              <div class="stat-label">Root Owns</div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-2 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="lab-stat-card">
+              <div class="stat-icon" style="color:#9FEF00;"><i class="icon-puzzle"></i></div>
+              <div class="stat-number stat-number-htb" id="htb-stat-challenges"><span class="stat-loading">—</span></div>
+              <div class="stat-label">Challenges</div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-2 wow fadeInUp" data-wow-delay="0.45s">
+            <div class="lab-stat-card">
+              <div class="stat-icon" style="color:#9FEF00;"><i class="icon-badge"></i></div>
+              <div class="stat-number stat-number-htb" id="htb-stat-rank-tier"><span class="stat-loading">—</span></div>
+              <div class="stat-label">Rank Tier</div>
+            </div>
+          </div>
+
+        </div><!-- /.row -->
+      </div>
+    </section>
+
+    <!-- =====================================================
+         CERTIFICATIONS
+         ===================================================== -->
+    <section class="lab-badge-section">
+      <div class="container">
+        <h2 class="section-title wow flipInX" data-wow-delay="0.3s">HTB Certifications</h2>
+        <p class="badge-section-subtitle wow fadeInUp" data-wow-delay="0.4s">
+          Industry-recognised offensive and defensive security certifications
+        </p>
+
+        <!-- Cert cards — rendered by JS from HTB_CERTS config below -->
+        <div class="row justify-content-center htb-cert-row wow fadeInUp" data-wow-delay="0.45s"
+             id="htb-certs-container"></div>
+
+        <div class="text-center mt-4 wow fadeInUp" data-wow-delay="0.6s">
+          <a id="htb-certs-link" href="https://academy.hackthebox.com" class="btn btn-border"
+             target="_blank" rel="noopener">
+            View HTB Academy Profile &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         RECENTLY PWNED MACHINES
+         API: data from GET /api/v4/user/profile/activity/{user_id}
+         ===================================================== -->
+    <section class="activity-section">
+      <div class="container">
+        <h2 class="section-title wow flipInX" data-wow-delay="0.3s">Recently Pwned Machines</h2>
+
+        <div class="row">
+
+          <!-- Machine Card 1 -->
+          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="machine-card">
+              <div class="machine-card-thumb-placeholder">
+                <!-- PLACEHOLDER: machine thumbnail 144×144px (2× retina),
+                     HTB machine avatar PNG. Replace this div with an <img> tag
+                     once the real image is available.
+                     Example: <img src="assets/img/htb/machine-lame.png" alt="Lame"> -->
+                <i class="icon-screen-desktop"></i>
+              </div>
+              <div class="machine-card-info">
+                <!-- API: replace "Machine Name" with activity.machine.name -->
+                <p class="machine-card-name">Machine Name</p>
+                <p class="machine-card-meta">
+                  <!-- API: replace with activity.machine.difficulty and activity.machine.os -->
+                  <span class="badge badge-easy">Easy</span>
+                  &nbsp;<span class="badge badge-pill badge-secondary">Linux</span>
+                  &nbsp;<span class="text-muted">Date: --/--/----</span>
+                </p>
+                <!-- API: replace # with GitHub writeup URL when available -->
+                <!-- PLACEHOLDER: replace # with GitHub link to writeup repository -->
+                <a href="#" class="mini-card-link" style="font-size:12px;">
+                  Writeup <i class="icon-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Machine Card 2 -->
+          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="machine-card">
+              <div class="machine-card-thumb-placeholder">
+                <!-- PLACEHOLDER: machine thumbnail 144×144px, HTB machine avatar PNG -->
+                <i class="icon-screen-desktop"></i>
+              </div>
+              <div class="machine-card-info">
+                <p class="machine-card-name">Machine Name</p>
+                <p class="machine-card-meta">
+                  <span class="badge badge-medium">Medium</span>
+                  &nbsp;<span class="badge badge-pill badge-secondary">Windows</span>
+                  &nbsp;<span class="text-muted">Date: --/--/----</span>
+                </p>
+                <!-- PLACEHOLDER: replace # with GitHub writeup link -->
+                <a href="#" class="mini-card-link" style="font-size:12px;">
+                  Writeup <i class="icon-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Machine Card 3 -->
+          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="machine-card">
+              <div class="machine-card-thumb-placeholder">
+                <!-- PLACEHOLDER: machine thumbnail 144×144px, HTB machine avatar PNG -->
+                <i class="icon-screen-desktop"></i>
+              </div>
+              <div class="machine-card-info">
+                <p class="machine-card-name">Machine Name</p>
+                <p class="machine-card-meta">
+                  <span class="badge badge-easy">Easy</span>
+                  &nbsp;<span class="badge badge-pill badge-secondary">Linux</span>
+                  &nbsp;<span class="text-muted">Date: --/--/----</span>
+                </p>
+                <!-- PLACEHOLDER: replace # with GitHub writeup link -->
+                <a href="#" class="mini-card-link" style="font-size:12px;">
+                  Writeup <i class="icon-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Machine Card 4 -->
+          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="machine-card">
+              <div class="machine-card-thumb-placeholder">
+                <!-- PLACEHOLDER: machine thumbnail 144×144px, HTB machine avatar PNG -->
+                <i class="icon-screen-desktop"></i>
+              </div>
+              <div class="machine-card-info">
+                <p class="machine-card-name">Machine Name</p>
+                <p class="machine-card-meta">
+                  <span class="badge badge-hard">Hard</span>
+                  &nbsp;<span class="badge badge-pill badge-secondary">Windows</span>
+                  &nbsp;<span class="text-muted">Date: --/--/----</span>
+                </p>
+                <!-- PLACEHOLDER: replace # with GitHub writeup link -->
+                <a href="#" class="mini-card-link" style="font-size:12px;">
+                  Writeup <i class="icon-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Machine Card 5 (placeholder) -->
+          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.55s">
+            <div class="machine-card">
+              <div class="machine-card-thumb-placeholder">
+                <!-- PLACEHOLDER: machine thumbnail 144×144px, HTB machine avatar PNG -->
+                <i class="icon-screen-desktop"></i>
+              </div>
+              <div class="machine-card-info">
+                <p class="machine-card-name">Machine Name</p>
+                <p class="machine-card-meta">
+                  <span class="badge badge-medium">Medium</span>
+                  &nbsp;<span class="badge badge-pill badge-secondary">Linux</span>
+                  &nbsp;<span class="text-muted">Date: --/--/----</span>
+                </p>
+                <!-- PLACEHOLDER: replace # with GitHub writeup link -->
+                <a href="#" class="mini-card-link" style="font-size:12px;">
+                  Writeup <i class="icon-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Machine Card 6 (placeholder) -->
+          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+            <div class="machine-card">
+              <div class="machine-card-thumb-placeholder">
+                <!-- PLACEHOLDER: machine thumbnail 144×144px, HTB machine avatar PNG -->
+                <i class="icon-screen-desktop"></i>
+              </div>
+              <div class="machine-card-info">
+                <p class="machine-card-name">Machine Name</p>
+                <p class="machine-card-meta">
+                  <span class="badge badge-hard">Hard</span>
+                  &nbsp;<span class="badge badge-pill badge-secondary">Windows</span>
+                  &nbsp;<span class="text-muted">Date: --/--/----</span>
+                </p>
+                <!-- PLACEHOLDER: replace # with GitHub writeup link -->
+                <a href="#" class="mini-card-link" style="font-size:12px;">
+                  Writeup <i class="icon-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.row -->
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SKILLS ASSESSED
+         ===================================================== -->
+    <section class="lab-stats-section" style="background-color:#f0f4f0;">
+      <div class="container">
+        <h2 class="section-title wow flipInX" data-wow-delay="0.3s">Skills Assessed on HTB</h2>
+        <p class="text-center text-muted mb-4 wow fadeInUp" data-wow-delay="0.4s">
+          Categories covered through machines and challenges completed
+        </p>
+
+        <div class="skill-category-grid wow fadeInUp" data-wow-delay="0.4s">
+
+          <!-- Exploitation -->
+          <div class="skill-category">
+            <div class="skill-category-title">Exploitation</div>
+            <span class="skill-badge skill-badge-htb">Web Exploitation</span>
+            <span class="skill-badge skill-badge-htb">Linux Exploitation</span>
+            <span class="skill-badge skill-badge-htb">Windows Exploitation</span>
+            <span class="skill-badge skill-badge-htb">Active Directory</span>
+          </div>
+
+          <!-- Analysis -->
+          <div class="skill-category">
+            <div class="skill-category-title">Analysis</div>
+            <span class="skill-badge skill-badge-htb">Forensics</span>
+            <span class="skill-badge skill-badge-htb">Reverse Engineering</span>
+            <span class="skill-badge skill-badge-htb">OSINT</span>
+            <span class="skill-badge skill-badge-htb">Cryptography</span>
+          </div>
+
+          <!-- Enumeration -->
+          <div class="skill-category">
+            <div class="skill-category-title">Enumeration</div>
+            <span class="skill-badge skill-badge-htb">Network Enumeration</span>
+            <span class="skill-badge skill-badge-htb">Privilege Escalation</span>
+            <span class="skill-badge skill-badge-htb">Password Attacks</span>
+            <span class="skill-badge skill-badge-htb">Steganography</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         WRITEUP REPOSITORY (shown when GITHUB_USER + GITHUB_REPO are set)
+         ===================================================== -->
+    <section class="htb-github-section" id="htb-github-section" style="display:none">
+      <div class="container">
+        <h2 class="section-title wow flipInX" data-wow-delay="0.3s">Writeup Repository</h2>
+        <p class="text-center wow fadeInUp" data-wow-delay="0.4s" style="color:rgba(240,237,232,.6); margin-bottom:30px;">
+          Documented machine solutions and notes — live from GitHub
+        </p>
+        <div class="htb-github-panel wow fadeInUp" data-wow-delay="0.45s">
+          <div class="htb-github-header">
+            <i class="fa fa-github htb-github-icon"></i>
+            <div>
+              <p class="htb-github-repo-name" id="htb-repo-name">—</p>
+              <p class="htb-github-repo-desc" id="htb-repo-desc">—</p>
+            </div>
+          </div>
+          <div class="htb-github-stats-row">
+            <div class="htb-github-stat">
+              <span class="htb-github-stat-value" id="htb-repo-stars">—</span>
+              <span class="htb-github-stat-label">Stars</span>
+            </div>
+            <div class="htb-github-stat">
+              <span class="htb-github-stat-value" id="htb-repo-forks">—</span>
+              <span class="htb-github-stat-label">Forks</span>
+            </div>
+            <div class="htb-github-stat">
+              <span class="htb-github-stat-value" id="htb-repo-updated">—</span>
+              <span class="htb-github-stat-label">Last Updated</span>
+            </div>
+          </div>
+          <div class="text-center" style="margin-top:20px;">
+            <a id="htb-repo-link" href="#" class="btn btn-common" target="_blank" rel="noopener">
+              View Repository &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         WRITEUPS TABLE
+         ===================================================== -->
+    <section class="writeups-section">
+      <div class="container">
+        <h2 class="section-title wow flipInX" data-wow-delay="0.3s">Writeups &amp; Notes</h2>
+        <p class="text-center text-muted mb-4 wow fadeInUp" data-wow-delay="0.4s">
+          Documented solutions and learning notes — hosted on GitHub
+        </p>
+
+        <div class="wow fadeInUp" data-wow-delay="0.4s">
+          <table class="table table-hover writeup-table">
+            <thead class="thead-light">
+              <tr>
+                <th>Machine / Challenge</th>
+                <th>Difficulty</th>
+                <th>OS / Category</th>
+                <th>Writeup</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- PLACEHOLDER: add a row per completed machine/challenge.
+                   Replace each # with the GitHub URL to the writeup file.
+                   Example row structure shown below. -->
+              <tr>
+                <td>Machine Name</td>
+                <td><span class="badge badge-easy">Easy</span></td>
+                <td>Linux</td>
+                <!-- PLACEHOLDER: replace # with GitHub repository writeup URL -->
+                <td><a href="#" target="_blank" rel="noopener">GitHub &rarr;</a></td>
+              </tr>
+              <tr>
+                <td>Machine Name</td>
+                <td><span class="badge badge-medium">Medium</span></td>
+                <td>Windows</td>
+                <!-- PLACEHOLDER: replace # with GitHub repository writeup URL -->
+                <td><a href="#" target="_blank" rel="noopener">GitHub &rarr;</a></td>
+              </tr>
+              <tr>
+                <td colspan="4" class="text-center text-muted" style="font-style:italic; font-size:13px;">
+                  More writeups will be added as machines are completed.
+                  <!-- PLACEHOLDER: remove this row and populate with real writeup entries -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="text-center mt-3 wow fadeInUp" data-wow-delay="0.5s">
+          <!-- PLACEHOLDER: replace # with GitHub profile or writeups repository URL -->
+          <a href="#" class="btn btn-common" target="_blank" rel="noopener">
+            View HTB Writeups on GitHub &rarr;
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Lab Navigation -->
+    <section class="project-nav-section">
+      <div class="container">
+        <div class="project-nav-bar">
+          <a href="catch-the-flag.html" class="btn btn-border"><i class="icon-arrow-left"></i> Previous Lab</a>
+          <a href="index.html#labs-teaser" class="btn btn-common">All Labs</a>
+          <a href="tryhackme.html" class="btn btn-border">Next Lab <i class="icon-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+    <footer class="footer-area section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="footer-text text-center wow fadeInDown" data-wow-delay="0.3s">
+              <ul class="social-icon">
+                <li>
+                  <a class="github" href="https://github.com/Evanildo22" target="_blank" rel="noopener noreferrer"><i class="icon-social-github"></i></a>
+                </li>
+                <li>
+                  <a class="linkedin" href="https://linkedin.com/in/evanildoribeiro" target="_blank" rel="noopener noreferrer"><i class="icon-social-linkedin"></i></a>
+                </li>
+                <li>
+                  <a class="twitter" href="https://x.com/@EvanRibei" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" style="vertical-align:middle;"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></a>
+                </li>
+                <li>
+                  <a class="youtube" href="https://www.youtube.com/@MrRibeiro2000" target="_blank" rel="noopener noreferrer"><i class="fa fa-youtube"></i></a>
+                </li>
+              </ul>
+              <p>Copyright &copy; 2025 Evanildo Ribeiro. All Rights Reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="icon-arrow-up"></i></a>
+
+    <!-- Scripts — full set required so main.js runs without errors -->
+    <script src="meetme/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="meetme/assets/js/popper.min.js"></script>
+    <script src="meetme/assets/js/bootstrap.min.js"></script>
+    <script src="meetme/assets/js/jquery.mixitup.js"></script>
+    <script src="meetme/assets/js/jquery.counterup.min.js"></script>
+    <script src="meetme/assets/js/waypoints.min.js"></script>
+    <script src="meetme/assets/js/wow.js"></script>
+    <script src="meetme/assets/js/jquery.nav.js"></script>
+    <script src="meetme/assets/js/jquery.easing.min.js"></script>
+    <script src="meetme/assets/js/nivo-lightbox.js"></script>
+    <script src="meetme/assets/js/jquery.slicknav.js"></script>
+    <script src="meetme/assets/js/main.js"></script>
+    <script>
+      /* ============================================================
+         HackTheBox — Profile Configuration
+         ─────────────────────────────────────────────────────────────
+         HTB_PROFILE_URL  Your public HTB profile page (UUID-based, new system).
+                          Used for all "View Profile" links on the page.
+
+         HTB_NUMERIC_ID   Your OLD numeric user ID — needed for the live badge
+                          image and the stats API.
+                          How to find it: log into app.hackthebox.com, go to your
+                          profile, and read the number from the URL:
+                          https://app.hackthebox.com/users/XXXXXX
+                          Leave blank until found — page works without it.
+
+         HTB_USERNAME     Your HTB display username.
+
+         CREDLY_USERNAME  Your Credly username — leave blank to skip.
+                          HTB issues CPTS / CBBH / CDSA / CWEE certs via Credly.
+                          When you earn one, Credly will create your account and
+                          email you. Your username will be at credly.com/users/<slug>
+
+         GITHUB_USER      Your GitHub username — leave blank to skip.
+         GITHUB_REPO      Your public writeup repository name.
+                          When both are set the Writeup Repository section appears
+                          with live stats (stars, forks, last updated).
+
+         HTB_CERTS        Your certifications list.
+                          status:    'earned' | 'in-progress' | 'planned'
+                          verifyUrl: paste the public HTB Academy cert URL when earned.
+                          https://academy.hackthebox.com/achievement/badge/...
+         ============================================================ */
+
+      const HTB_PROFILE_URL = 'https://app.hackthebox.com/public/users/2452811';  // public — works for non-HTB users
+      const HTB_NUMERIC_ID  = '2452811';   // numeric ID — used for badge image and stats API
+      const HTB_USERNAME    = 'Evancyber';
+      const CREDLY_USERNAME = '';        // add when you earn your first HTB cert via Credly
+      const GITHUB_USER     = '';        // add when you create your writeup repo
+      const GITHUB_REPO     = '';        // e.g. 'htb-writeups'
+
+      const HTB_CERTS = [
+        // Update status + paste verifyUrl when you earn each cert.
+        { name: 'CPTS', full: 'Certified Penetration Testing Specialist', status: 'in-progress', verifyUrl: '' },
+        { name: 'CBBH', full: 'Certified Bug Bounty Hunter',              status: 'planned',     verifyUrl: '' },
+        { name: 'CDSA', full: 'Certified Defensive Security Analyst',     status: 'planned',     verifyUrl: '' },
+        { name: 'CWEE', full: 'Certified Web Exploitation Expert',        status: 'planned',     verifyUrl: '' },
+      ];
+
+      (async function initHTBProfile() {
+
+        const $ = id => document.getElementById(id);
+
+        /* ── Profile links — use new UUID-based public profile URL ── */
+        ['htb-profile-link','htb-profile-btn','htb-profile-btn2','htb-certs-link'].forEach(id => {
+          const el = $(id); if (el) el.href = HTB_PROFILE_URL;
+        });
+        $('htb-config-hint').style.display    = 'none';
+        $('htb-badge-live-note').style.display = '';
+
+        /* ── Badge image + stats API — require legacy numeric ID ── */
+        if (HTB_NUMERIC_ID) {
+          const badgeImg = $('htb-badge-img');
+          if (badgeImg) badgeImg.src = `https://www.hackthebox.eu/badge/image/user/${HTB_NUMERIC_ID}`;
+
+          /* ── Public profile API (no token — works for public profiles) ── */
+          try {
+            const res = await fetch(
+              `https://www.hackthebox.com/api/v4/user/profile/basic/${HTB_NUMERIC_ID}`,
+              { headers: { 'Accept': 'application/json' } }
+            );
+            if (res.ok) {
+              const { profile: p } = await res.json();
+              const set = (id, val) => { const el = $(id); if (el) el.textContent = val ?? '—'; };
+              set('htb-stat-rank',      p.ranking       ? `#${Number(p.ranking).toLocaleString()}` : '—');
+              set('htb-stat-points',    p.points         ? Number(p.points).toLocaleString()        : '—');
+              set('htb-stat-user-owns', p.user_owns      ?? '—');
+              set('htb-stat-root-owns', p.system_owns    ?? '—');
+              set('htb-stat-challenges',p.challenge_owns ?? '—');
+              set('htb-stat-rank-tier', p.rank           ?? '—');
+            }
+          } catch (_) {
+            // CORS or API unavailable — badge image already shows key stats visually
+          }
+        } else {
+          // No numeric ID yet — hide the badge hero until it's added
+          const hero = $('htb-badge-hero');
+          if (hero) hero.style.display = 'none';
+        }
+
+        /* ── Certification cards ── */
+        const certsContainer = document.getElementById('htb-certs-container');
+        if (certsContainer) {
+          const statusLabel = { earned: '&#10003; Earned', 'in-progress': '&#8987; In Progress', planned: 'Planned' };
+          certsContainer.innerHTML = HTB_CERTS.map(cert => {
+            const link = cert.status === 'earned' && cert.verifyUrl
+              ? `<a href="${cert.verifyUrl}" class="htb-cert-verify" target="_blank" rel="noopener">Verify Certificate &rarr;</a>`
+              : cert.status === 'in-progress'
+                ? `<a href="https://academy.hackthebox.com" class="htb-cert-verify htb-cert-verify--dim" target="_blank" rel="noopener">View on Academy &rarr;</a>`
+                : '';
+            return `<div class="col-6 col-md-3">
+              <div class="htb-cert-card">
+                <div class="htb-cert-abbr">${cert.name}</div>
+                <div class="htb-cert-full">${cert.full}</div>
+                <span class="htb-cert-status htb-cert-status--${cert.status}">${statusLabel[cert.status] || cert.status}</span>
+                <div class="htb-cert-link-wrap">${link}</div>
+              </div>
+            </div>`;
+          }).join('');
+        }
+
+        /* ── GitHub writeup repository stats ── */
+        if (GITHUB_USER && GITHUB_REPO) {
+          try {
+            const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}`);
+            if (res.ok) {
+              const repo = await res.json();
+              const section = document.getElementById('htb-github-section');
+              if (section) {
+                section.style.display = '';
+                const el = (id, val) => { const e = document.getElementById(id); if (e) e.textContent = val; };
+                el('htb-repo-name',    repo.full_name);
+                el('htb-repo-desc',    repo.description || 'HackTheBox machine writeups');
+                el('htb-repo-stars',   repo.stargazers_count ?? 0);
+                el('htb-repo-forks',   repo.forks_count ?? 0);
+                el('htb-repo-updated', new Date(repo.updated_at).toLocaleDateString('en-GB',
+                  { year: 'numeric', month: 'short', day: 'numeric' }));
+                const link = document.getElementById('htb-repo-link');
+                if (link) link.href = repo.html_url;
+              }
+            }
+          } catch (_) { /* GitHub API unavailable */ }
+        }
+
+      }());
+    </script>
+    <script>
+      /* Scroll-Spy: highlight the Labs nav link on Labs sub-pages */
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
+          if (link.textContent.trim() === 'Labs') {
+            link.classList.add('active');
+          }
+        });
+      });
+    </script>
+      <script>
+      /* Mark the current page's entry in the Projects / Labs dropdown */
+      document.addEventListener('DOMContentLoaded', function () {
+        var page = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.dropdown-menu .dropdown-item').forEach(function (item) {
+          var href = (item.getAttribute('href') || '').split('/').pop();
+          if (href && href === page) {
+            item.classList.add('active');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

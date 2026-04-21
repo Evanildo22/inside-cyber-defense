@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TryHackMe Labs — Evanildo Ribeiro | Inside Cyber Defense</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/bootstrap.min.css">
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/fonts/font-awesome.min.css">
+    <!-- Icons -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/fonts/simple-line-icons.css">
+    <!-- Slicknav (required for mobile menu via main.js) -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/slicknav.css">
+    <!-- Nivo Lightbox -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/nivo-lightbox.css">
+    <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/animate.css">
+    <!-- Main Theme Style -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/main.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/responsive.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/custom.css">
+    <!-- Project Pages Styles -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/project-pages.css">
+  </head>
+
+  <body class="page-thm">
+
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
+    <header id="header-wrap">
+      <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"
+              aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              <span class="icon-menu"></span>
+              <span class="icon-menu"></span>
+              <span class="icon-menu"></span>
+            </button>
+            <a href="index.html" class="navbar-brand">
+              <!-- PLACEHOLDER: replace 2.png with final logo file — recommended 200×60px PNG with transparent bg -->
+              <img src="meetme/assets/img/Logo.png" alt="Inside Cyber Defense">
+            </a>
+          </div>
+          <div class="collapse navbar-collapse" id="main-navbar">
+            <ul class="onepage-nev navbar-nav mr-auto w-100 justify-content-end align-items-center clearfix">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+              <li class="nav-item"><a class="nav-link" href="index.html#resume">Resume</a></li>
+              <li class="nav-item"><a class="nav-link" href="index.html#certifications">Certifications</a></li>
+              <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="index.html#portfolios" id="projectsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-projects" aria-labelledby="projectsDropdown">
+            <a class="dropdown-item" href="anomaly-detection.html">Anomaly Detection</a>
+            <a class="dropdown-item" href="detection-as-code.html">Detection-as-Code</a>
+            <a class="dropdown-item" href="incident-response.html">Incident Response</a>
+            <a class="dropdown-item" href="network-security.html">Network Security</a>
+            <a class="dropdown-item" href="network-setup.html">Network Setup &amp; Config</a>
+            <a class="dropdown-item" href="network-traffic-analysis.html">Network Traffic Analysis</a>
+            <a class="dropdown-item" href="packet-analysis.html">Packet Analysis</a>
+            <a class="dropdown-item" href="pentesting.html">Pentesting &amp; Ethical Hacking</a>
+            <a class="dropdown-item" href="rsa-cryptography.html">RSA Cryptography</a>
+            <a class="dropdown-item" href="threat-enrichment.html">Automated Threat Enrichment</a>
+            <a class="dropdown-item" href="vulnerability-assessment.html">Vulnerability Assessment</a>
+              </div>
+            </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="index.html#labs-teaser" id="labsDropdown" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Labs</a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="labsDropdown">
+                  <a class="dropdown-item" href="hackthebox.html">
+                    <span style="color:#9FEF00; font-weight:700;">&#9670;</span> HackTheBox
+                  </a>
+                  <a class="dropdown-item" href="tryhackme.html">
+                    <span style="color:#C11111; font-weight:700;">&#9670;</span> TryHackMe
+                  </a>
+                  <a class="dropdown-item" href="catch-the-flag.html">
+                    <span style="color:#ffc800; font-weight:700;">&#9670;</span> CTF &amp; Pentesting
+                  </a>
+                </div>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+
+            </ul>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <ul class="onepage-nev mobile-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#certifications">Certifications</a></li>
+          <li><a href="index.html#portfolios">Projects</a>
+          <ul>
+              <li><a href="anomaly-detection.html">Anomaly Detection</a></li>
+              <li><a href="detection-as-code.html">Detection-as-Code</a></li>
+              <li><a href="incident-response.html">Incident Response</a></li>
+              <li><a href="network-security.html">Network Security</a></li>
+              <li><a href="network-setup.html">Network Setup &amp; Config</a></li>
+              <li><a href="network-traffic-analysis.html">Network Traffic Analysis</a></li>
+              <li><a href="packet-analysis.html">Packet Analysis</a></li>
+              <li><a href="pentesting.html">Pentesting &amp; Ethical Hacking</a></li>
+              <li><a href="rsa-cryptography.html">RSA Cryptography</a></li>
+              <li><a href="threat-enrichment.html">Automated Threat Enrichment</a></li>
+              <li><a href="vulnerability-assessment.html">Vulnerability Assessment</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#labs-teaser">Labs</a>
+            <ul>
+              <li><a href="hackthebox.html">HackTheBox</a></li>
+              <li><a href="tryhackme.html">TryHackMe</a></li>
+              <li><a href="catch-the-flag.html">CTF &amp; Pentesting</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- =====================================================
+           HERO — TryHackMe branding
+           ===================================================== -->
+      <div id="hero-area" class="hero-area-bg hero-thm">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <div class="contents">
+                <!-- PLACEHOLDER: TryHackMe logo/banner 400×100px, official brand asset
+                     from tryhackme.com — place above title if desired -->
+                <h5 class="script-font wow fadeInUp" data-wow-delay="0.2s">
+                  TryHackMe Labs
+                </h5>
+                <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">
+                  Guided Learning Paths &amp; SOC Skills
+                </h2>
+                <div class="hero-rule wow fadeInUp" data-wow-delay="0.35s"></div>
+                <p class="script-font wow fadeInUp" data-wow-delay="0.6s">
+                  Building SOC analyst skills through structured learning paths, guided rooms, and practical challenges
+                </p>
+                <div class="header-button wow fadeInUp" data-wow-delay="0.8s">
+                  <a href="index.html#labs-teaser" class="btn btn-common">&#8592; Back to Profile</a>
+                  <!-- PLACEHOLDER: replace # with your public TryHackMe profile URL
+                       Format: https://tryhackme.com/p/yourusername -->
+                  <a href="#" id="thm-profile-btn" class="btn btn-border" style="margin-left:10px;" target="_blank" rel="noopener">
+                    THM Profile &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </header>
+
+    <!-- =====================================================
+         STATS BAR
+         API: all stat values below are placeholders.
+         TryHackMe public API: https://tryhackme.com/api/user/rank/{username}
+         Additional data: https://tryhackme.com/api/no-auth/user/{username}/details
+         ===================================================== -->
+    <section class="lab-stats-section">
+      <div class="container">
+
+        <div class="row text-center">
+
+          <!-- Global Rank -->
+          <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="lab-stat-card">
+              <div class="stat-icon" style="color:#C11111;">&#9650;</div>
+              <div class="stat-number stat-number-thm" id="thm-stat-rank"><span class="stat-loading">—</span></div>
+              <div class="stat-label">Global Rank</div>
+            </div>
+          </div>
+
+          <!-- Points -->
+          <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="lab-stat-card">
+              <div class="stat-icon" style="color:#C11111;"><i class="icon-star"></i></div>
+              <div class="stat-number stat-number-thm" id="thm-stat-points"><span class="stat-loading">—</span></div>
+              <div class="stat-label">Points</div>
+            </div>
+          </div>
+
+          <!-- Rooms Completed -->
+          <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="lab-stat-card">
+              <div class="stat-icon" style="color:#C11111;"><i class="icon-home"></i></div>
+              <div class="stat-number stat-number-thm" id="thm-stat-rooms"><span class="stat-loading">—</span></div>
+              <div class="stat-label">Rooms Completed</div>
+            </div>
+          </div>
+
+          <!-- Daily Streak -->
+          <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="lab-stat-card">
+              <div class="stat-icon" style="color:#C11111;"><i class="icon-energy"></i></div>
+              <div class="stat-number stat-number-thm" id="thm-stat-streak"><span class="stat-loading">—</span></div>
+              <div class="stat-label">Streak (days)</div>
+            </div>
+          </div>
+
+        </div><!-- /.row -->
+      </div>
+    </section>
+
+    <!-- =====================================================
+         THM PROFILE BADGE SECTION
+         ===================================================== -->
+    <section class="lab-badge-section">
+      <div class="container">
+        <h2 class="section-title wow flipInX" data-wow-delay="0.3s">Official THM Profile Badge</h2>
+        <p class="badge-section-subtitle wow fadeInUp" data-wow-delay="0.4s">
+          Auto-updated by TryHackMe — reflects current rank and stats
+        </p>
+
+        <div class="wow fadeInUp" data-wow-delay="0.5s">
+          <a id="thm-badge-link" href="https://tryhackme.com/p/Evan.cyber" target="_blank" rel="noopener">
+            <img id="thm-badge-img"
+                 src="https://tryhackme-badges.s3.amazonaws.com/Evan.cyber.png"
+                 alt="Evan.cyber — TryHackMe"
+                 class="thm-badge-img"
+                 onerror="this.closest('.wow').style.display='none'">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         LEARNING PATHS
+         API: from THM learning paths endpoint once authenticated
+         ===================================================== -->
+    <section class="activity-section">
+      <div class="container">
+        <h2 class="section-title wow flipInX" data-wow-delay="0.3s">Learning Paths</h2>
+        <p class="text-center text-muted mb-4 wow fadeInUp" data-wow-delay="0.4s">
+          Structured paths aligned with SOC analyst and junior penetration tester roles
+        </p>
+
+        <div class="row">
+
+          <!-- Path 1: SOC Level 1 -->
+          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="path-card">
+              <div class="path-card-header">
+                <div class="path-card-icon">
+                  <!-- PLACEHOLDER: path icon 96×96px (2× retina), THM SOC Level 1 path cover
+                       Replace this div with <img src="..." alt="SOC Level 1"> once available -->
+                  <i class="icon-shield" style="color:#C11111;"></i>
+                </div>
+                <div>
+                  <p class="path-card-title">SOC Level 1</p>
+                  <!-- API: replace static room count with live data from THM API -->
+                  <p class="path-card-rooms">26 rooms &mdash; Blue Team / Monitoring</p>
+                </div>
+              </div>
+              <!-- API: set width % to actual progress from THM API -->
+              <!-- PLACEHOLDER: replace 0% with real progress value once API is connected -->
+              <div class="path-progress-bar">
+                <div class="path-progress-fill" id="thm-path-soc" style="width: 0%;"></div>
+              </div>
+              <small class="text-muted">
+                0% complete
+                <!-- API: replace 0% with user path progress percentage -->
+              </small>
+              <p class="path-card-description text-muted" style="font-size:13px; margin-top:8px;">
+                SIEM, log analysis, incident response, threat intelligence
+              </p>
+            </div>
+          </div>
+
+          <!-- Path 2: Jr Penetration Tester -->
+          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="path-card">
+              <div class="path-card-header">
+                <div class="path-card-icon">
+                  <!-- PLACEHOLDER: path icon 96×96px (2× retina), THM Jr Pen Tester path cover -->
+                  <i class="icon-lock" style="color:#C11111;"></i>
+                </div>
+                <div>
+                  <p class="path-card-title">Jr Penetration Tester</p>
+                  <!-- API: replace static room count with live data from THM API -->
+                  <p class="path-card-rooms">28 rooms &mdash; Offensive Security</p>
+                </div>
+              </div>
+              <!-- API: set width % to actual progress -->
+              <div class="path-progress-bar">
+                <div class="path-progress-fill" id="thm-path-jrpt" style="width: 0%;"></div>
+              </div>
+              <small class="text-muted">0% complete</small>
+              <p class="path-card-description text-muted" style="font-size:13px; margin-top:8px;">
+                Exploitation, web attacks, privilege escalation, post-exploitation
+              </p>
+            </div>
+          </div>
+
+          <!-- Path 3: Pre-Security -->
+          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="path-card">
+              <div class="path-card-header">
+                <div class="path-card-icon">
+                  <!-- PLACEHOLDER: path icon 96×96px (2× retina), THM Pre-Security path cover -->
+                  <i class="icon-graduation" style="color:#C11111;"></i>
+                </div>
+                <div>
+                  <p class="path-card-title">Pre-Security</p>
+                  <!-- API: replace static room count with live data from THM API -->
+                  <p class="path-card-rooms">18 rooms &mdash; Fundamentals</p>
+                </div>
+              </div>
+              <!-- API: set width % to actual progress -->
+              <div class="path-progress-bar">
+                <div class="path-progress-fill" id="thm-path-presec" style="width: 0%;"></div>
+              </div>
+              <small class="text-muted">0% complete</small>
+              <p class="path-card-description text-muted" style="font-size:13px; margin-top:8px;">
+                Networking, web fundamentals, Linux &amp; Windows basics
+              </p>
+            </div>
+          </div>
+
+          <!-- Path 4: Cyber Defence -->
+          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="path-card">
+              <div class="path-card-header">
+                <div class="path-card-icon">
+                  <!-- PLACEHOLDER: path icon 96×96px (2× retina), THM Cyber Defence path cover -->
+                  <i class="icon-eye" style="color:#C11111;"></i>
+                </div>
+                <div>
+                  <p class="path-card-title">Cyber Defence</p>
+                  <!-- API: replace static room count with live data from THM API -->
+                  <p class="path-card-rooms">22 rooms &mdash; Defensive Security</p>
+                </div>
+              </div>
+              <!-- API: set width % to actual progress -->
+              <div class="path-progress-bar">
+                <div class="path-progress-fill" id="thm-path-cyberdef" style="width: 0%;"></div>
+              </div>
+              <small class="text-muted">0% complete</small>
+              <p class="path-card-description text-muted" style="font-size:13px; margin-top:8px;">
+                Threat hunting, IDS/IPS, DFIR, malware analysis
+              </p>
+            </div>
+          </div>
+
+        </div><!-- /.row -->
+      </div>
+    </section>
+
+    <!-- =====================================================
+         RECENT ROOMS
+         API: from THM completed rooms for the user profile
+         ===================================================== -->
+    <section class="lab-stats-section">
+      <div class="container">
+        <h2 class="section-title wow flipInX" data-wow-delay="0.3s">Recent Rooms</h2>
+
+        <div class="row">
+
+          <!-- Room Card 1 -->
+          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="room-card">
+              <div class="room-card-thumb-placeholder">
+                <!-- PLACEHOLDER: room thumbnail 144×144px (2× retina), THM room icon PNG.
+                     Replace this div with an <img> tag once the real image is available.
+                     Example: <img src="assets/img/thm/room-intronetworking.png" alt="Room Name"> -->
+                <i class="icon-home"></i>
+              </div>
+              <div class="room-card-info">
+                <!-- API: replace "Room Name" with room.title from THM API -->
+                <p class="room-card-name">Room Name</p>
+                <p class="room-card-meta">
+                  <!-- API: replace with room.difficulty and room.type -->
+                  <span class="badge badge-easy">Easy</span>
+                  &nbsp;<span class="badge badge-pill badge-info">Networking</span>
+                  &nbsp;<span class="text-muted">Completed: --/--/----</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 2 -->
+          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="room-card">
+              <div class="room-card-thumb-placeholder">
+                <!-- PLACEHOLDER: room thumbnail 144×144px, THM room icon PNG -->
+                <i class="icon-home"></i>
+              </div>
+              <div class="room-card-info">
+                <p class="room-card-name">Room Name</p>
+                <p class="room-card-meta">
+                  <span class="badge badge-medium">Medium</span>
+                  &nbsp;<span class="badge badge-pill badge-warning">SOC</span>
+                  &nbsp;<span class="text-muted">Completed: --/--/----</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 3 -->
+          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="room-card">
+              <div class="room-card-thumb-placeholder">
+                <!-- PLACEHOLDER: room thumbnail 144×144px, THM room icon PNG -->
+                <i class="icon-home"></i>
+              </div>
+              <div class="room-card-info">
+                <p class="room-card-name">Room Name</p>
+                <p class="room-card-meta">
+                  <span class="badge badge-easy">Easy</span>
+                  &nbsp;<span class="badge badge-pill badge-success">Web</span>
+                  &nbsp;<span class="text-muted">Completed: --/--/----</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 4 -->
+          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="room-card">
+              <div class="room-card-thumb-placeholder">
+                <!-- PLACEHOLDER: room thumbnail 144×144px, THM room icon PNG -->
+                <i class="icon-home"></i>
+              </div>
+              <div class="room-card-info">
+                <p class="room-card-name">Room Name</p>
+                <p class="room-card-meta">
+                  <span class="badge badge-hard">Hard</span>
+                  &nbsp;<span class="badge badge-pill badge-danger">Forensics</span>
+                  &nbsp;<span class="text-muted">Completed: --/--/----</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.row -->
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SKILLS ASSESSED
+         API: from THM user profile badge/skill categories
+         ===================================================== -->
+    <section class="activity-section">
+      <div class="container">
+        <h2 class="section-title wow flipInX" data-wow-delay="0.3s">Skills Practised on THM</h2>
+
+        <div class="text-center wow fadeInUp" data-wow-delay="0.4s">
+          <!-- API: populate skill badges from THM user profile skill categories -->
+          <span class="skill-badge skill-badge-thm">Network Fundamentals</span>
+          <span class="skill-badge skill-badge-thm">Web Application Security</span>
+          <span class="skill-badge skill-badge-thm">SIEM &amp; Log Analysis</span>
+          <span class="skill-badge skill-badge-thm">Incident Response</span>
+          <span class="skill-badge skill-badge-thm">Phishing Analysis</span>
+          <span class="skill-badge skill-badge-thm">Threat Intelligence</span>
+          <span class="skill-badge skill-badge-thm">Digital Forensics</span>
+          <span class="skill-badge skill-badge-thm">Vulnerability Research</span>
+          <!-- API: add/remove badges based on actual THM rooms completed -->
+        </div>
+
+        <div class="text-center mt-3 wow fadeInUp" data-wow-delay="0.5s">
+          <p class="text-muted"><em>More writeups will be added as machines are completed.</em></p>
+          <!-- PLACEHOLDER: replace # with GitHub profile or writeups repository URL -->
+          <a href="#" class="btn btn-common" target="_blank" rel="noopener">
+            View THM Writeups on GitHub &rarr;
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         BADGES
+         API: from THM user profile badges endpoint
+         ===================================================== -->
+    <section class="lab-stats-section">
+      <div class="container">
+        <h2 class="section-title wow flipInX" data-wow-delay="0.3s">Badges Earned</h2>
+        <p class="text-center text-muted mb-4 wow fadeInUp" data-wow-delay="0.4s">
+          Achievements unlocked through room completions and milestones
+        </p>
+
+        <div class="badge-grid justify-content-center wow fadeInUp" data-wow-delay="0.4s">
+          <!-- API: populate badge circles with actual badge images from THM API
+               Each badge image should be 160×160px (2× retina), circular PNG -->
+          <!-- PLACEHOLDER: replace each badge-circle with an <img> once API data is available -->
+          <div class="badge-circle"><i class="icon-star"></i></div>
+          <div class="badge-circle"><i class="icon-star"></i></div>
+          <div class="badge-circle"><i class="icon-star"></i></div>
+          <div class="badge-circle"><i class="icon-star"></i></div>
+          <div class="badge-circle"><i class="icon-star"></i></div>
+          <div class="badge-circle"><i class="icon-star"></i></div>
+          <!-- API: add more badge-circle elements as badges are earned -->
+        </div>
+
+        <p class="text-center text-muted mt-3" style="font-size:13px; font-style:italic;">
+          Badges update as milestones are reached on TryHackMe — replace the icons above with your actual badge images as you earn them.
+        </p>
+      </div>
+    </section>
+
+    <!-- Lab Navigation -->
+    <section class="project-nav-section">
+      <div class="container">
+        <div class="project-nav-bar">
+          <a href="hackthebox.html" class="btn btn-border"><i class="icon-arrow-left"></i> Previous Lab</a>
+          <a href="index.html#labs-teaser" class="btn btn-common">All Labs</a>
+          <a href="catch-the-flag.html" class="btn btn-border">Next Lab <i class="icon-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+    <footer class="footer-area section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="footer-text text-center wow fadeInDown" data-wow-delay="0.3s">
+              <ul class="social-icon">
+                <li>
+                  <a class="github" href="https://github.com/Evanildo22" target="_blank" rel="noopener noreferrer"><i class="icon-social-github"></i></a>
+                </li>
+                <li>
+                  <a class="linkedin" href="https://linkedin.com/in/evanildoribeiro" target="_blank" rel="noopener noreferrer"><i class="icon-social-linkedin"></i></a>
+                </li>
+                <li>
+                  <a class="twitter" href="https://x.com/@EvanRibei" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" style="vertical-align:middle;"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></a>
+                </li>
+                <li>
+                  <a class="youtube" href="https://www.youtube.com/@MrRibeiro2000" target="_blank" rel="noopener noreferrer"><i class="fa fa-youtube"></i></a>
+                </li>
+              </ul>
+              <p>Copyright &copy; 2025 Evanildo Ribeiro. All Rights Reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="icon-arrow-up"></i></a>
+
+    <!-- Scripts — full set required so main.js runs without errors -->
+    <script src="meetme/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="meetme/assets/js/popper.min.js"></script>
+    <script src="meetme/assets/js/bootstrap.min.js"></script>
+    <script src="meetme/assets/js/jquery.mixitup.js"></script>
+    <script src="meetme/assets/js/jquery.counterup.min.js"></script>
+    <script src="meetme/assets/js/waypoints.min.js"></script>
+    <script src="meetme/assets/js/wow.js"></script>
+    <script src="meetme/assets/js/jquery.nav.js"></script>
+    <script src="meetme/assets/js/jquery.easing.min.js"></script>
+    <script src="meetme/assets/js/nivo-lightbox.js"></script>
+    <script src="meetme/assets/js/jquery.slicknav.js"></script>
+    <script src="meetme/assets/js/main.js"></script>
+    <script>
+      /* ============================================================
+         TryHackMe — Live Stats Configuration
+         1. Enter your TryHackMe username below (case-sensitive)
+            Find it at: https://tryhackme.com/profile → username in URL
+         2. Stats load automatically from the TryHackMe public API.
+            No API key required.
+         ============================================================ */
+      const THM_USERNAME = 'Evan.cyber';
+
+      (async function loadTHMStats() {
+        if (THM_USERNAME === 'YOUR_THM_USERNAME') return;
+
+        const profileBtn = document.getElementById('thm-profile-btn');
+        const profileURL = `https://tryhackme.com/p/${THM_USERNAME}`;
+        if (profileBtn) profileBtn.href = profileURL;
+
+        const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val ?? '—'; };
+
+        // Fetch points, rooms, streak from details endpoint
+        try {
+          const res = await fetch(`https://tryhackme.com/api/no-auth/user/${THM_USERNAME}/details`);
+          if (res.ok) {
+            const { userDetails: u } = await res.json();
+            set('thm-stat-points', u.points != null ? Number(u.points).toLocaleString() : '—');
+            set('thm-stat-rooms',  u.completedRooms ?? '—');
+            set('thm-stat-streak', u.streak ?? '—');
+          }
+        } catch (_) { /* badge image shows accurate stats */ }
+
+        // Fetch global rank from dedicated rank endpoint
+        try {
+          const rankRes = await fetch(`https://tryhackme.com/api/user/rank/${THM_USERNAME}`);
+          if (rankRes.ok) {
+            const rankData = await rankRes.json();
+            set('thm-stat-rank', rankData.userRank != null ? `#${Number(rankData.userRank).toLocaleString()}` : '—');
+          }
+        } catch (_) { /* badge image shows accurate stats */ }
+      })();
+    </script>
+    <script>
+      /* Scroll-Spy: highlight the Labs nav link on Labs sub-pages */
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
+          if (link.textContent.trim() === 'Labs') {
+            link.classList.add('active');
+          }
+        });
+      });
+    </script>
+      <script>
+      /* Mark the current page's entry in the Projects / Labs dropdown */
+      document.addEventListener('DOMContentLoaded', function () {
+        var page = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.dropdown-menu .dropdown-item').forEach(function (item) {
+          var href = (item.getAttribute('href') || '').split('/').pop();
+          if (href && href === page) {
+            item.classList.add('active');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

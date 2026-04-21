@@ -1,0 +1,2329 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Inside Cyber Defense | Evanildo Ribeiro — Security Engineer &amp; SOC Analyst</title>
+    <meta name="description" content="Evanildo Ribeiro — Security Engineer &amp; SOC Analyst and Security Researcher. Cybersecurity portfolio covering threat detection, incident response, and security tooling. Open to opportunities in the UK, EU">
+    <meta property="og:title" content="Inside Cyber Defense | Evanildo Ribeiro">
+    <meta property="og:description" content="Security Engineer &amp; SOC Analyst portfolio — threat detection, incident response, SIEM, security tooling.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts: Inter + Lora (Direction 3: Structured Authority) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/bootstrap.min.css" >
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/fonts/font-awesome.min.css">
+    <!-- Icon -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/fonts/simple-line-icons.css">
+    <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/slicknav.css">
+    <!-- Nivo Lightbox -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/nivo-lightbox.css" >
+    <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/animate.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/main.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/responsive.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" type="text/css" href="meetme/assets/css/custom.css">
+    <!-- TopoJSON — decodes world-atlas country shapes for the CIA Triad globe -->
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+
+  </head>
+  <body>
+
+    <!-- Header Area wrapper Starts -->
+    <header id="header-wrap">
+      <!-- Navbar Start -->
+      <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              <span class="icon-menu"></span>
+              <span class="icon-menu"></span>
+              <span class="icon-menu"></span>
+            </button>
+            <a href="index.html" class="navbar-brand"><img src="meetme/assets/img/Logo.png" alt="Inside Cyber Defence"></a>
+          </div>
+          <div class="collapse navbar-collapse" id="main-navbar">
+            <ul class="onepage-nev navbar-nav mr-auto w-100 justify-content-end align-items-center clearfix">
+              <li class="nav-item active">
+                <a class="nav-link" href="#hero-area">
+                  Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">
+                  About
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#services">
+                  Services
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#cia-triad">
+                  CIA Triad
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#skills">
+                  Skills
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#resume">
+                  Resume
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#certifications">
+                  Certifications
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#portfolios" id="projectsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-projects" aria-labelledby="projectsDropdown">
+            <a class="dropdown-item" href="anomaly-detection.html">Anomaly Detection</a>
+            <a class="dropdown-item" href="detection-as-code.html">Detection-as-Code</a>
+            <a class="dropdown-item" href="incident-response.html">Incident Response</a>
+            <a class="dropdown-item" href="network-security.html">Network Security</a>
+            <a class="dropdown-item" href="network-setup.html">Network Setup &amp; Config</a>
+            <a class="dropdown-item" href="network-traffic-analysis.html">Network Traffic Analysis</a>
+            <a class="dropdown-item" href="packet-analysis.html">Packet Analysis</a>
+            <a class="dropdown-item" href="pentesting.html">Pentesting &amp; Ethical Hacking</a>
+            <a class="dropdown-item" href="rsa-cryptography.html">RSA Cryptography</a>
+            <a class="dropdown-item" href="threat-enrichment.html">Automated Threat Enrichment</a>
+            <a class="dropdown-item" href="vulnerability-assessment.html">Vulnerability Assessment</a>
+              </div>
+            </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#labs-teaser" id="labsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Labs
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="labsDropdown">
+                  <a class="dropdown-item" href="hackthebox.html">
+                    <span style="color:#9FEF00; font-weight:700;">&#9670;</span> HackTheBox
+                  </a>
+                  <a class="dropdown-item" href="tryhackme.html">
+                    <span style="color:#C11111; font-weight:700;">&#9670;</span> TryHackMe
+                  </a>
+                  <a class="dropdown-item" href="catch-the-flag.html">
+                    <span style="color:#ffc800; font-weight:700;">&#9670;</span> CTF &amp; Pentesting
+                  </a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">
+                  Contact
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Start -->
+        <ul class="onepage-nev mobile-menu">
+          <li>
+            <a href="#hero-area">Home</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#services">Services</a>
+          </li>
+          <li>
+            <a href="#skills">Skills</a>
+          </li>
+          <li>
+            <a href="#resume">Resume</a>
+          </li>
+          <li>
+            <a href="#certifications">Certifications</a>
+          </li>
+          <li>
+            <a href="#portfolios">Projects</a>
+          <ul>
+              <li><a href="anomaly-detection.html">Anomaly Detection</a></li>
+              <li><a href="detection-as-code.html">Detection-as-Code</a></li>
+              <li><a href="incident-response.html">Incident Response</a></li>
+              <li><a href="network-security.html">Network Security</a></li>
+              <li><a href="network-setup.html">Network Setup &amp; Config</a></li>
+              <li><a href="network-traffic-analysis.html">Network Traffic Analysis</a></li>
+              <li><a href="packet-analysis.html">Packet Analysis</a></li>
+              <li><a href="pentesting.html">Pentesting &amp; Ethical Hacking</a></li>
+              <li><a href="rsa-cryptography.html">RSA Cryptography</a></li>
+              <li><a href="threat-enrichment.html">Automated Threat Enrichment</a></li>
+              <li><a href="vulnerability-assessment.html">Vulnerability Assessment</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Labs</a>
+            <ul>
+              <li><a href="hackthebox.html">HackTheBox</a></li>
+              <li><a href="tryhackme.html">TryHackMe</a></li>
+              <li><a href="catch-the-flag.html">CTF &amp; Pentesting</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+        <!-- Mobile Menu End -->
+      </nav>
+      <!-- Navbar End -->
+
+      <!-- Hero Area Start -->
+      <div id="hero-area" class="hero-area-bg">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 hero-content-col">
+              <div class="contents">
+                <h2 class="head-title wow fadeInUp" data-wow-delay="0.2s">Evanildo Ribeiro</h2>
+                <div class="hero-rule wow fadeInUp" data-wow-delay="0.35s"></div>
+                <p class="script-font wow fadeInUp" data-wow-delay="0.5s">Security Engineer &amp; SOC Analyst — London, UK</p>
+                <ul class="social-icon wow fadeInUp" data-wow-delay="0.8s">
+                  <li>
+                    <a class="github" href="https://github.com/Evanildo22" target="_blank" rel="noopener noreferrer"><i class="icon-social-github"></i></a>
+                  </li>
+                  <li>
+                    <a class="linkedin" href="https://linkedin.com/in/evanildoribeiro" target="_blank" rel="noopener noreferrer"><i class="icon-social-linkedin"></i></a>
+                  </li>
+                  <li>
+                    <a class="twitter" href="https://x.com/@EvanRibei" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" style="vertical-align:middle;"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></a>
+                  </li>
+                  <li>
+                    <a class="youtube" href="https://www.youtube.com/@MrRibeiro2000" target="_blank" rel="noopener noreferrer"><i class="fa fa-youtube"></i></a>
+                  </li>
+                </ul>
+                <div class="header-button wow fadeInUp" data-wow-delay="1s">
+                  <a href="#contact" class="btn btn-common">Contact Me</a>
+                </div>
+              </div>
+            </div>
+            <!-- Earth Globe (right column) -->
+            <div class="col-md-6 col-sm-12 hero-globe-col" aria-hidden="true">
+              <div class="hero-globe-wrap">
+                <iframe src='https://my.spline.design/earthdayandnight-cQ5UJQ0L51cL7U8O9qAzWnB2/' frameborder='0' title="Interactive 3D Earth Globe"></iframe>
+                <div class="hero-globe-guard" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+              <!-- Orbit ring overlay — sibling to globe-wrap so CSS mask doesn't dissolve rings -->
+              <canvas id="hero-cyber-overlay" aria-hidden="true"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Hero Area End -->
+
+    <script>
+    /* ── Hero orbit rings — cyber monitoring telemetry overlay ── */
+    (function () {
+      const cvs = document.getElementById('hero-cyber-overlay');
+      if (!cvs) return;
+      const ctx = cvs.getContext('2d');
+      const PI  = Math.PI;
+      const TAU = PI * 2;
+      const DEG = PI / 180;
+
+      let W = 0, H = 0, cx = 0, cy = 0, R = 0;
+
+      function resize() {
+        const dpr = window.devicePixelRatio || 1;
+        W = cvs.offsetWidth  || 560;
+        H = cvs.offsetHeight || 560;
+        cvs.width  = Math.round(W * dpr);
+        cvs.height = Math.round(H * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        cx = W * 0.50;
+        cy = H * 0.50;
+        R  = Math.min(W, H) * 0.365;
+      }
+
+      new ResizeObserver(resize).observe(cvs);
+      resize();
+
+      /* ── Ring definitions ── */
+      const RINGS = [
+        {
+          /* Main ring — dominant equatorial band, slightly sphere-fitted (ry 0.21).
+             frontStart/End 0.05 trims ~3° each endpoint so the arc fades into
+             the limb rather than cutting off sharply on the right side. */
+          rx: 1.52, ry: 0.21, tilt: -2 * DEG,
+          speed: 0.0022, phase: 0.42,
+          xOff: 0.00, yOff: 0.01,
+          frontStart: 0.09, frontEnd: PI - 0.02,
+          frontColor: 'rgba(225, 240, 255, 0.90)',
+          backColor:  'rgba(190, 220, 255, 0.40)',
+          lineWidth: 1.1,
+          nodeColor: 'rgba(255, 245, 210, 1)',
+          nodeGlow:  'rgba(255, 205, 80, 0.95)',
+          nodeR: 3.8,
+          nodeOffsets: [0, PI]
+        },
+        {
+          /* Secondary ring — receding supporting band.
+             Same-plane tilt (-1° vs -2°) preserves the coordinated look.
+             Non-crossing proof: |yOff_delta|/|ry_delta| = 0.080/0.02 = 4.0 > 1.
+             frontOpacity: 0.20 — whisper-level; front barely registers, depth comes
+             from the side/back limb arc only. No node — avoids left-side cluster. */
+          rx: 1.44, ry: 0.23, tilt: -1 * DEG,
+          speed: 0.00140, phase: PI * 0.60,
+          xOff: 0.00, yOff: -0.072,
+          frontStart: 0.15, frontEnd: PI - 0.22,
+          frontOpacity: 0.22,
+          frontColor: 'rgba(190, 218, 255, 0.26)',
+          backColor:  'rgba(165, 195, 255, 0.17)',
+          lineWidth: 0.62,
+          nodeOffsets: []
+        }
+      ];
+
+      function ringCenter(ring) {
+        return { x: cx + (ring.xOff || 0) * R, y: cy + (ring.yOff || 0) * R };
+      }
+
+      function normalizePhase(a) { return ((a % TAU) + TAU) % TAU; }
+
+      function nodePos(ring, phase) {
+        const c    = ringCenter(ring);
+        const cosT = Math.cos(ring.tilt);
+        const sinT = Math.sin(ring.tilt);
+        const ex   = ring.rx * R * Math.cos(phase);
+        const ey   = ring.ry * R * Math.sin(phase);
+        return { x: c.x + ex * cosT - ey * sinT, y: c.y + ex * sinT + ey * cosT };
+      }
+
+      function strokeOrbitArc(ring, start, end, isBack) {
+        const c = ringCenter(ring);
+        ctx.save();
+        ctx.translate(c.x, c.y);
+        ctx.rotate(ring.tilt);
+
+        if (isBack) {
+          /* Back arc — clearly readable, ~35% of front, gives genuine orbital depth */
+          ctx.beginPath();
+          ctx.ellipse(0, 0, ring.rx * R, ring.ry * R, 0, start, end);
+          ctx.strokeStyle = 'rgba(130, 175, 255, 0.07)';
+          ctx.lineWidth   = 3.0;
+          ctx.shadowBlur  = 0;
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.ellipse(0, 0, ring.rx * R, ring.ry * R, 0, start, end);
+          ctx.strokeStyle = ring.backColor;
+          ctx.lineWidth   = Math.max(0.6, ring.lineWidth * 0.72);
+          ctx.stroke();
+        } else {
+          /* Front arc — thin, clean line; glow kept narrow so ring reads as wire not band */
+          /* Soft halo — tighter than before */
+          ctx.beginPath();
+          ctx.ellipse(0, 0, ring.rx * R, ring.ry * R, 0, start, end);
+          ctx.strokeStyle = 'rgba(110, 185, 255, 0.05)';
+          ctx.lineWidth   = 5.5;
+          ctx.shadowBlur  = 10;
+          ctx.shadowColor = 'rgba(110, 185, 255, 0.05)';
+          ctx.stroke();
+
+          /* Mid glow */
+          ctx.beginPath();
+          ctx.ellipse(0, 0, ring.rx * R, ring.ry * R, 0, start, end);
+          ctx.strokeStyle = 'rgba(180, 215, 255, 0.18)';
+          ctx.lineWidth   = 1.8;
+          ctx.shadowBlur  = 4;
+          ctx.shadowColor = 'rgba(180, 215, 255, 0.18)';
+          ctx.stroke();
+
+          /* Sharp core */
+          ctx.beginPath();
+          ctx.ellipse(0, 0, ring.rx * R, ring.ry * R, 0, start, end);
+          ctx.strokeStyle = ring.frontColor;
+          ctx.lineWidth   = ring.lineWidth;
+          ctx.shadowBlur  = 0;
+          ctx.stroke();
+        }
+
+        ctx.restore();
+        ctx.shadowBlur = 0;
+      }
+
+      function drawNode(x, y, r, fill, glow, glowSize) {
+        /* Warm gold aura */
+        const g = ctx.createRadialGradient(x, y, 0, x, y, glowSize);
+        g.addColorStop(0.00, 'rgba(255, 230, 155, 0.92)');
+        g.addColorStop(0.20, 'rgba(255, 210, 110, 0.55)');
+        g.addColorStop(0.50, 'rgba(255, 180, 70,  0.18)');
+        g.addColorStop(1.00, 'rgba(255, 180, 70,  0.00)');
+        ctx.fillStyle = g;
+        ctx.beginPath(); ctx.arc(x, y, glowSize, 0, TAU); ctx.fill();
+
+        /* Core */
+        ctx.shadowBlur  = 12;
+        ctx.shadowColor = glow;
+        ctx.fillStyle   = fill;
+        ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill();
+
+        /* White specular highlight */
+        ctx.shadowBlur  = 5;
+        ctx.shadowColor = 'rgba(255,255,255,0.90)';
+        ctx.fillStyle   = 'rgba(255,255,255,1)';
+        ctx.beginPath(); ctx.arc(x, y, r * 0.40, 0, TAU); ctx.fill();
+        ctx.shadowBlur  = 0;
+      }
+
+      function drawTail(ring, nodePhase) {
+        const TAIL = 0.25, N = 16;
+        for (let i = 0; i < N; i++) {
+          const t1 = nodePhase - TAIL * (1 - i / N);
+          const t2 = nodePhase - TAIL * (1 - (i + 1) / N);
+          if (normalizePhase(t1) > PI || normalizePhase(t2) > PI) continue;
+          const p1    = nodePos(ring, t1);
+          const p2    = nodePos(ring, t2);
+          const ratio = i / N;
+          const alpha = Math.pow(ratio, 2.0) * 0.50;
+          ctx.strokeStyle = `rgba(255, 210, 110, ${alpha})`;
+          ctx.lineWidth   = 0.35 + ratio * 1.5;
+          ctx.shadowBlur  = 8;
+          ctx.shadowColor = `rgba(255, 195, 80, ${alpha * 0.65})`;
+          ctx.beginPath(); ctx.moveTo(p1.x, p1.y); ctx.lineTo(p2.x, p2.y); ctx.stroke();
+        }
+        ctx.shadowBlur = 0;
+      }
+
+      function drawOrbitDust(ring, nodePhase) {
+        for (let i = 0; i < 9; i++) {
+          const a = nodePhase - 0.06 - i * 0.020;
+          const p = nodePos(ring, a);
+          if (Math.hypot(p.x - cx, p.y - cy) < R * 0.97) continue;
+          const jx    = Math.sin(i * 13.1 + nodePhase * 3.3) * 5.0;
+          const jy    = Math.cos(i * 8.7  + nodePhase * 2.1) * 5.0;
+          const alpha = 0.015 + i * 0.003;
+          ctx.fillStyle = `rgba(255, 215, 140, ${alpha})`;
+          ctx.beginPath();
+          ctx.arc(p.x + jx, p.y + jy, 0.30 + (i % 3) * 0.16, 0, TAU);
+          ctx.fill();
+        }
+      }
+
+      let frame = 0, running = true;
+
+      /* Pause when hero scrolls off-screen */
+      new IntersectionObserver(function (entries) {
+        running = entries[0].isIntersecting;
+        if (running) draw();
+      }, { threshold: 0.01 }).observe(document.getElementById('hero-area') || cvs);
+
+      function draw() {
+        if (!running) return;
+        requestAnimationFrame(draw);
+        frame++;
+        ctx.clearRect(0, 0, W, H);
+
+        for (const ring of RINGS) {
+          ring.phase += ring.speed;
+
+          /* BACK ARC — clipped outside globe disc so it reads as behind */
+          ctx.save();
+          ctx.beginPath();
+          ctx.rect(0, 0, W, H);
+          ctx.arc(cx, cy, R * 0.975, 0, TAU, true);
+          ctx.clip('evenodd');
+          strokeOrbitArc(ring, PI, TAU, true);
+          ctx.restore();
+
+          /* FRONT ARC — per-ring trim + optional opacity recession */
+          const fS = ring.frontStart   !== undefined ? ring.frontStart   : 0;
+          const fE = ring.frontEnd     !== undefined ? ring.frontEnd     : PI;
+          const fO = ring.frontOpacity !== undefined ? ring.frontOpacity : 1.0;
+          ctx.save();
+          ctx.globalAlpha = fO;
+          strokeOrbitArc(ring, fS, fE, false);
+          ctx.restore();
+
+          /* NODES */
+          for (const offset of ring.nodeOffsets) {
+            const nodePhase  = ring.phase + offset;
+            const nodePhaseN = normalizePhase(nodePhase);
+            const isFront    = nodePhaseN < PI;
+            const np         = nodePos(ring, nodePhase);
+            const pulse      = 0.5 + 0.5 * Math.sin(frame * 0.017 * 1.8 + nodePhase * 3);
+
+            if (isFront) {
+              drawOrbitDust(ring, nodePhase);
+              drawTail(ring, nodePhase);
+              drawNode(
+                np.x, np.y,
+                ring.nodeR * (0.88 + pulse * 0.22),
+                ring.nodeColor, ring.nodeGlow,
+                10 + pulse * 5
+              );
+            } else {
+              if (Math.hypot(np.x - cx, np.y - cy) > R * 0.975) {
+                ctx.save();
+                ctx.globalAlpha = 0.28;
+                drawNode(np.x, np.y, ring.nodeR * 0.68, ring.nodeColor, ring.nodeGlow, 6);
+                ctx.restore();
+              }
+            }
+          }
+        }
+      }
+
+      draw();
+    })();
+    </script>
+
+    </header>
+    <!-- Header Area wrapper End -->
+
+    <!-- About Section Start -->
+    <section id="about" class="section-padding">
+      <div class="container">
+        <div class="row align-items-center">
+
+          <!-- Left: Scroll-flip photo -->
+          <div class="col-lg-5 col-md-6 col-sm-12 text-center wow fadeInLeft" data-wow-delay="0.3s">
+            <div class="about-photo-wrap">
+              <!-- Flip card paused — Face A shown statically; flip structure preserved in git for future use -->
+              <img class="about-photo img-fluid" src="meetme/assets/img/about/About_flip_image2.png" alt="Evanildo Ribeiro — Cybersecurity Professional">/*About_flip_image2.png*/
+            </div>
+          </div>
+
+          <!-- Right: Content -->
+          <div class="col-lg-7 col-md-6 col-sm-12 wow fadeInRight" data-wow-delay="0.4s">
+            <div class="about-content-wrap">
+
+              <h2 class="about-name">Evanildo Ribeiro</h2>
+              <p class="about-role">Security Engineer &amp; SOC Analyst</p>
+
+              <p class="about-bio">Cybersecurity professional with a strong academic background and practical experience gained through Research Assistant in Cybersecurity role, and Labs. I worked with real-world security concepts, research-driven analysis, and applied defensive security principles in structured environments.</p>
+
+              <p class="about-bio">I am particularly interested in SOC Analyst and security Engineer roles, where I can contribute to monitoring, analysis, and incident support, helping to protect systems, data, and users.</p>
+
+              <!-- Profile info tiles -->
+              <div class="about-info-grid wow fadeInUp" data-wow-delay="0.5s">
+                <div class="about-info-tile">
+                  <i class="fa fa-map-marker"></i>
+                  <div>
+                    <span class="info-label">Location</span>
+                    <span class="info-value">London, UK</span>
+                  </div>
+                </div>
+                <div class="about-info-tile">
+                  <i class="fa fa-briefcase"></i>
+                  <div>
+                    <span class="info-label">Experience Level</span>
+                    <span class="info-value">Junior / Entry-Level</span>
+                  </div>
+                </div>
+                <div class="about-info-tile">
+                  <i class="fa fa-globe"></i>
+                  <div>
+                    <span class="info-label">Work Authorisation</span>
+                    <span class="info-value">UK, EU &amp; Brazil</span>
+                  </div>
+                </div>
+                <div class="about-info-tile">
+                  <i class="fa fa-envelope"></i>
+                  <div>
+                    <span class="info-label">Email</span>
+                    <span class="info-value"><a href="mailto:contact@evanildoribeiro.com"> contact@evanildoribeiro.com</a></span>
+                  </div>
+                </div>
+                <div class="about-info-tile about-info-tile--languages">
+                  <i class="fa fa-language"></i>
+                  <div>
+                    <span class="info-label">Languages</span>
+                    <span class="info-value">English – Fluent &nbsp;|&nbsp; Portuguese – Native &nbsp;|&nbsp; Spanish – Intermediate</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Action buttons -->
+              <div class="about-actions wow fadeInUp" data-wow-delay="0.65s">
+                <button class="about-btn-video" id="watchIntroBtn" data-toggle="modal" data-target="#introModal">
+                  <i class="fa fa-play-circle"></i> Watch Intro
+                </button>
+                <a href="/assets/CV-document/Evanildo_Ribeiro_CV.pdf" download class="about-btn-primary">
+                  <i class="fa fa-download"></i> Download CV
+                </a>
+                <a href="#contact" class="about-btn-outline">
+                  <i class="fa fa-envelope-o"></i> Contact Me
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- Services Section Start -->
+    <section id="services" class="services section-padding">
+      <h2 class="section-title wow flipInX" data-wow-delay="0.3s">What I Do</h2>
+      <p class="svc-subtitle wow flipInX" data-wow-delay="0.4s">Focused on supporting security operations, analysis, and defensive cybersecurity practices</p>
+      <div class="container">
+        <div class="row">
+
+          <!-- Service 1: Security Monitoring -->
+          <div class="col-md-6 col-lg-3 col-xs-12">
+            <div class="services-item svc-1 wow fadeInUp" data-wow-delay="0.2s">
+              <span class="svc-number">01</span>
+              <div class="svc-icon-wrap">
+                <i class="icon-eye"></i>
+              </div>
+              <div class="services-content">
+                <h3>Security Monitoring &amp; Analysis</h3>
+                <p>I support security monitoring activities by analysing alerts, logs, and security events to help identify potential threats and suspicious behaviour. I am familiar with the importance of accurate escalation and clear documentation within SOC environments.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 2: Threat Awareness -->
+          <div class="col-md-6 col-lg-3 col-xs-12">
+            <div class="services-item svc-2 wow fadeInUp" data-wow-delay="0.35s">
+              <span class="svc-number">02</span>
+              <div class="svc-icon-wrap">
+                <i class="icon-target"></i>
+              </div>
+              <div class="services-content">
+                <h3>Threat Awareness &amp; Risk Support</h3>
+                <p>I assist in identifying security risks by applying core cybersecurity principles, threat awareness, and risk-based thinking. My experience includes supporting research and analysis related to vulnerabilities, attack techniques, and defensive security strategies.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 3: Incident Support -->
+          <div class="col-md-6 col-lg-3 col-xs-12">
+            <div class="services-item svc-3 wow fadeInUp" data-wow-delay="0.5s">
+              <span class="svc-number">03</span>
+              <div class="svc-icon-wrap">
+                <i class="icon-magnifier"></i>
+              </div>
+              <div class="services-content">
+                <h3>Incident Support &amp; Investigation</h3>
+                <p>I support incident response activities by assisting with investigation, evidence gathering, and structured analysis. I understand the importance of following defined processes, maintaining information integrity, and supporting response efforts effectively.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 4: Research & Learning -->
+          <div class="col-md-6 col-lg-3 col-xs-12">
+            <div class="services-item svc-4 wow fadeInUp" data-wow-delay="0.65s">
+              <span class="svc-number">04</span>
+              <div class="svc-icon-wrap">
+                <i class="icon-graduation"></i>
+              </div>
+              <div class="services-content">
+                <h3>Security Research &amp; Continuous Learning</h3>
+                <p>I actively engage in cybersecurity research and continuous learning to stay informed about emerging threats, tools, and defensive techniques. This includes hands-on labs, academic research, and independent skill development aligned with SOC and analyst roles.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- Services Section End -->
+
+
+    <!-- CIA Triad Section Start -->
+    <section id="cia-triad" class="cia-triad-section">
+      <div class="container">
+        <div class="row align-items-center cia-row">
+
+          <!-- Left: CIA content -->
+          <div class="col-lg-5 col-12 cia-content-col">
+            <p class="cia-eyebrow wow fadeInUp" data-wow-delay="0.1s">Core Security Principles</p>
+            <h2 class="cia-title wow fadeInUp" data-wow-delay="0.2s">The CIA Triad</h2>
+            <p class="cia-intro wow fadeInUp" data-wow-delay="0.3s">The foundational model that guides every defensive decision. Confidentiality, Integrity, and Availability define how I assess risk, respond to incidents, and architect secure systems — every threat on this globe challenges one or more of these principles.</p>
+
+            <div class="cia-pillars">
+
+              <!-- Confidentiality -->
+              <div class="cia-pillar cia-pillar--gold wow fadeInUp" data-wow-delay="0.35s">
+                <div class="cia-pillar-icon cia-pillar-icon--gold">
+                  <i class="icon-lock"></i>
+                </div>
+                <div class="cia-pillar-body">
+                  <h3 class="cia-pillar-title">Confidentiality</h3>
+                  <p class="cia-pillar-desc">Ensuring sensitive data reaches only authorised parties. Enforced through encryption, access controls, and least-privilege policies to prevent unauthorised disclosure.</p>
+                </div>
+              </div>
+
+              <!-- Integrity -->
+              <div class="cia-pillar cia-pillar--teal wow fadeInUp" data-wow-delay="0.45s">
+                <div class="cia-pillar-icon cia-pillar-icon--teal">
+                  <i class="icon-shield"></i>
+                </div>
+                <div class="cia-pillar-body">
+                  <h3 class="cia-pillar-title">Integrity</h3>
+                  <p class="cia-pillar-desc">Guaranteeing data remains accurate and unaltered. Maintained through hashing, digital signatures, checksums, and rigorous audit trails that detect tampering.</p>
+                </div>
+              </div>
+
+              <!-- Availability -->
+              <div class="cia-pillar cia-pillar--amber wow fadeInUp" data-wow-delay="0.55s">
+                <div class="cia-pillar-icon cia-pillar-icon--amber">
+                  <i class="icon-energy"></i>
+                </div>
+                <div class="cia-pillar-body">
+                  <h3 class="cia-pillar-title">Availability</h3>
+                  <p class="cia-pillar-desc">Keeping systems accessible when needed. Achieved through redundancy, failover, DDoS mitigation, and continuous uptime monitoring to prevent service disruption.</p>
+                </div>
+              </div>
+
+            </div><!-- /.cia-pillars -->
+          </div><!-- /.cia-content-col -->
+
+          <!-- Right: Threat Globe -->
+          <div class="col-lg-7 col-12 cia-globe-col wow fadeInUp" data-wow-delay="0.3s">
+            <div class="cia-globe-wrap">
+              <canvas id="cia-globe-canvas" aria-label="Live threat globe showing active cyber attack simulations"></canvas>
+            </div>
+
+            <!-- Badge + Legend -->
+            <div class="cia-globe-footer">
+              <div class="cia-badge">
+                <span class="cia-badge__dot"></span>
+                <span id="cia-threat-count">0</span>&nbsp;Global Cyber Threats
+              </div>
+              <div class="cia-legend">
+                <span class="cia-legend-item">
+                  <span class="cia-legend-dot" style="background:#ff3737; box-shadow:0 0 6px #ff3737;"></span>
+                  Threat Origin
+                </span>
+                <span class="cia-legend-item">
+                  <span class="cia-legend-dot" style="background:#46c8ff; box-shadow:0 0 6px #46c8ff;"></span>
+                  Protected Node
+                </span>
+                <span class="cia-legend-item">
+                  <span class="cia-legend-dot" style="background:#ff9128; box-shadow:0 0 6px #ff9128; border-radius:2px;"></span>
+                  Interception Arc
+                </span>
+              </div>
+            </div>
+          </div><!-- /.cia-globe-col -->
+
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+
+      <script>
+      (function () {
+        const canvas = document.getElementById('cia-globe-canvas');
+        const ctx    = canvas.getContext('2d');
+        const badge  = document.getElementById('cia-threat-count');
+
+        const PAL = {
+          gridRGB    : [80,  155, 255],
+          sweepRGB   : [201, 151,  58],
+          threatRGB  : [255,  55,  55],
+          targetRGB  : [ 70, 200, 255],
+          arcGlowRGB : [255, 145,  45],
+          landFill   : 'rgba(28, 78, 140, 0.80)',
+          landStroke : 'rgba(80, 160, 255, 0.22)',
+          fill0      : 'rgba(22,  50,  92, 1.0)',
+          fill1      : 'rgba(14,  32,  62, 1.0)',
+          fill2      : 'rgba( 6,  14,  36, 1.0)',
+        };
+
+        var cw, ch, R, cx, cy;
+        /* Gradient cache — rebuilt on resize only, reused every frame */
+        var cachedFill = null;
+
+        function resize() {
+          var dpr  = window.devicePixelRatio || 1;
+          var wrap = canvas.parentElement;
+          cw = wrap.offsetWidth  || 500;
+          ch = wrap.offsetHeight || 500;
+          canvas.width  = Math.round(cw * dpr);
+          canvas.height = Math.round(ch * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          R  = Math.min(cw, ch) * 0.43;
+          cx = cw * 0.50;
+          cy = ch * 0.50;
+          cachedFill = ctx.createRadialGradient(cx-R*.20, cy-R*.15, 0, cx, cy, R);
+          cachedFill.addColorStop(0,   PAL.fill0);
+          cachedFill.addColorStop(0.7, PAL.fill1);
+          cachedFill.addColorStop(1,   PAL.fill2);
+        }
+
+        new ResizeObserver(resize).observe(canvas.parentElement);
+        resize();
+
+        var rotY     = -2.0;
+        var rotX     =  0.06;
+        var targetRX =  0.06;
+        var SPIN     =  0.0025;
+        var sweepLon = 0;
+        var mY       = 0;
+
+        /* Trig cache — recomputed once per frame in animate(), reused by every rotate() call */
+        var cosY = 1, sinY = 0, cosX = 1, sinX = 0;
+
+        document.addEventListener('mousemove', function(e) {
+          var r = canvas.getBoundingClientRect();
+          mY = e.clientY - r.top;
+        });
+
+        function toUnit(lat, lon) {
+          var phi   = (90 - lat) * Math.PI / 180;
+          var theta = lon        * Math.PI / 180;
+          return { x: Math.sin(phi)*Math.cos(theta), y: Math.cos(phi), z: Math.sin(phi)*Math.sin(theta) };
+        }
+
+        function rotate(v) {
+          const x  =  v.x * cosY + v.z * sinY;
+          const z0 = -v.x * sinY + v.z * cosY;
+          return { x, y: v.y*cosX - z0*sinX, z: v.y*sinX + z0*cosX };
+        }
+
+        function project(v) {
+          const fov = 4.2 * R;
+          const s   = fov / (fov + v.z * R);
+          return { x: cx + v.x*R*s, y: cy - v.y*R*s, z: v.z };
+        }
+
+        function tp(lat, lon) { return project(rotate(toUnit(lat, lon))); }
+
+        function slerp(a, b, t) {
+          const dot = Math.max(-1, Math.min(1, a.x*b.x + a.y*b.y + a.z*b.z));
+          const om  = Math.acos(dot);
+          if (om < 1e-4) return { x: a.x+(b.x-a.x)*t, y: a.y+(b.y-a.y)*t, z: a.z+(b.z-a.z)*t };
+          const so = Math.sin(om);
+          return {
+            x: Math.sin((1-t)*om)/so*a.x + Math.sin(t*om)/so*b.x,
+            y: Math.sin((1-t)*om)/so*a.y + Math.sin(t*om)/so*b.y,
+            z: Math.sin((1-t)*om)/so*a.z + Math.sin(t*om)/so*b.z,
+          };
+        }
+
+        function zFade(z, lo, range) {
+          lo    = (lo    === undefined) ? 0.12 : lo;
+          range = (range === undefined) ? 0.32 : range;
+          return Math.max(0, Math.min(1, (z + lo) / range));
+        }
+
+        /* ── Country / land data ── */
+        let geoFeatures = [];
+
+        function loadGeo() {
+          fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+            .then(function(r) { return r.json(); })
+            .then(function(topo) {
+              const fc = topojson.feature(topo, topo.objects.countries);
+              geoFeatures = fc.features.map(function(f) {
+                if (!f.geometry) return null;
+                const rawRings = [];
+                if (f.geometry.type === 'Polygon') {
+                  rawRings.push(f.geometry.coordinates[0]);
+                } else if (f.geometry.type === 'MultiPolygon') {
+                  f.geometry.coordinates.forEach(function(poly) { rawRings.push(poly[0]); });
+                }
+                if (!rawRings.length) return null;
+                const rings = rawRings.map(function(ring) {
+                  return ring.map(function(coord) { return toUnit(coord[1], coord[0]); });
+                });
+                const first = rings[0];
+                let sx = 0, sy = 0, sz = 0;
+                first.forEach(function(u) { sx += u.x; sy += u.y; sz += u.z; });
+                const n = first.length;
+                const l = Math.hypot(sx/n, sy/n, sz/n) || 1;
+                return { rings: rings, centroid: { x: sx/n/l, y: sy/n/l, z: sz/n/l } };
+              }).filter(Boolean);
+            })
+            .catch(function() {});
+        }
+
+        function drawLand() {
+          if (!geoFeatures.length) return;
+          ctx.fillStyle   = PAL.landFill;
+          ctx.strokeStyle = PAL.landStroke;
+          ctx.lineWidth   = 0.5;
+          for (const feat of geoFeatures) {
+            if (rotate(feat.centroid).z < -0.52) continue;
+            for (const ring of feat.rings) {
+              ctx.beginPath();
+              let prev = null;
+              for (const u of ring) {
+                const rv = rotate(u);
+                const p  = project(rv);
+                if (!prev) {
+                  ctx.moveTo(p.x, p.y);
+                } else {
+                  const jump = Math.hypot(p.x - prev.x, p.y - prev.y);
+                  if (jump > R * 1.15) ctx.moveTo(p.x, p.y);
+                  else ctx.lineTo(p.x, p.y);
+                }
+                prev = p;
+              }
+              ctx.closePath();
+              ctx.fill();
+              ctx.stroke();
+            }
+          }
+        }
+
+        var CITIES = [
+          { lat: 55.75, lon:  37.62, type:'threat', label:'Moscow'         },
+          { lat: 39.91, lon: 116.39, type:'threat', label:'Beijing'        },
+          { lat: 35.69, lon:  51.39, type:'threat', label:'Tehran'         },
+          { lat: 39.02, lon: 125.75, type:'threat', label:'Pyongyang'      },
+          { lat: 44.80, lon:  20.46, type:'threat', label:'Belgrade'       },
+          { lat: 22.30, lon: 114.18, type:'threat', label:'Hong Kong'      },
+          { lat:  51.50, lon:  -0.12, type:'target', label:'London'        },
+          { lat:  40.71, lon: -74.00, type:'target', label:'New York'      },
+          { lat:  38.90, lon: -77.03, type:'target', label:'Washington'    },
+          { lat:  48.85, lon:   2.35, type:'target', label:'Paris'         },
+          { lat:  35.68, lon: 139.69, type:'target', label:'Tokyo'         },
+          { lat:   1.35, lon: 103.82, type:'target', label:'Singapore'     },
+          { lat:  50.11, lon:   8.68, type:'target', label:'Frankfurt'     },
+          { lat:  37.77, lon: -122.4, type:'target', label:'San Francisco' },
+          { lat: -33.87, lon: 151.21, type:'target', label:'Sydney'        },
+          { lat:  25.20, lon:  55.27, type:'target', label:'Dubai'         },
+          { lat:  52.52, lon:  13.40, type:'target', label:'Berlin'        },
+          { lat:  55.67, lon:  12.57, type:'target', label:'Copenhagen'    },
+          { lat: -23.55, lon: -46.63, type:'target', label:'São Paulo'     },
+          { lat:  28.61, lon:  77.21, type:'target', label:'Delhi'         },
+        ];
+        CITIES.forEach(function(c) { c.unit = toUnit(c.lat, c.lon); c.phase = Math.random()*Math.PI*2; });
+
+        /* Pre-computed subsets — avoids filtering CITIES on every arc spawn */
+        var THREATS = CITIES.filter(function(c) { return c.type === 'threat'; });
+        var TARGETS = CITIES.filter(function(c) { return c.type === 'target'; });
+
+        var MAX_ARCS = 6;
+        var arcs = [], nextSpawn = 40;
+
+        function spawnArc() {
+          arcs.push({
+            src: THREATS[Math.floor(Math.random()*THREATS.length)],
+            tgt: TARGETS[Math.floor(Math.random()*TARGETS.length)],
+            t: 0, speed: 0.0045 + Math.random()*0.003,
+          });
+        }
+        for (var i = 0; i < 4; i++) spawnArc();
+
+        /* Static grid lines — computed once at init */
+        var LATS = [-75,-60,-45,-30,-15,0,15,30,45,60,75];
+        var LONS = Array.from({length:18}, function(_,i) { return i*20-180; });
+
+        function drawGrid() {
+          const S = 80;
+          const [r,g,b] = PAL.gridRGB;
+          ctx.lineWidth = 0.55;
+          for (const lat of LATS) {
+            for (let s = 0; s < S; s++) {
+              const p1 = tp(lat, -180+(s/S)*360), p2 = tp(lat, -180+((s+1)/S)*360);
+              const a  = Math.max(0.02, ((p1.z+p2.z)*.5+0.6)/1.6*0.18);
+              ctx.strokeStyle = `rgba(${r},${g},${b},${a})`;
+              ctx.beginPath(); ctx.moveTo(p1.x,p1.y); ctx.lineTo(p2.x,p2.y); ctx.stroke();
+            }
+          }
+          for (const lon of LONS) {
+            for (let s = 0; s < S; s++) {
+              const p1 = tp(-90+(s/S)*180, lon), p2 = tp(-90+((s+1)/S)*180, lon);
+              const a  = Math.max(0.02, ((p1.z+p2.z)*.5+0.6)/1.6*0.18);
+              ctx.strokeStyle = `rgba(${r},${g},${b},${a})`;
+              ctx.beginPath(); ctx.moveTo(p1.x,p1.y); ctx.lineTo(p2.x,p2.y); ctx.stroke();
+            }
+          }
+        }
+
+        function drawSweep() {
+          const [r,g,b] = PAL.sweepRGB, WAKE = 28;
+          for (let lat = -80; lat <= 80; lat += 2.5) {
+            for (let d = 0; d <= WAKE; d += 1.5) {
+              const p = tp(lat, sweepLon-d);
+              if (p.z < 0) continue;
+              ctx.fillStyle = `rgba(${r},${g},${b},${(1-d/WAKE)*0.13*p.z})`;
+              ctx.beginPath(); ctx.arc(p.x,p.y,1.3,0,Math.PI*2); ctx.fill();
+            }
+            const pe = tp(lat, sweepLon);
+            if (pe.z > 0) {
+              ctx.fillStyle = `rgba(255,205,85,${0.6*pe.z})`;
+              ctx.beginPath(); ctx.arc(pe.x,pe.y,1.6,0,Math.PI*2); ctx.fill();
+            }
+          }
+        }
+
+        function drawNodes(t) {
+          for (const city of CITIES) {
+            const rv  = rotate(city.unit);
+            const vis = zFade(rv.z);
+            if (vis <= 0) continue;
+            const p     = project(rv);
+            const isThr = city.type === 'threat';
+            const pulse = 0.5 + 0.5*Math.sin(t*1.8+city.phase);
+            const baseR = isThr ? 4.0 : 3.2;
+            const [cr,cg,cb] = isThr ? PAL.threatRGB : PAL.targetRGB;
+            if (isThr) {
+              ctx.strokeStyle = `rgba(${cr},${cg},${cb},${(0.5-pulse*.44)*vis})`;
+              ctx.lineWidth = 0.9; ctx.shadowBlur = 0;
+              ctx.beginPath(); ctx.arc(p.x,p.y, baseR+5+pulse*9, 0, Math.PI*2); ctx.stroke();
+            }
+            ctx.shadowBlur  = isThr ? 16 : 11;
+            ctx.shadowColor = `rgba(${cr},${cg},${cb},0.9)`;
+            ctx.fillStyle   = `rgba(${cr},${cg},${cb},${(0.72+pulse*.28)*vis})`;
+            ctx.beginPath(); ctx.arc(p.x,p.y, baseR*(0.85+pulse*.15), 0, Math.PI*2); ctx.fill();
+            ctx.shadowBlur  = 0;
+          }
+        }
+
+        function drawArcs() {
+          const [ar,ag,ab] = PAL.arcGlowRGB, TRAIL = 0.32;
+          for (const arc of arcs) {
+            const head = arc.t, tail = Math.max(0, head-TRAIL);
+            for (let s = 0; s < 55; s++) {
+              const t1  = tail+(head-tail)*(s/55), t2 = tail+(head-tail)*((s+1)/55);
+              const rv1 = rotate(slerp(arc.src.unit, arc.tgt.unit, t1));
+              const rv2 = rotate(slerp(arc.src.unit, arc.tgt.unit, t2));
+              const vis = zFade(Math.min(rv1.z, rv2.z), 0.22, 0.35);
+              if (vis <= 0) continue;
+              const p1    = project(rv1), p2 = project(rv2);
+              const ratio = (t1-tail)/(head-tail+0.001);
+              const a     = ratio*0.90*vis;
+              ctx.strokeStyle = `rgba(255,${Math.round(55+ratio*110)},${Math.round(55-ratio*55)},${a})`;
+              ctx.lineWidth   = 1.5 + ratio*0.9;
+              ctx.shadowBlur  = 10;
+              ctx.shadowColor = `rgba(${ar},${ag},${ab},${a*.7})`;
+              ctx.beginPath(); ctx.moveTo(p1.x,p1.y); ctx.lineTo(p2.x,p2.y); ctx.stroke();
+            }
+            const hRV  = rotate(slerp(arc.src.unit, arc.tgt.unit, head));
+            const hVis = zFade(hRV.z);
+            if (hVis > 0) {
+              const hp = project(hRV);
+              ctx.shadowBlur  = 24; ctx.shadowColor = `rgba(${ar},${ag},${ab},0.95)`;
+              ctx.fillStyle   = `rgba(255,245,220,${hVis})`;
+              ctx.beginPath(); ctx.arc(hp.x,hp.y,3.4,0,Math.PI*2); ctx.fill();
+              ctx.shadowBlur  = 0;
+            }
+          }
+          ctx.shadowBlur = 0;
+        }
+
+        let display = 0, real = 0;
+        function updateBadge() {
+          if (display < real) {
+            display = Math.min(real, display + (Math.ceil((real-display)*.1) || 1));
+            badge.textContent = display.toLocaleString();
+          }
+        }
+
+        let frame = 0;
+
+        /* Pause animation when section is off-screen to save CPU */
+        let sectionVisible = false;
+        new IntersectionObserver(function(entries) {
+          sectionVisible = entries[0].isIntersecting;
+          if (sectionVisible) animate();
+        }, { threshold: 0.01 }).observe(canvas.closest('section'));
+
+        function animate() {
+          if (!sectionVisible) return;
+          requestAnimationFrame(animate);
+          frame++;
+          rotY     += SPIN;
+          sweepLon  = (rotY*1.6*180/Math.PI) % 360;
+          targetRX  = (Math.max(0, Math.min(1, mY/ch)) - 0.5) * 0.26;
+          rotX     += (targetRX - rotX) * 0.04;
+
+          /* Update trig cache once per frame */
+          cosY = Math.cos(rotY); sinY = Math.sin(rotY);
+          cosX = Math.cos(rotX); sinX = Math.sin(rotX);
+
+          ctx.clearRect(0, 0, cw, ch);
+
+          ctx.save();
+          ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI*2); ctx.clip();
+            ctx.fillStyle = cachedFill; ctx.fillRect(0, 0, cw, ch);
+            drawLand();
+            drawGrid();
+            drawSweep();
+            drawArcs();
+            drawNodes(frame*0.017);
+          ctx.restore();
+
+          nextSpawn--;
+          if (nextSpawn <= 0 && arcs.length < MAX_ARCS) { spawnArc(); nextSpawn = 45+Math.random()*55; }
+          arcs.forEach(a => { a.t += a.speed; });
+          const before = arcs.length;
+          arcs = arcs.filter(a => a.t < 1.06);
+          if (arcs.length < before) real += Math.ceil(1+Math.random()*2);
+          updateBadge();
+        }
+
+        /* Boot */
+        loadGeo();
+      })();
+      </script>
+    </section>
+    <!-- CIA Triad Section End -->
+
+        <!-- Skills Section Start -->
+    <section id="skills" class="section-padding">
+      <div class="container">
+        <h2 class="section-title wow flipInX" data-wow-delay="0.3s">Skills &amp; Tools</h2>
+        <p class="section-subtitle text-center wow flipInX" data-wow-delay="0.4s">Technical capabilities developed through academic study, research, and hands-on lab practice</p>
+
+        <div class="row">
+
+          <!-- Security & Monitoring -->
+          <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="skills-category">
+              <p class="skills-category-title">Security &amp; Monitoring</p>
+              <span class="skill-tag">ELK Stack (Elastic/Kibana)</span>
+              <span class="skill-tag">Splunk</span>
+              <span class="skill-tag">SIEM Concepts</span>
+              <span class="skill-tag">SIGMA Rules</span>
+              <span class="skill-tag">YARA</span>
+              <span class="skill-tag">MITRE ATT&amp;CK</span>
+              <span class="skill-tag">Log Analysis</span>
+              <span class="skill-tag">Alert Triage</span>
+            </div>
+          </div>
+
+          <!-- Network Analysis -->
+          <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="skills-category">
+              <p class="skills-category-title">Network Analysis</p>
+              <span class="skill-tag">Wireshark</span>
+              <span class="skill-tag">Nmap</span>
+              <span class="skill-tag">tcpdump</span>
+              <span class="skill-tag">Zeek (Bro)</span>
+              <span class="skill-tag">TCP/IP</span>
+              <span class="skill-tag">Packet Analysis</span>
+              <span class="skill-tag">Network Forensics</span>
+              <span class="skill-tag">VLANs / Routing</span>
+            </div>
+          </div>
+
+          <!-- Scripting & Automation -->
+          <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="skills-category">
+              <p class="skills-category-title">Scripting &amp; Automation</p>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Bash / Shell</span>
+              <span class="skill-tag">PowerShell</span>
+              <span class="skill-tag">Git &amp; GitHub</span>
+              <span class="skill-tag">Regex</span>
+              <span class="skill-tag">JSON / YAML</span>
+            </div>
+          </div>
+
+          <!-- Frameworks & Standards -->
+          <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="skills-category">
+              <p class="skills-category-title">Frameworks &amp; Standards</p>
+              <span class="skill-tag">NIST CSF</span>
+              <span class="skill-tag">ISO 27001 Awareness</span>
+              <span class="skill-tag">Incident Response</span>
+              <span class="skill-tag">Risk Analysis</span>
+              <span class="skill-tag">Vulnerability Management</span>
+              <span class="skill-tag">Detection-as-Code</span>
+            </div>
+          </div>
+
+          <!-- Operating Systems & Platforms -->
+          <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay="0.6s">
+            <div class="skills-category">
+              <p class="skills-category-title">Operating Systems &amp; Platforms</p>
+              <span class="skill-tag">Kali Linux</span>
+              <span class="skill-tag">Ubuntu / Debian</span>
+              <span class="skill-tag">Windows Server</span>
+              <span class="skill-tag">Active Directory (Basics)</span>
+              <span class="skill-tag">VirtualBox / VMware</span>
+            </div>
+          </div>
+
+          <!-- Threat Intelligence & OSINT -->
+          <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="skills-category">
+              <p class="skills-category-title">Threat Intelligence &amp; OSINT</p>
+              <span class="skill-tag">VirusTotal</span>
+              <span class="skill-tag">Shodan</span>
+              <span class="skill-tag">OSINT Techniques</span>
+              <span class="skill-tag">IOC Analysis</span>
+              <span class="skill-tag">Threat Feeds</span>
+              <span class="skill-tag">AlienVault OTX</span>
+              <span class="skill-tag">MISP (Awareness)</span>
+              <span class="skill-tag">URL / IP / Hash Analysis</span>
+            </div>
+          </div>
+
+        </div><!-- /.row -->
+      </div>
+    </section>
+    <!-- Skills Section End -->
+
+    <!-- Resume Section Start -->
+    <div id="resume" class="section-padding">
+      <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.2s">
+          <h2 class="section-title">Resume</h2>
+          <p class="resume-subtitle">Academic background, professional experience &amp; continuous development</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="education wow fadeInRight" data-wow-delay="0.3s">
+              <ul class="timeline">
+                <li>
+                  <i class="icon-graduation"></i>
+                  <h2 class="timelin-title">Education</h2>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <div class="edu-card-header">
+                      <h3 class="line-title">BSc (Hons) In Cybersecurity - University Of West London</h3>
+                      <!-- PLACEHOLDER: save the UWL logo as meetme/assets/img/logo-uwl.png (transparent PNG, ~200px wide) -->
+                      <img src="meetme/assets/img/logo-uwl.png" alt="University of West London" class="edu-logo">
+                    </div>
+                    <p>London, UK</p>
+                    <span>2020 - 2024</span>
+                    <p class="line-text">Focused on core cybersecurity principles including network security, risk management, cryptography, secure systems, and security analysis, with practical labs and academic research.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <div class="edu-card-header">
+                      <h3 class="line-title">CMI Level 3 Award in First Line Management (QCF)</h3>
+                      <!-- PLACEHOLDER: save the CMI logo as meetme/assets/img/logo-cmi.png (transparent PNG, ~300px wide) -->
+                      <img src="meetme/assets/img/logo-cmi.png" alt="Chartered Management Institute" class="edu-logo">
+                    </div>
+                    <p>Chartered Management Institute, London, UK</p>
+                    <span>2013 - 2014</span>
+                    <p class="line-text">Professional qualification focused on first-line management principles, communication, and organisational awareness, supporting effective teamwork and structured working environments.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">Additional Learning & Certifications</h3>
+                    <span>2025 - 2025</span>
+                    <p class="line-text">Actively preparing for industry-recognised certifications and developing hands-on skills through labs, research, and practical exercises aligned with SOC and analyst roles.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="experience wow fadeInRight" data-wow-delay="0.6s">
+              <ul class="timeline">
+                <li>
+                  <i class="icon-briefcase"></i>
+                  <h2 class="timelin-title">Experience</h2>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">Research Assistant in Cybersecurity (Internship).</h3>
+                    <p>UWL - London, UK</p>
+                    <span>Jun 2025 - Dec 2025</span>
+                    <p class="line-text">Supported cybersecurity research activities, security analysis, and structured investigation tasks. Gained hands-on exposure to defensive security concepts, threat awareness, and analytical methodologies.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">Cybersecurity Projects & Labs</h3>
+                    <p>Academic & Independent Work - Ongoing</p>
+                    <span>2023 - 2024</span>
+                    <p class="line-text">Completed practical cybersecurity labs and projects focused on monitoring, analysis, system security, and defensive techniques aligned with SOC environments.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">IT Support & Systems Technician</h3>
+                    <p>Gráfica Rio LTDA - Linhares, Brazil</p>
+                    <span>Mar 2015 - Oct 2019</span>
+                    <p class="line-text">Managed internal network infrastructure and workstations across Windows and macOS, serving as the sole IT point of contact to resolve hardware, software, and production system issues while standardising configurations and documentation to improve reliability.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Resume Section End -->
+
+
+    <!-- Certifications Section Start -->
+    <section id="certifications">
+      <div class="container">
+        <h2 class="section-title section-title-dark wow flipInX" data-wow-delay="0.3s">Certifications &amp; Credentials</h2>
+        <span class="section-subtitle-light wow flipInX" data-wow-delay="0.4s">
+          Industry-recognised certifications actively pursued to validate cybersecurity expertise
+        </span>
+
+        <div class="row justify-content-center">
+
+          <!-- CompTIA Network+ -->
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="cert-card">
+              <!-- PLACEHOLDER: replace icon with CompTIA Network+ official badge image (144×144px PNG, transparent bg) -->
+              <div class="cert-logo-wrap">
+                <i class="fa fa-sitemap" style="color: #c8002a;"></i>
+              </div>
+              <p class="cert-name">Network+</p>
+              <p class="cert-issuer">CompTIA</p>
+              <span class="cert-status cert-status-planned">In progress</span>
+            </div>
+          </div>
+
+          <!-- CompTIA Security+ -->
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 wow fadeInUp" data-wow-delay="0.15s">
+            <div class="cert-card">
+              <!-- PLACEHOLDER: replace icon with CompTIA Security+ official badge image (144×144px PNG, transparent bg) -->
+              <div class="cert-logo-wrap">
+                <i class="fa fa-shield" style="color: #c8002a;"></i>
+              </div>
+              <p class="cert-name">Security+</p>
+              <p class="cert-issuer">CompTIA</p>
+              <span class="cert-status cert-status-planned">In progress</span>
+            </div>
+          </div>
+
+          <!-- Microsoft AZ-900 Azure Fundamentals -->
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="cert-card">
+              <!-- PLACEHOLDER: replace icon with CompTIA CySA+ official badge image (144×144px PNG, transparent bg) -->
+              <div class="cert-logo-wrap">
+                <i class="fa fa-eye" style="color: #c8002a;"></i>
+              </div>
+              <p class="cert-name">AZ-900 Azure Fundamentals</p>
+              <p class="cert-issuer">Microsoft</p>
+              <span class="cert-status cert-status-planned">In progress</span>
+            </div>
+          </div>
+
+          <!-- Splunk Core Certified User -->
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="cert-card">
+              <!-- PLACEHOLDER: replace icon with CompTIA CySA+ official badge image (144×144px PNG, transparent bg) -->
+              <div class="cert-logo-wrap">
+                <i class="fa fa-eye" style="color: #c8002a;"></i>
+              </div>
+              <p class="cert-name">Splunk Core Certified User</p>
+              <p class="cert-issuer">Splunk</p>
+              <span class="cert-status cert-status-planned">In progress</span>
+            </div>
+          </div>
+
+
+
+
+          <!--  
+
+              #EC-Council Certified Ethical Hacker (CEH)
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="cert-card">
+                  #PLACEHOLDER: replace icon with CompTIA CySA+ official badge image (144×144px PNG, transparent bg)
+              <div class="cert-logo-wrap">
+                <i class="fa fa-eye" style="color: #c8002a;"></i>
+              </div>
+              <p class="cert-name">Certified Ethical Hacker (CEH)</p>
+              <p class="cert-issuer">EC-Council</p>
+              <span class="cert-status cert-status-planned">In progress</span>
+            </div>
+          </div>
+
+
+                Microsoft SC-200 Security Operations Analyst
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="cert-card">
+               #PLACEHOLDER: replace icon with CompTIA CySA+ official badge image (144×144px PNG, transparent bg)
+              <div class="cert-logo-wrap">
+                <i class="fa fa-eye" style="color: #c8002a;"></i>
+              </div>
+              <p class="cert-name">SC-200 Security Operations Analyst</p>
+              <p class="cert-issuer">Microsoft</p>
+              <span class="cert-status cert-status-planned">In progress</span>
+            </div>
+          </div>
+
+              CompTIA CySA+ 
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="cert-card">
+                 #PLACEHOLDER: replace icon with CompTIA CySA+ official badge image (144×144px PNG, transparent bg)
+              <div class="cert-logo-wrap">
+                <i class="fa fa-eye" style="color: #c8002a;"></i>
+              </div>
+              <p class="cert-name">CySA+</p>
+              <p class="cert-issuer">CompTIA</p>
+              <span class="cert-status cert-status-planned">Planned</span>
+            </div>
+          </div>
+
+              Google Cybersecurity Certificate
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 wow fadeInUp" data-wow-delay="0.25s">
+            <div class="cert-card">
+                  #PLACEHOLDER: replace icon with Google Cybersecurity Certificate badge image (144×144px PNG, transparent bg)
+              <div class="cert-logo-wrap">
+                <i class="fa fa-google" style="color: #4285f4;"></i>
+              </div>
+              <p class="cert-name">Cybersecurity Certificate</p>
+              <p class="cert-issuer">Google</p>
+              <span class="cert-status cert-status-planned">Planned</span>
+            </div>
+          </div>
+
+              ISC2 CC
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="cert-card">
+                   #PLACEHOLDER: replace icon with ISC2 CC official badge image (144×144px PNG, transparent bg)
+              <div class="cert-logo-wrap">
+                <i class="fa fa-lock" style="color: #00a651;"></i>
+              </div>
+              <p class="cert-name">CC — Certified in Cybersecurity</p>
+              <p class="cert-issuer">ISC2</p>
+              <span class="cert-status cert-status-planned">Planned</span>
+            </div>
+          </div>
+
+              BTL1
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 wow fadeInUp" data-wow-delay="0.35s">
+            <div class="cert-card">
+                  #PLACEHOLDER: replace icon with BTL1 official badge image (144×144px PNG, transparent bg)
+              <div class="cert-logo-wrap">
+                <i class="fa fa-bug" style="color: #0099e6;"></i>
+              </div>
+              <p class="cert-name">BTL1 — Blue Team Labs One</p>
+              <p class="cert-issuer">Security Blue Team</p>
+              <span class="cert-status cert-status-planned">Planned</span>
+            </div>
+          </div>
+
+               SC-900 
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="cert-card">
+                 #PLACEHOLDER: replace icon with Microsoft SC-900 official badge image (144×144px PNG, transparent bg)
+              <div class="cert-logo-wrap">
+                <i class="fa fa-windows" style="color: #00a4ef;"></i>
+              </div>
+              <p class="cert-name">SC-900: Security Fundamentals</p>
+              <p class="cert-issuer">Microsoft</p>
+              <span class="cert-status cert-status-planned">Planned</span>
+            </div>
+          </div>
+
+              eJPT 
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 wow fadeInUp" data-wow-delay="0.45s">
+            <div class="cert-card">
+                  #PLACEHOLDER: replace icon with eJPT official badge image (144×144px PNG, transparent bg)
+              <div class="cert-logo-wrap">
+                <i class="fa fa-terminal" style="color: #f5811f;"></i>
+              </div>
+              <p class="cert-name">eJPT — Junior Penetration Tester</p>
+              <p class="cert-issuer">INE / eLearnSecurity</p>
+              <span class="cert-status cert-status-planned">Planned</span>
+            </div>
+          </div>
+          -->
+
+
+
+        </div><!-- /.row -->
+
+        <p class="certs-footer-note wow fadeInUp" data-wow-delay="0.5s">
+          Additional certifications will be added as I continue my cybersecurity training and complete new certifications exams.
+        </p>
+
+      </div>
+    </section>
+    <!-- Certifications Section End -->
+
+
+    <!-- Portfolio Section -->
+    <section id="portfolios" class="section-padding">
+      <div class="container">
+        <h2 class="section-title wow flipInX" data-wow-delay="0.3s">Cybersecurity Projects</h2>
+        <p class="section-subtitle text-center wow flipInX" data-wow-delay="0.4s">Hands-on work spanning monitoring, analysis, cryptography, and offensive security</p>
+
+        <!-- Filter Buttons -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="controls text-center wow fadeInUp" data-wow-delay="0.3s">
+              <button class="filter active btn btn-common" data-filter="all">All</button>
+              <button class="filter btn btn-common" data-filter=".network">Network</button>
+              <button class="filter btn btn-common" data-filter=".monitoring">Monitoring</button>
+              <button class="filter btn btn-common" data-filter=".cryptography">Cryptography</button>
+              <button class="filter btn btn-common" data-filter=".analysis">Analysis</button>
+              <button class="filter btn btn-common" data-filter=".pentest">Pentesting</button>
+              <button class="filter btn btn-common" data-filter=".detection">Detection</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mini-Card Grid -->
+        <div id="portfolio" class="row wow fadeInUp" data-wow-delay="0.2s">
+
+          <!-- Network Setup & Configuration -->
+          <div class="col-sm-6 col-md-4 col-lg-4 mix network">
+            <div class="portfolio-item">
+              <div class="mini-card">
+                <!-- PLACEHOLDER: thumbnail image 600×400px (3:2 ratio)
+                     Suggested: Cisco Packet Tracer topology diagram screenshot -->
+                <img class="mini-card-img" src="meetme/assets/img/gallery/img-1.jpg" alt="Network Setup & Configuration">
+                <div class="mini-card-body">
+                  <p class="mini-card-title">Network Setup &amp; Configuration</p>
+                  <div class="mini-card-tags">
+                    <span class="mini-tag">Cisco IOS</span>
+                    <span class="mini-tag">VLANs</span>
+                    <span class="mini-tag">ACLs</span>
+                    <span class="mini-tag">TCP/IP</span>
+                  </div>
+                  <div class="mini-card-footer">
+                    <a href="network-setup.html" class="mini-card-link">View Project <i class="icon-arrow-right"></i></a>
+                    <!-- PLACEHOLDER: replace # with GitHub repo URL for this project -->
+                    <a href="#" class="mini-card-github" target="_blank" rel="noopener" title="View on GitHub"><i class="fa fa-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Network Security -->
+          <div class="col-sm-6 col-md-4 col-lg-4 mix network monitoring">
+            <div class="portfolio-item">
+              <div class="mini-card">
+                <!-- PLACEHOLDER: thumbnail image 600×400px (3:2 ratio)
+                     Suggested: firewall rule output or network security dashboard screenshot -->
+                <img class="mini-card-img" src="meetme/assets/img/gallery/img-2.jpg" alt="Network Security">
+                <div class="mini-card-body">
+                  <p class="mini-card-title">Network Security</p>
+                  <div class="mini-card-tags">
+                    <span class="mini-tag">Firewall</span>
+                    <span class="mini-tag">IDS/IPS</span>
+                    <span class="mini-tag">Nmap</span>
+                    <span class="mini-tag">Linux</span>
+                  </div>
+                  <div class="mini-card-footer">
+                    <a href="network-security.html" class="mini-card-link">View Project <i class="icon-arrow-right"></i></a>
+                    <!-- PLACEHOLDER: replace # with GitHub repo URL for this project -->
+                    <a href="#" class="mini-card-github" target="_blank" rel="noopener" title="View on GitHub"><i class="fa fa-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Anomaly Detection -->
+          <div class="col-sm-6 col-md-4 col-lg-4 mix monitoring detection">
+            <div class="portfolio-item">
+              <div class="mini-card">
+                <!-- PLACEHOLDER: thumbnail image 600×400px (3:2 ratio)
+                     Suggested: ML model output graph, Kibana alert dashboard, or anomaly chart -->
+                <img class="mini-card-img" src="meetme/assets/img/gallery/img-3.jpg" alt="Anomaly Detection">
+                <div class="mini-card-body">
+                  <p class="mini-card-title">Anomaly Detection</p>
+                  <div class="mini-card-tags">
+                    <span class="mini-tag">Python</span>
+                    <span class="mini-tag">scikit-learn</span>
+                    <span class="mini-tag">ELK Stack</span>
+                  </div>
+                  <div class="mini-card-footer">
+                    <a href="anomaly-detection.html" class="mini-card-link">View Project <i class="icon-arrow-right"></i></a>
+                    <!-- PLACEHOLDER: replace # with GitHub repo URL for this project -->
+                    <a href="#" class="mini-card-github" target="_blank" rel="noopener" title="View on GitHub"><i class="fa fa-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RSA Cryptography -->
+          <div class="col-sm-6 col-md-4 col-lg-4 mix cryptography">
+            <div class="portfolio-item">
+              <div class="mini-card">
+                <!-- PLACEHOLDER: thumbnail image 600×400px (3:2 ratio)
+                     Suggested: RSA key generation terminal output or encryption diagram -->
+                <img class="mini-card-img" src="meetme/assets/img/gallery/img-4.jpg" alt="RSA Cryptography">
+                <div class="mini-card-body">
+                  <p class="mini-card-title">RSA Cryptography</p>
+                  <div class="mini-card-tags">
+                    <span class="mini-tag">RSA</span>
+                    <span class="mini-tag">Python</span>
+                    <span class="mini-tag">Encryption</span>
+                    <span class="mini-tag">PKI</span>
+                  </div>
+                  <div class="mini-card-footer">
+                    <a href="rsa-cryptography.html" class="mini-card-link">View Project <i class="icon-arrow-right"></i></a>
+                    <!-- PLACEHOLDER: replace # with GitHub repo URL for this project -->
+                    <a href="#" class="mini-card-github" target="_blank" rel="noopener" title="View on GitHub"><i class="fa fa-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Packet Analysis -->
+          <div class="col-sm-6 col-md-4 col-lg-4 mix analysis network">
+            <div class="portfolio-item">
+              <div class="mini-card">
+                <!-- PLACEHOLDER: thumbnail image 600×400px (3:2 ratio)
+                     Suggested: Wireshark capture screenshot showing packet details -->
+                <img class="mini-card-img" src="meetme/assets/img/gallery/img-5.jpg" alt="Packet Analysis">
+                <div class="mini-card-body">
+                  <p class="mini-card-title">Packet Analysis</p>
+                  <div class="mini-card-tags">
+                    <span class="mini-tag">Wireshark</span>
+                    <span class="mini-tag">tcpdump</span>
+                    <span class="mini-tag">TCP/IP</span>
+                  </div>
+                  <div class="mini-card-footer">
+                    <a href="packet-analysis.html" class="mini-card-link">View Project <i class="icon-arrow-right"></i></a>
+                    <!-- PLACEHOLDER: replace # with GitHub repo URL for this project -->
+                    <a href="#" class="mini-card-github" target="_blank" rel="noopener" title="View on GitHub"><i class="fa fa-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vulnerability Assessment -->
+          <div class="col-sm-6 col-md-4 col-lg-4 mix analysis monitoring">
+            <div class="portfolio-item">
+              <div class="mini-card">
+                <!-- PLACEHOLDER: thumbnail image 600×400px (3:2 ratio)
+                     Suggested: Nessus/OpenVAS scan results or vulnerability report screenshot -->
+                <img class="mini-card-img" src="meetme/assets/img/gallery/img-6.jpg" alt="Vulnerability Assessment">
+                <div class="mini-card-body">
+                  <p class="mini-card-title">Vulnerability Assessment</p>
+                  <div class="mini-card-tags">
+                    <span class="mini-tag">Nessus</span>
+                    <span class="mini-tag">OpenVAS</span>
+                    <span class="mini-tag">CVE</span>
+                    <span class="mini-tag">Risk</span>
+                  </div>
+                  <div class="mini-card-footer">
+                    <a href="vulnerability-assessment.html" class="mini-card-link">View Project <i class="icon-arrow-right"></i></a>
+                    <!-- PLACEHOLDER: replace # with GitHub repo URL for this project -->
+                    <a href="#" class="mini-card-github" target="_blank" rel="noopener" title="View on GitHub"><i class="fa fa-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /#portfolio -->
+
+        <!-- Extra projects — outside #portfolio so MixItUp never manages them.
+             Filtered by our own JS; hidden until "Show more Projects" is clicked. -->
+        <div id="portfolio-extra" class="row" style="display:none">
+
+          <!-- Network Traffic Analysis -->
+          <div class="col-sm-6 col-md-4 col-lg-4 extra-item analysis network">
+            <div class="portfolio-item">
+              <div class="mini-card">
+                <img class="mini-card-img" src="meetme/assets/img/gallery/img-1.jpg" alt="Network Traffic Analysis">
+                <div class="mini-card-body">
+                  <p class="mini-card-title">Network Traffic Analysis</p>
+                  <div class="mini-card-tags">
+                    <span class="mini-tag">Zeek</span>
+                    <span class="mini-tag">Wireshark</span>
+                    <span class="mini-tag">Splunk</span>
+                  </div>
+                  <div class="mini-card-footer">
+                    <a href="network-traffic-analysis.html" class="mini-card-link">View Project <i class="icon-arrow-right"></i></a>
+                    <a href="#" class="mini-card-github" target="_blank" rel="noopener" title="View on GitHub"><i class="fa fa-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pentesting & Ethical Hacking -->
+          <div class="col-sm-6 col-md-4 col-lg-4 extra-item pentest">
+            <div class="portfolio-item">
+              <div class="mini-card">
+                <img class="mini-card-img" src="meetme/assets/img/gallery/img-2.jpg" alt="Pentesting & Ethical Hacking">
+                <div class="mini-card-body">
+                  <p class="mini-card-title">Pentesting &amp; Ethical Hacking</p>
+                  <div class="mini-card-tags">
+                    <span class="mini-tag">Kali Linux</span>
+                    <span class="mini-tag">Metasploit</span>
+                    <span class="mini-tag">Burp Suite</span>
+                  </div>
+                  <div class="mini-card-footer">
+                    <a href="pentesting.html" class="mini-card-link">View Project <i class="icon-arrow-right"></i></a>
+                    <a href="#" class="mini-card-github" target="_blank" rel="noopener" title="View on GitHub"><i class="fa fa-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Incident Response -->
+          <div class="col-sm-6 col-md-4 col-lg-4 extra-item monitoring detection">
+            <div class="portfolio-item">
+              <div class="mini-card">
+                <img class="mini-card-img" src="meetme/assets/img/gallery/img-3.jpg" alt="Incident Response">
+                <div class="mini-card-body">
+                  <p class="mini-card-title">Incident Response</p>
+                  <div class="mini-card-tags">
+                    <span class="mini-tag">IR Playbook</span>
+                    <span class="mini-tag">NIST</span>
+                    <span class="mini-tag">Forensics</span>
+                  </div>
+                  <div class="mini-card-footer">
+                    <a href="incident-response.html" class="mini-card-link">View Project <i class="icon-arrow-right"></i></a>
+                    <a href="#" class="mini-card-github" target="_blank" rel="noopener" title="View on GitHub"><i class="fa fa-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Detection-as-Code -->
+          <div class="col-sm-6 col-md-4 col-lg-4 extra-item detection monitoring">
+            <div class="portfolio-item">
+              <div class="mini-card">
+                <img class="mini-card-img" src="meetme/assets/img/gallery/img-4.jpg" alt="Detection-as-Code">
+                <div class="mini-card-body">
+                  <p class="mini-card-title">Detection-as-Code</p>
+                  <div class="mini-card-tags">
+                    <span class="mini-tag">SIGMA</span>
+                    <span class="mini-tag">YARA</span>
+                    <span class="mini-tag">Git</span>
+                    <span class="mini-tag">Splunk SPL</span>
+                  </div>
+                  <div class="mini-card-footer">
+                    <a href="detection-as-code.html" class="mini-card-link">View Project <i class="icon-arrow-right"></i></a>
+                    <a href="#" class="mini-card-github" target="_blank" rel="noopener" title="View on GitHub"><i class="fa fa-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Automated Threat Enrichment -->
+          <div class="col-sm-6 col-md-4 col-lg-4 extra-item detection analysis">
+            <div class="portfolio-item">
+              <div class="mini-card">
+                <img class="mini-card-img" src="meetme/assets/img/gallery/img-5.jpg" alt="Automated Threat Enrichment">
+                <div class="mini-card-body">
+                  <p class="mini-card-title">Automated Threat Enrichment</p>
+                  <div class="mini-card-tags">
+                    <span class="mini-tag">Python</span>
+                    <span class="mini-tag">SOAR</span>
+                    <span class="mini-tag">Threat Intel</span>
+                    <span class="mini-tag">APIs</span>
+                  </div>
+                  <div class="mini-card-footer">
+                    <a href="threat-enrichment.html" class="mini-card-link">View Project <i class="icon-arrow-right"></i></a>
+                    <a href="#" class="mini-card-github" target="_blank" rel="noopener" title="View on GitHub"><i class="fa fa-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /#portfolio-extra -->
+
+        <!-- Unified single-container view for specific filter buttons -->
+        <div id="portfolio-unified" class="row" style="display:none"></div>
+
+        <div class="portfolio-footer wow fadeInUp" data-wow-delay="0.4s">
+          <div class="portfolio-footer-btns">
+            <button class="portfolio-toggle-btn" id="portfolioToggleBtn">
+              <i class="fa fa-plus-circle"></i> Show more Projects
+            </button>
+            <!-- PLACEHOLDER: replace # with GitHub profile or repositories URL -->
+            <a href="#" class="btn btn-common" target="_blank" rel="noopener">
+              View All Projects on GitHub &rarr;
+            </a>
+          </div>
+          <p class="portfolio-footer-note">More projects will be added as work is completed.</p>
+        </div>
+
+      </div>
+    </section>
+    <!-- Portfolio Section Ends -->
+
+
+    <!-- Labs Teaser Section Start -->
+    <section id="labs-teaser">
+      <div class="container">
+        <h2 class="section-title section-title-dark wow flipInX" data-wow-delay="0.3s">Labs &amp; Hands-On Practice</h2>
+        <span class="section-subtitle-light wow flipInX" data-wow-delay="0.4s">
+          Actively building real-world skills through HackTheBox, TryHackMe, and CTF challenges
+        </span>
+
+        <div class="row justify-content-center">
+
+          <!-- HackTheBox Card -->
+          <div class="col-12 col-sm-6 col-lg-4 wow fadeInLeft" data-wow-delay="0.3s">
+            <div class="lab-card lab-card-htb">
+              <p class="lab-card-platform">HackTheBox</p>
+              <p class="lab-card-title">Offensive &amp; Defensive Lab Challenges</p>
+
+              <!-- API: the stats below will be replaced with live data from HTB API -->
+              <div class="lab-stat-row">
+                <div class="lab-stat">
+                  <span class="lab-stat-value">--</span>
+                  <span class="lab-stat-label">Rank</span>
+                </div>
+                <div class="lab-stat">
+                  <span class="lab-stat-value">--</span>
+                  <span class="lab-stat-label">Points</span>
+                </div>
+                <div class="lab-stat">
+                  <span class="lab-stat-value">--</span>
+                  <span class="lab-stat-label">Machines</span>
+                </div>
+                <div class="lab-stat">
+                  <span class="lab-stat-value">--</span>
+                  <span class="lab-stat-label">Challenges</span>
+                </div>
+              </div>
+
+              <p class="lab-api-notice">
+                <!-- API: connect HTB API to populate stats automatically -->
+                Live stats coming soon — API integration planned for Stage 2.
+              </p>
+
+              <a href="hackthebox.html" class="lab-card-btn">View HTB Profile &rarr;</a>
+            </div>
+          </div>
+
+          <!-- TryHackMe Card -->
+          <div class="col-12 col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="lab-card lab-card-thm">
+              <p class="lab-card-platform">TryHackMe</p>
+              <p class="lab-card-title">Guided Learning Paths &amp; SOC Skills</p>
+
+              <!-- API: the stats below will be replaced with live data from THM API -->
+              <div class="lab-stat-row">
+                <div class="lab-stat">
+                  <span class="lab-stat-value">--</span>
+                  <span class="lab-stat-label">Rank</span>
+                </div>
+                <div class="lab-stat">
+                  <span class="lab-stat-value">--</span>
+                  <span class="lab-stat-label">Points</span>
+                </div>
+                <div class="lab-stat">
+                  <span class="lab-stat-value">--</span>
+                  <span class="lab-stat-label">Rooms</span>
+                </div>
+                <div class="lab-stat">
+                  <span class="lab-stat-value">--</span>
+                  <span class="lab-stat-label">Streak (days)</span>
+                </div>
+              </div>
+
+              <p class="lab-api-notice">
+                <!-- API: connect THM API to populate stats automatically -->
+                Live stats coming soon — API integration planned for Stage 2.
+              </p>
+
+              <a href="tryhackme.html" class="lab-card-btn">View THM Profile &rarr;</a>
+            </div>
+          </div>
+
+          <!-- CTF & Pentesting Card -->
+          <div class="col-12 col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay="0.5s">
+            <div class="lab-card lab-card-ctf">
+              <p class="lab-card-platform">CTF &amp; Pentesting</p>
+              <p class="lab-card-title">Capture The Flag &amp; Machine Exploitation</p>
+
+              <div class="lab-stat-row">
+                <div class="lab-stat">
+                  <span class="lab-stat-value">5</span>
+                  <span class="lab-stat-label">Machines</span>
+                </div>
+                <div class="lab-stat">
+                  <span class="lab-stat-value">3</span>
+                  <span class="lab-stat-label">Writeups</span>
+                </div>
+                <div class="lab-stat">
+                  <span class="lab-stat-value">2</span>
+                  <span class="lab-stat-label">Videos</span>
+                </div>
+                <div class="lab-stat">
+                  <span class="lab-stat-value">Multi</span>
+                  <span class="lab-stat-label">Platform</span>
+                </div>
+              </div>
+
+              <p class="lab-api-notice">
+                VulnHub &amp; HTB machines — walkthroughs &amp; exploitation notes.
+              </p>
+
+              <a href="catch-the-flag.html" class="lab-card-btn">View CTF Labs &rarr;</a>
+            </div>
+          </div>
+
+        </div><!-- /.row -->
+      </div>
+    </section>
+    <!-- Labs Teaser Section End -->
+
+    
+
+
+    <!-- Contact Section Start -->
+    <section id="contact" class="section-padding">
+      <div class="container">
+
+        <h2 class="section-title section-title-dark wow flipInX" data-wow-delay="0.3s">Get In Touch</h2>
+        <span class="section-subtitle-light wow flipInX" data-wow-delay="0.4s">
+          Open to Security Engineer or SOC analyst opportunities
+        </span>
+
+        <div class="row align-items-center">
+
+          <!-- Left: Message Panel -->
+          <div class="col-lg-6 col-md-12 wow fadeInLeft" data-wow-delay="0.3s">
+            <div class="contact-message-panel">
+
+              <div class="contact-avail-badge">
+                <span class="avail-dot"></span>
+                Available for Opportunities
+              </div>
+
+              <h3 class="contact-panel-title">Let's Connect</h3>
+              <p class="contact-panel-text">I am currently seeking opportunities as a Security Engineer or SOC Analyst (early career). If you would like to discuss my background, experience, or suitability for a role, please feel free to get in touch.</p>
+
+              <div class="contact-actions">
+                <a href="/assets/CV-document/Evanildo_Ribeiro_CV.pdf" download class="contact-cv-btn">
+                  <i class="fa fa-download"></i> Download CV
+                </a>
+                <div class="contact-socials">
+                  <a href="https://github.com/Evanildo22" class="contact-social-link" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="icon-social-github"></i></a>
+                  <a href="https://linkedin.com/in/evanildoribeiro" class="contact-social-link" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="icon-social-linkedin"></i></a>
+                  <a href="https://x.com/@EvanRibei" class="contact-social-link" title="Twitter / X" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" style="vertical-align:middle;"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></a>
+                  <a href="https://www.youtube.com/@MrRibeiro2000" class="contact-social-link" title="YouTube" target="_blank" rel="noopener noreferrer"><i class="fa fa-youtube"></i></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right: Contact Detail Cards -->
+          <div class="col-lg-6 col-md-12 wow fadeInRight" data-wow-delay="0.4s">
+            <div class="contact-details-panel">
+
+              <!-- Location -->
+              <div class="contact-detail-card">
+                <div class="contact-detail-icon">
+                  <i class="fa fa-map-marker"></i>
+                </div>
+                <div class="contact-detail-info">
+                  <span class="contact-detail-label">Location</span>
+                  <p class="contact-detail-value">London, United Kingdom</p>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="contact-detail-card">
+                <div class="contact-detail-icon">
+                  <i class="fa fa-envelope"></i>
+                </div>
+                <div class="contact-detail-info">
+                  <span class="contact-detail-label">Email</span>
+                  <p class="contact-detail-value">
+                    <a href="mailto:contact@evanildoribeiro.com"> contact@evanildoribeiro.com</a>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="contact-detail-card">
+                <div class="contact-detail-icon">
+                  <i class="fa fa-phone"></i>
+                </div>
+                <div class="contact-detail-info">
+                  <span class="contact-detail-label">Phone</span>
+                  <p class="contact-detail-value">
+                    <a href="tel:+447411269534">+44 (0) 741 126 9534</a>
+                  </p>
+                </div>
+              </div>
+
+              <!-- LinkedIn -->
+              <div class="contact-detail-card">
+                <div class="contact-detail-icon">
+                  <i class="fa fa-linkedin"></i>
+                </div>
+                <div class="contact-detail-info">
+                  <span class="contact-detail-label">LinkedIn</span>
+                  <p class="contact-detail-value">
+                    <a href="https://www.linkedin.com/in/evanildoribeiro" target="_blank" rel="noopener">linkedin.com/in/evanildoribeiro</a>
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div><!-- /.row -->
+      </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Footer Section Start -->
+    <footer class="footer-area section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="footer-text text-center wow fadeInDown" data-wow-delay="0.3s">
+              <ul class="social-icon">
+                <li>
+                  <a class="github" href="https://github.com/Evanildo22" target="_blank" rel="noopener noreferrer"><i class="icon-social-github"></i></a>
+                </li>
+                <li>
+                  <a class="linkedin" href="https://linkedin.com/in/evanildoribeiro" target="_blank" rel="noopener noreferrer"><i class="icon-social-linkedin"></i></a>
+                </li>
+                <li>
+                  <a class="twitter" href="https://x.com/@EvanRibei" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" style="vertical-align:middle;"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></a>
+                </li>
+                <li>
+                  <a class="youtube" href="https://www.youtube.com/@MrRibeiro2000" target="_blank" rel="noopener noreferrer"><i class="fa fa-youtube"></i></a>
+                </li>
+              </ul>
+              <p>Copyright © 2025 Evanildo Ribeiro. All Rights Reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Go to Top Link -->
+    <a href="#" class="back-to-top">
+    	<i class="icon-arrow-up"></i>
+    </a>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="meetme/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="meetme/assets/js/popper.min.js"></script>
+    <script src="meetme/assets/js/bootstrap.min.js"></script>
+    <script src="meetme/assets/js/jquery.mixitup.js"></script>
+    <script src="meetme/assets/js/jquery.counterup.min.js"></script>
+    <script src="meetme/assets/js/waypoints.min.js"></script>
+    <script src="meetme/assets/js/wow.js"></script>
+    <script src="meetme/assets/js/jquery.nav.js"></script>
+    <script src="meetme/assets/js/jquery.easing.min.js"></script>
+    <script src="meetme/assets/js/nivo-lightbox.js"></script>
+    <script src="meetme/assets/js/jquery.slicknav.js"></script>
+    <script src="meetme/assets/js/main.js"></script>
+
+    <!-- Hash-anchor fix: hide body immediately to mask native browser hash-scroll and
+         plugin repositioning flashes, then scroll precisely to the target section and
+         fade the page in cleanly. -->
+    <script>
+      if (window.location.hash) {
+        var _hashTarget = window.location.hash;
+
+        // Hide body before any rendering so the native hash-scroll flash is invisible
+        document.documentElement.style.opacity = '0';
+
+        window.addEventListener('load', function () {
+
+          function revealWow() {
+            document.querySelectorAll('.wow').forEach(function (el) {
+              var r = el.getBoundingClientRect();
+              if (r.top < window.innerHeight && r.bottom > 0) {
+                el.style.visibility = 'visible';
+                el.classList.add('animated');
+              }
+            });
+          }
+
+          function scrollToTarget() {
+            var target = document.querySelector(_hashTarget);
+            if (!target) return;
+            var navH = (document.querySelector('.navbar') || { offsetHeight: 70 }).offsetHeight;
+            var el = target, pos = 0;
+            while (el) { pos += el.offsetTop; el = el.offsetParent; }
+            window.scrollTo({ top: pos - navH, behavior: 'instant' });
+          }
+
+          setTimeout(function () {
+            scrollToTarget();
+            revealWow();
+            // Fade the page in after scroll is set — smooth, no flash
+            document.documentElement.style.transition = 'opacity 0.25s ease';
+            document.documentElement.style.opacity = '1';
+          }, 400);
+
+        });
+      }
+    </script>
+
+    <!-- Scroll-spy: highlights the active nav link as sections enter the viewport -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+        // Map each observed section element to its matching nav link
+        var sectionLinkMap = new Map();
+        navLinks.forEach(function (link) {
+          var href = link.getAttribute('href');
+          if (href && href.charAt(0) === '#') {
+            var section = document.getElementById(href.slice(1));
+            if (section) {
+              sectionLinkMap.set(section, link);
+            }
+          }
+        });
+
+        function setActive(activeLink) {
+          // Desktop navbar
+          navLinks.forEach(function (l) { l.classList.remove('active'); });
+          if (activeLink) { activeLink.classList.add('active'); }
+
+          // Mobile nav (slicknav renders .slicknav_nav after window.load,
+          // so look it up fresh each call to avoid timing issues)
+          var mobileLinks = document.querySelectorAll('.slicknav_nav a');
+          mobileLinks.forEach(function (l) { l.classList.remove('active'); });
+          if (activeLink) {
+            var activeHref = activeLink.getAttribute('href');
+            mobileLinks.forEach(function (l) {
+              if (l.getAttribute('href') === activeHref) {
+                l.classList.add('active');
+              }
+            });
+          }
+        }
+
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              setActive(sectionLinkMap.get(entry.target));
+            }
+          });
+        // threshold:0 = trigger on any pixel visible.
+        // rootMargin shrinks the detection zone to the top 40% of the viewport,
+        // so tall sections (like the portfolio grid) still fire correctly.
+        }, { threshold: 0, rootMargin: '0px 0px -60% 0px' });
+
+        sectionLinkMap.forEach(function (link, section) {
+          observer.observe(section);
+        });
+      });
+    </script>
+
+    <!-- Watch Intro Modal -->
+    <div class="modal fade" id="introModal" tabindex="-1" role="dialog" aria-labelledby="introModalLabel" aria-modal="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content intro-modal-content">
+          <div class="intro-modal-header">
+            <h5 class="intro-modal-title" id="introModalLabel">
+              <span class="intro-modal-eyebrow">Video Introduction</span>
+              Evanildo Ribeiro
+            </h5>
+            <button type="button" class="intro-modal-close" data-dismiss="modal" aria-label="Close">
+              <i class="fa fa-times"></i>
+            </button>
+          </div>
+          <div class="intro-modal-body">
+            <div class="intro-video-wrapper">
+              <!-- Replace VIDEO_ID with your YouTube video ID -->
+              <iframe
+                id="introVideoFrame"
+                src=""
+                data-src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&rel=0&modestbranding=1"
+                title="Evanildo Ribeiro — Video Introduction"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Watch Intro Modal End -->
+
+    <script>
+    /* ── Projects: filter buttons + "Show more / Hide" toggle ──
+       We own all filter logic.  MixItUp is prevented from initialising on
+       #portfolio so its $(window).load handler never conflicts with ours. */
+    (function ($) {
+
+      /* Block MixItUp from initialising on #portfolio.
+         main.js calls $portfolio.mixItUp() inside $(window).load, which fires
+         after this inline script runs, so our override is already in place. */
+      if ($.fn.mixItUp) {
+        var _orig = $.fn.mixItUp;
+        $.fn.mixItUp = function () {
+          return this.is('#portfolio') ? this : _orig.apply(this, arguments);
+        };
+      }
+
+      $(document).ready(function () {
+        var $portfolio = $('#portfolio');
+        var $extra     = $('#portfolio-extra');
+        var $unified   = $('#portfolio-unified');
+        var $toggleBtn = $('#portfolioToggleBtn');
+
+        var currentFilter = 'all';
+        var extraExpanded = false;
+
+        /* Snapshot all 11 items in DOM order — this order determines
+           which items fill each row.  Bootstrap's 3-column grid means the
+           first 3 matching items form row 1, the next 3 form row 2, etc.,
+           so fuller rows naturally appear first without any extra sorting. */
+        var allItems = [];
+        $portfolio.children('.mix').each(function () { allItems.push(this); });
+        $extra.children('.extra-item').each(function () { allItems.push(this); });
+
+        /* ── Render a specific filter in the unified single-container grid ──
+           • ≤ 3 results  → 1 row, centred
+           • 4–6 results  → 1–2 rows, all visible (no toggle needed)
+           • > 6 results  → first 2 rows visible; rest hidden behind toggle  */
+        function renderUnified(filter) {
+          $unified.empty().removeClass('portfolio-centered');
+
+          var matching = allItems.filter(function (el) {
+            return $(el).hasClass(filter);
+          });
+
+          if (matching.length === 0) {
+            $unified.show();
+            $toggleBtn.hide();
+            return;
+          }
+
+          $.each(matching, function (i, el) {
+            var $clone = $(el).clone(false);
+            $clone.removeClass('mix extra-item'); /* keep col-* + filter classes */
+            if (i >= 6) $clone.addClass('unified-overflow').hide();
+            $unified.append($clone);
+          });
+
+          if (matching.length <= 3) $unified.addClass('portfolio-centered');
+
+          $unified.show();
+
+          if (matching.length > 6) {
+            $toggleBtn.show().html('<i class="fa fa-plus-circle"></i> Show more Projects');
+          } else {
+            $toggleBtn.hide(); /* all items fit in ≤ 2 rows — no toggle needed */
+          }
+        }
+
+        /* ── Show the ALL view (items 1–6 visible; 7–11 behind toggle) ── */
+        function showAllView() {
+          $unified.hide().empty();
+          $portfolio.children('.mix').show();
+          $portfolio.show();
+
+          if (extraExpanded) {
+            $extra.children('.extra-item').show();
+            $extra.show();
+            $toggleBtn.show().html('<i class="fa fa-minus-circle"></i> Hide extra Projects');
+          } else {
+            $extra.hide();
+            $toggleBtn.show().html('<i class="fa fa-plus-circle"></i> Show more Projects');
+          }
+        }
+
+        /* ── Filter button clicks ──
+           stopImmediatePropagation prevents MixItUp (registered later, in
+           $(window).load) from also receiving the same click event. */
+        $('.controls .filter').on('click', function (e) {
+          e.stopImmediatePropagation();
+
+          var f = $(this).data('filter');
+          currentFilter = (!f || f === 'all') ? 'all' : f.replace('.', '');
+
+          $('.controls .filter').removeClass('active');
+          $(this).addClass('active');
+
+          if (currentFilter === 'all') {
+            showAllView();
+          } else {
+            $portfolio.hide();
+            $extra.hide();
+            renderUnified(currentFilter);
+          }
+        });
+
+        /* ── Toggle button ── */
+        $('#portfolioToggleBtn').on('click', function () {
+          if (currentFilter === 'all') {
+            if (!extraExpanded) {
+              extraExpanded = true;
+              $extra.children('.extra-item').show();
+              $extra.show();
+              $(this).html('<i class="fa fa-minus-circle"></i> Hide extra Projects');
+            } else {
+              extraExpanded = false;
+              $extra.hide();
+              $(this).html('<i class="fa fa-plus-circle"></i> Show more Projects');
+              $('html, body').animate({
+                scrollTop: $('#portfolios').offset().top - 70
+              }, 400);
+            }
+          } else {
+            /* Unified view: expand / collapse overflow items (index ≥ 6) */
+            var $overflow = $unified.find('.unified-overflow');
+            var isOpen = $overflow.first().is(':visible');
+            if (!isOpen) {
+              $overflow.show();
+              $(this).html('<i class="fa fa-minus-circle"></i> Hide extra Projects');
+            } else {
+              $overflow.hide();
+              $(this).html('<i class="fa fa-plus-circle"></i> Show more Projects');
+              $('html, body').animate({
+                scrollTop: $('#portfolios').offset().top - 70
+              }, 400);
+            }
+          }
+        });
+
+        /* ── Initial state: ALL filter, collapsed ── */
+        showAllView();
+      });
+
+    }(jQuery));
+    </script>
+
+    <!-- About flip card script disabled — showing Face A only -->
+    <!-- <script> flip card logic preserved for future use </script> -->
+
+    <script>
+      // Watch Intro modal: lazy-load video on open, stop on close
+      (function () {
+        var modal = document.getElementById('introModal');
+        if (!modal) return;
+        var iframe = document.getElementById('introVideoFrame');
+        modal.addEventListener('show.bs.modal', function () {
+          if (!iframe.src) iframe.src = iframe.getAttribute('data-src');
+        });
+        // jQuery fallback (Bootstrap 4)
+        if (typeof $ !== 'undefined') {
+          $('#introModal').on('show.bs.modal', function () {
+            if (!iframe.src || iframe.src === window.location.href) {
+              iframe.src = iframe.getAttribute('data-src');
+            }
+          });
+          $('#introModal').on('hidden.bs.modal', function () {
+            iframe.src = '';
+          });
+        }
+      })();
+    </script>
+
+  </body>
+</html>
+
