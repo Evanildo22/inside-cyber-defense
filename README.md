@@ -212,6 +212,6 @@ Local preview: open `index.html` directly in any modern browser — no build ste
 
 ## Contact
 
-- **Email:** dejaines@hotmail.com
+- **Email:** contact@evanildoribeiro.com
 - **LinkedIn:** [linkedin.com/in/evanildoribeiro](https://www.linkedin.com/in/evanildoribeiro)
 - **GitHub:** [github.com/Evanildo22](https://github.com/Evanildo22)
