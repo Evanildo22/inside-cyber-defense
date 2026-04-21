@@ -180,7 +180,7 @@
           <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.2s">
             <div class="lab-stat-card">
               <div class="stat-icon" style="color:#C11111;">&#9650;</div>
-              <div class="stat-number stat-number-thm" id="thm-stat-rank"><span class="stat-loading">—</span></div>
+              <div class="stat-number stat-number-thm" id="thm-stat-rank">Top 100%</div>
               <div class="stat-label">Global Rank</div>
             </div>
           </div>
@@ -189,7 +189,7 @@
           <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.3s">
             <div class="lab-stat-card">
               <div class="stat-icon" style="color:#C11111;"><i class="icon-star"></i></div>
-              <div class="stat-number stat-number-thm" id="thm-stat-points"><span class="stat-loading">—</span></div>
+              <div class="stat-number stat-number-thm" id="thm-stat-points">0</div>
               <div class="stat-label">Points</div>
             </div>
           </div>
@@ -198,7 +198,7 @@
           <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
             <div class="lab-stat-card">
               <div class="stat-icon" style="color:#C11111;"><i class="icon-home"></i></div>
-              <div class="stat-number stat-number-thm" id="thm-stat-rooms"><span class="stat-loading">—</span></div>
+              <div class="stat-number stat-number-thm" id="thm-stat-rooms">2</div>
               <div class="stat-label">Rooms Completed</div>
             </div>
           </div>
@@ -207,7 +207,7 @@
           <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.5s">
             <div class="lab-stat-card">
               <div class="stat-icon" style="color:#C11111;"><i class="icon-energy"></i></div>
-              <div class="stat-number stat-number-thm" id="thm-stat-streak"><span class="stat-loading">—</span></div>
+              <div class="stat-number stat-number-thm" id="thm-stat-streak">2</div>
               <div class="stat-label">Streak (days)</div>
             </div>
           </div>
@@ -221,19 +221,20 @@
          ===================================================== -->
     <section class="lab-badge-section">
       <div class="container">
-        <h2 class="section-title wow flipInX" data-wow-delay="0.3s">Official THM Profile Badge</h2>
+        <h2 class="section-title wow flipInX" data-wow-delay="0.3s">TryHackMe Profile</h2>
         <p class="badge-section-subtitle wow fadeInUp" data-wow-delay="0.4s">
-          Auto-updated by TryHackMe — reflects current rank and stats
+          Active on TryHackMe — building blue team and offensive security skills
         </p>
 
-        <div class="wow fadeInUp" data-wow-delay="0.5s">
-          <a id="thm-badge-link" href="https://tryhackme.com/p/Evan.cyber" target="_blank" rel="noopener">
-            <img id="thm-badge-img"
-                 src="https://tryhackme-badges.s3.amazonaws.com/Evan.cyber.png"
-                 alt="Evan.cyber — TryHackMe"
-                 class="thm-badge-img"
-                 onerror="this.closest('.wow').style.display='none'">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.5s">
+          <a href="https://tryhackme.com/p/Evan.cyber" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:14px;background:#1A2744;border:1px solid rgba(193,17,17,0.35);border-radius:10px;padding:18px 32px;text-decoration:none;color:#F0EDE8;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;transition:border-color .2s,box-shadow .2s;"
+             onmouseover="this.style.borderColor='rgba(193,17,17,0.75)';this.style.boxShadow='0 4px 20px rgba(193,17,17,0.18)'"
+             onmouseout="this.style.borderColor='rgba(193,17,17,0.35)';this.style.boxShadow='none'">
+            <span style="width:10px;height:10px;border-radius:50%;background:#C11111;box-shadow:0 0 0 0 rgba(193,17,17,0.5);animation:thm-pulse 2s ease-out infinite;flex-shrink:0;"></span>
+            <span>Evan.cyber &nbsp;·&nbsp; [0x1] NEOPHYTE &nbsp;·&nbsp; View Profile on TryHackMe &nbsp;<i class="fa fa-external-link" style="font-size:12px;opacity:0.6;"></i></span>
           </a>
+          <style>@keyframes thm-pulse{0%{box-shadow:0 0 0 0 rgba(193,17,17,0.5)}70%{box-shadow:0 0 0 8px rgba(193,17,17,0)}100%{box-shadow:0 0 0 0 rgba(193,17,17,0)}}</style>
         </div>
       </div>
     </section>
@@ -263,18 +264,15 @@
                 <div>
                   <p class="path-card-title">SOC Level 1</p>
                   <!-- API: replace static room count with live data from THM API -->
-                  <p class="path-card-rooms">26 rooms &mdash; Blue Team / Monitoring</p>
+                  <p class="path-card-rooms">65 rooms &mdash; Blue Team / Monitoring</p>
                 </div>
               </div>
               <!-- API: set width % to actual progress from THM API -->
               <!-- PLACEHOLDER: replace 0% with real progress value once API is connected -->
               <div class="path-progress-bar">
-                <div class="path-progress-fill" id="thm-path-soc" style="width: 0%;"></div>
+                <div class="path-progress-fill" id="thm-path-soc" style="width: 2%;"></div>
               </div>
-              <small class="text-muted">
-                0% complete
-                <!-- API: replace 0% with user path progress percentage -->
-              </small>
+              <small class="text-muted">2% complete (2 of 65 rooms)</small>
               <p class="path-card-description text-muted" style="font-size:13px; margin-top:8px;">
                 SIEM, log analysis, incident response, threat intelligence
               </p>
@@ -576,37 +574,8 @@
          2. Stats load automatically from the TryHackMe public API.
             No API key required.
          ============================================================ */
-      const THM_USERNAME = 'Evan.cyber';
-
-      (async function loadTHMStats() {
-        if (THM_USERNAME === 'YOUR_THM_USERNAME') return;
-
-        const profileBtn = document.getElementById('thm-profile-btn');
-        const profileURL = `https://tryhackme.com/p/${THM_USERNAME}`;
-        if (profileBtn) profileBtn.href = profileURL;
-
-        const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val ?? '—'; };
-
-        // Fetch points, rooms, streak from details endpoint
-        try {
-          const res = await fetch(`https://tryhackme.com/api/no-auth/user/${THM_USERNAME}/details`);
-          if (res.ok) {
-            const { userDetails: u } = await res.json();
-            set('thm-stat-points', u.points != null ? Number(u.points).toLocaleString() : '—');
-            set('thm-stat-rooms',  u.completedRooms ?? '—');
-            set('thm-stat-streak', u.streak ?? '—');
-          }
-        } catch (_) { /* badge image shows accurate stats */ }
-
-        // Fetch global rank from dedicated rank endpoint
-        try {
-          const rankRes = await fetch(`https://tryhackme.com/api/user/rank/${THM_USERNAME}`);
-          if (rankRes.ok) {
-            const rankData = await rankRes.json();
-            set('thm-stat-rank', rankData.userRank != null ? `#${Number(rankData.userRank).toLocaleString()}` : '—');
-          }
-        } catch (_) { /* badge image shows accurate stats */ }
-      })();
+      /* Stats are manually maintained — update values in the HTML stat cards
+         above when your TryHackMe progress changes, then git push. */
     </script>
     <script>
       /* Scroll-Spy: highlight the Labs nav link on Labs sub-pages */
