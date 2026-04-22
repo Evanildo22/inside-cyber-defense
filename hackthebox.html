@@ -191,7 +191,7 @@
           <div class="col-6 col-md-2 wow fadeInUp" data-wow-delay="0.2s">
             <div class="lab-stat-card">
               <div class="stat-icon" style="color:#9FEF00;">&#9650;</div>
-              <div class="stat-number stat-number-htb" id="htb-stat-rank"><span class="stat-loading">—</span></div>
+              <div class="stat-number stat-number-htb" id="htb-stat-rank">#1,009</div>
               <div class="stat-label">Global Rank</div>
             </div>
           </div>
@@ -199,7 +199,7 @@
           <div class="col-6 col-md-2 wow fadeInUp" data-wow-delay="0.25s">
             <div class="lab-stat-card">
               <div class="stat-icon" style="color:#9FEF00;"><i class="icon-star"></i></div>
-              <div class="stat-number stat-number-htb" id="htb-stat-points"><span class="stat-loading">—</span></div>
+              <div class="stat-number stat-number-htb" id="htb-stat-points">0</div>
               <div class="stat-label">Points</div>
             </div>
           </div>
@@ -207,7 +207,7 @@
           <div class="col-6 col-md-2 wow fadeInUp" data-wow-delay="0.3s">
             <div class="lab-stat-card">
               <div class="stat-icon" style="color:#9FEF00;"><i class="icon-user"></i></div>
-              <div class="stat-number stat-number-htb" id="htb-stat-user-owns"><span class="stat-loading">—</span></div>
+              <div class="stat-number stat-number-htb" id="htb-stat-user-owns">0</div>
               <div class="stat-label">User Owns</div>
             </div>
           </div>
@@ -215,7 +215,7 @@
           <div class="col-6 col-md-2 wow fadeInUp" data-wow-delay="0.35s">
             <div class="lab-stat-card">
               <div class="stat-icon" style="color:#9FEF00;"><i class="icon-screen-desktop"></i></div>
-              <div class="stat-number stat-number-htb" id="htb-stat-root-owns"><span class="stat-loading">—</span></div>
+              <div class="stat-number stat-number-htb" id="htb-stat-root-owns">0</div>
               <div class="stat-label">Root Owns</div>
             </div>
           </div>
@@ -223,7 +223,7 @@
           <div class="col-6 col-md-2 wow fadeInUp" data-wow-delay="0.4s">
             <div class="lab-stat-card">
               <div class="stat-icon" style="color:#9FEF00;"><i class="icon-puzzle"></i></div>
-              <div class="stat-number stat-number-htb" id="htb-stat-challenges"><span class="stat-loading">—</span></div>
+              <div class="stat-number stat-number-htb" id="htb-stat-challenges">0</div>
               <div class="stat-label">Challenges</div>
             </div>
           </div>
@@ -231,7 +231,7 @@
           <div class="col-6 col-md-2 wow fadeInUp" data-wow-delay="0.45s">
             <div class="lab-stat-card">
               <div class="stat-icon" style="color:#9FEF00;"><i class="icon-badge"></i></div>
-              <div class="stat-number stat-number-htb" id="htb-stat-rank-tier"><span class="stat-loading">—</span></div>
+              <div class="stat-number stat-number-htb" id="htb-stat-rank-tier">Noob</div>
               <div class="stat-label">Rank Tier</div>
             </div>
           </div>
@@ -264,80 +264,31 @@
     </section>
 
     <!-- =====================================================
-         RECENTLY PWNED MACHINES
-         API: data from GET /api/v4/user/profile/activity/{user_id}
+         RECENT ACTIVITY
          ===================================================== -->
     <section class="activity-section">
       <div class="container">
-        <h2 class="section-title wow flipInX" data-wow-delay="0.3s">Recently Pwned Machines</h2>
+        <h2 class="section-title wow flipInX" data-wow-delay="0.3s">Recent Activity</h2>
+        <p class="text-center text-muted mb-4 wow fadeInUp" data-wow-delay="0.4s">
+          Completed Sherlocks, machines, and challenges — updated as progress is made
+        </p>
 
-        <div class="row">
+        <div class="row justify-content-center">
 
-          <!-- Machine Card 1 -->
+          <!-- Brutus — Sherlock (DFIR) -->
           <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
             <div class="machine-card">
               <div class="machine-card-thumb-placeholder">
-                <!-- PLACEHOLDER: machine thumbnail 144×144px (2× retina),
-                     HTB machine avatar PNG. Replace this div with an <img> tag
-                     once the real image is available.
-                     Example: <img src="assets/img/htb/machine-lame.png" alt="Lame"> -->
-                <i class="icon-screen-desktop"></i>
+                <i class="icon-magnifier"></i>
               </div>
               <div class="machine-card-info">
-                <!-- API: replace "Machine Name" with activity.machine.name -->
-                <p class="machine-card-name">Machine Name</p>
-                <p class="machine-card-meta">
-                  <!-- API: replace with activity.machine.difficulty and activity.machine.os -->
-                  <span class="badge badge-easy">Easy</span>
-                  &nbsp;<span class="badge badge-pill badge-secondary">Linux</span>
-                  &nbsp;<span class="text-muted">Date: --/--/----</span>
-                </p>
-                <!-- API: replace # with GitHub writeup URL when available -->
-                <!-- PLACEHOLDER: replace # with GitHub link to writeup repository -->
-                <a href="#" class="mini-card-link" style="font-size:12px;">
-                  Writeup <i class="icon-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Machine Card 2 -->
-          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="machine-card">
-              <div class="machine-card-thumb-placeholder">
-                <!-- PLACEHOLDER: machine thumbnail 144×144px, HTB machine avatar PNG -->
-                <i class="icon-screen-desktop"></i>
-              </div>
-              <div class="machine-card-info">
-                <p class="machine-card-name">Machine Name</p>
-                <p class="machine-card-meta">
-                  <span class="badge badge-medium">Medium</span>
-                  &nbsp;<span class="badge badge-pill badge-secondary">Windows</span>
-                  &nbsp;<span class="text-muted">Date: --/--/----</span>
-                </p>
-                <!-- PLACEHOLDER: replace # with GitHub writeup link -->
-                <a href="#" class="mini-card-link" style="font-size:12px;">
-                  Writeup <i class="icon-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Machine Card 3 -->
-          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-            <div class="machine-card">
-              <div class="machine-card-thumb-placeholder">
-                <!-- PLACEHOLDER: machine thumbnail 144×144px, HTB machine avatar PNG -->
-                <i class="icon-screen-desktop"></i>
-              </div>
-              <div class="machine-card-info">
-                <p class="machine-card-name">Machine Name</p>
+                <p class="machine-card-name">Brutus &nbsp;<span style="font-size:11px; color:#9FEF00; font-weight:500;">Sherlock</span></p>
                 <p class="machine-card-meta">
                   <span class="badge badge-easy">Easy</span>
-                  &nbsp;<span class="badge badge-pill badge-secondary">Linux</span>
-                  &nbsp;<span class="text-muted">Date: --/--/----</span>
+                  &nbsp;<span class="badge badge-pill badge-secondary">DFIR</span>
+                  &nbsp;<span class="text-muted">Aug, 2025</span>
                 </p>
-                <!-- PLACEHOLDER: replace # with GitHub writeup link -->
+                <!-- PLACEHOLDER: replace # with GitHub writeup URL when available -->
                 <a href="#" class="mini-card-link" style="font-size:12px;">
                   Writeup <i class="icon-arrow-right"></i>
                 </a>
@@ -345,70 +296,11 @@
             </div>
           </div>
 
-          <!-- Machine Card 4 -->
-          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-            <div class="machine-card">
-              <div class="machine-card-thumb-placeholder">
-                <!-- PLACEHOLDER: machine thumbnail 144×144px, HTB machine avatar PNG -->
-                <i class="icon-screen-desktop"></i>
-              </div>
-              <div class="machine-card-info">
-                <p class="machine-card-name">Machine Name</p>
-                <p class="machine-card-meta">
-                  <span class="badge badge-hard">Hard</span>
-                  &nbsp;<span class="badge badge-pill badge-secondary">Windows</span>
-                  &nbsp;<span class="text-muted">Date: --/--/----</span>
-                </p>
-                <!-- PLACEHOLDER: replace # with GitHub writeup link -->
-                <a href="#" class="mini-card-link" style="font-size:12px;">
-                  Writeup <i class="icon-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Machine Card 5 (placeholder) -->
-          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.55s">
-            <div class="machine-card">
-              <div class="machine-card-thumb-placeholder">
-                <!-- PLACEHOLDER: machine thumbnail 144×144px, HTB machine avatar PNG -->
-                <i class="icon-screen-desktop"></i>
-              </div>
-              <div class="machine-card-info">
-                <p class="machine-card-name">Machine Name</p>
-                <p class="machine-card-meta">
-                  <span class="badge badge-medium">Medium</span>
-                  &nbsp;<span class="badge badge-pill badge-secondary">Linux</span>
-                  &nbsp;<span class="text-muted">Date: --/--/----</span>
-                </p>
-                <!-- PLACEHOLDER: replace # with GitHub writeup link -->
-                <a href="#" class="mini-card-link" style="font-size:12px;">
-                  Writeup <i class="icon-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Machine Card 6 (placeholder) -->
-          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-            <div class="machine-card">
-              <div class="machine-card-thumb-placeholder">
-                <!-- PLACEHOLDER: machine thumbnail 144×144px, HTB machine avatar PNG -->
-                <i class="icon-screen-desktop"></i>
-              </div>
-              <div class="machine-card-info">
-                <p class="machine-card-name">Machine Name</p>
-                <p class="machine-card-meta">
-                  <span class="badge badge-hard">Hard</span>
-                  &nbsp;<span class="badge badge-pill badge-secondary">Windows</span>
-                  &nbsp;<span class="text-muted">Date: --/--/----</span>
-                </p>
-                <!-- PLACEHOLDER: replace # with GitHub writeup link -->
-                <a href="#" class="mini-card-link" style="font-size:12px;">
-                  Writeup <i class="icon-arrow-right"></i>
-                </a>
-              </div>
-            </div>
+          <!-- No machines yet -->
+          <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
+            <p class="text-center text-muted" style="font-size:13px; font-style:italic; margin-top:10px;">
+              Machines will appear here as they are pwned.
+            </p>
           </div>
 
         </div><!-- /.row -->
@@ -422,7 +314,7 @@
       <div class="container">
         <h2 class="section-title wow flipInX" data-wow-delay="0.3s">Skills Assessed on HTB</h2>
         <p class="text-center text-muted mb-4 wow fadeInUp" data-wow-delay="0.4s">
-          Categories covered through machines and challenges completed
+          Areas of practice through HTB challenges, Sherlocks, and lab work
         </p>
 
         <div class="skill-category-grid wow fadeInUp" data-wow-delay="0.4s">
@@ -520,27 +412,16 @@
               </tr>
             </thead>
             <tbody>
-              <!-- PLACEHOLDER: add a row per completed machine/challenge.
-                   Replace each # with the GitHub URL to the writeup file.
-                   Example row structure shown below. -->
               <tr>
-                <td>Machine Name</td>
+                <td>Brutus <span class="badge badge-pill badge-secondary" style="font-size:10px;">Sherlock</span></td>
                 <td><span class="badge badge-easy">Easy</span></td>
-                <td>Linux</td>
-                <!-- PLACEHOLDER: replace # with GitHub repository writeup URL -->
-                <td><a href="#" target="_blank" rel="noopener">GitHub &rarr;</a></td>
-              </tr>
-              <tr>
-                <td>Machine Name</td>
-                <td><span class="badge badge-medium">Medium</span></td>
-                <td>Windows</td>
-                <!-- PLACEHOLDER: replace # with GitHub repository writeup URL -->
+                <td>DFIR</td>
+                <!-- PLACEHOLDER: replace # with GitHub writeup URL when available -->
                 <td><a href="#" target="_blank" rel="noopener">GitHub &rarr;</a></td>
               </tr>
               <tr>
                 <td colspan="4" class="text-center text-muted" style="font-style:italic; font-size:13px;">
-                  More writeups will be added as machines are completed.
-                  <!-- PLACEHOLDER: remove this row and populate with real writeup entries -->
+                  More writeups will be added as machines and challenges are completed.
                 </td>
               </tr>
             </tbody>
@@ -654,7 +535,7 @@
 
       const HTB_CERTS = [
         // Update status + paste verifyUrl when you earn each cert.
-        { name: 'CPTS', full: 'Certified Penetration Testing Specialist', status: 'in-progress', verifyUrl: '' },
+        { name: 'CPTS', full: 'Certified Penetration Testing Specialist', status: 'planned',     verifyUrl: '' },
         { name: 'CBBH', full: 'Certified Bug Bounty Hunter',              status: 'planned',     verifyUrl: '' },
         { name: 'CDSA', full: 'Certified Defensive Security Analyst',     status: 'planned',     verifyUrl: '' },
         { name: 'CWEE', full: 'Certified Web Exploitation Expert',        status: 'planned',     verifyUrl: '' },
@@ -671,32 +552,13 @@
         $('htb-config-hint').style.display    = 'none';
         $('htb-badge-live-note').style.display = '';
 
-        /* ── Badge image + stats API — require legacy numeric ID ── */
+        /* ── Badge image — loaded from HTB's badge service (image tag, no CORS) ── */
         if (HTB_NUMERIC_ID) {
           const badgeImg = $('htb-badge-img');
           if (badgeImg) badgeImg.src = `https://www.hackthebox.eu/badge/image/user/${HTB_NUMERIC_ID}`;
-
-          /* ── Public profile API (no token — works for public profiles) ── */
-          try {
-            const res = await fetch(
-              `https://www.hackthebox.com/api/v4/user/profile/basic/${HTB_NUMERIC_ID}`,
-              { headers: { 'Accept': 'application/json' } }
-            );
-            if (res.ok) {
-              const { profile: p } = await res.json();
-              const set = (id, val) => { const el = $(id); if (el) el.textContent = val ?? '—'; };
-              set('htb-stat-rank',      p.ranking       ? `#${Number(p.ranking).toLocaleString()}` : '—');
-              set('htb-stat-points',    p.points         ? Number(p.points).toLocaleString()        : '—');
-              set('htb-stat-user-owns', p.user_owns      ?? '—');
-              set('htb-stat-root-owns', p.system_owns    ?? '—');
-              set('htb-stat-challenges',p.challenge_owns ?? '—');
-              set('htb-stat-rank-tier', p.rank           ?? '—');
-            }
-          } catch (_) {
-            // CORS or API unavailable — badge image already shows key stats visually
-          }
+          /* Stats are manually maintained — update values in the HTML stat cards above
+             when your HTB progress changes, then git push. */
         } else {
-          // No numeric ID yet — hide the badge hero until it's added
           const hero = $('htb-badge-hero');
           if (hero) hero.style.display = 'none';
         }
