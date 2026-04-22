@@ -2327,6 +2327,14 @@ a.back-to-top:focus i {
 .stat-number-htb { color: #9FEF00; }
 .stat-number-thm { color: #C11111; }
 
+/* HTB page — dark stat cards */
+.page-htb .lab-stat-card {
+  background: #1A2744;
+  border: 1px solid rgba(159,239,0,0.25);
+  border-top: 3px solid #9FEF00;
+}
+.page-htb .lab-stat-card .stat-label { color: rgba(240,237,232,0.55); }
+
 .activity-section { padding: 50px 0; background-color: var(--white); }
 
 .machine-card, .room-card {
@@ -2455,8 +2463,25 @@ a.back-to-top:focus i {
   margin: 3px;
 }
 
-.skill-badge-htb { background: rgba(159,239,0,0.10); color: #9FEF00; border: 1px solid rgba(159,239,0,0.25); }
+.skill-badge-htb { background: #1A2744; color: #9FEF00; border: 1px solid rgba(159,239,0,0.4); }
 .skill-badge-thm { background: rgba(193,17,17,0.10);  color: #c11111; border: 1px solid rgba(193,17,17,0.25); }
+
+.skill-category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+.skill-category { flex: 1 1 220px; }
+.skill-category-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
 
 .badge-grid { display: flex; flex-wrap: wrap; gap: 14px; padding: 10px 0; }
 
@@ -2552,8 +2577,8 @@ a.back-to-top:focus i {
 /* ── Certification cards ── */
 .htb-cert-row { margin-top: 28px; row-gap: 20px; }
 .htb-cert-card {
-  background: rgba(159,239,0,.04);
-  border: 1px solid rgba(159,239,0,.14);
+  background: #1A2744;
+  border: 1px solid rgba(159,239,0,.25);
   border-radius: 12px;
   padding: 22px 16px 18px;
   text-align: center;
