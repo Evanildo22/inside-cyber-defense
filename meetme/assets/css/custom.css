@@ -302,15 +302,17 @@ ul li, ol li { list-style: none; }
 }
 
 /* Parent row (has expand arrow) — match regular link height */
-.slicknav_nav .slicknav_row,
 .slicknav_nav .slicknav_item {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.slicknav_nav .slicknav_row {
   padding: 11px 20px !important;
   margin: 0 !important;
   display: flex !important;
   align-items: center !important;
 }
-.slicknav_nav .slicknav_row a,
-.slicknav_nav .slicknav_item a {
+.slicknav_nav .slicknav_row a {
   padding: 0 !important;
   flex: 1 !important;
 }
