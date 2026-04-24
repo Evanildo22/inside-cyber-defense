@@ -278,6 +278,7 @@ ul li, ol li { list-style: none; }
   overflow-y: auto !important;
   overflow-x: hidden !important;
   -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior: contain !important;
 }
 
 /* Divider between items */

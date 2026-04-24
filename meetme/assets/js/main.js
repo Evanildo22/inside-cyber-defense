@@ -92,6 +92,12 @@
       label: '',
       closedSymbol: '<i class="icon-arrow-right"></i>',
       openedSymbol: '<i class="icon-arrow-down"></i>',
+      open: function() {
+        $('body').css({ 'overflow': 'hidden', 'position': 'relative' });
+      },
+      close: function() {
+        $('body').css({ 'overflow': '', 'position': '' });
+      }
     });
   });
 
