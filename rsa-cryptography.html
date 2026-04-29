@@ -113,11 +113,8 @@
                 <div class="hero-rule wow fadeInUp" data-wow-delay="0.35s"></div>
                 <p class="script-font wow fadeInUp" data-wow-delay="0.6s">Encrypted file sharing resilient to full storage-layer compromise</p>
                 <div class="header-button wow fadeInUp" data-wow-delay="1s">
-                  <a href="https://github.com/Evanildo22/CRYPTOGRAPHY" class="btn btn-common" target="_blank" rel="noopener"><i class="fa fa-github"></i> View Code</a>
-                  <!-- Live Demo button — uncomment and add href when deployed -->
-                  <!-- <a href="DEMO_URL" class="btn btn-border ml-3" target="_blank" rel="noopener"><i class="fa fa-external-link"></i> Live Demo</a> -->
-                  <!-- Write-up button — uncomment and add href when published -->
-                  <!-- <a href="WRITEUP_URL" class="btn btn-border ml-3" target="_blank" rel="noopener"><i class="fa fa-file-text-o"></i> Write-up</a> -->
+                  <a href="https://github.com/Evanildo22/CRYPTOGRAPHY" class="btn btn-common" target="_blank" rel="noopener"><i class="fa fa-github"></i> GitHub Repository</a>
+                  <a href="https://github.com/Evanildo22/CRYPTOGRAPHY#readme" class="btn btn-border ml-3" target="_blank" rel="noopener"><i class="fa fa-file-text-o"></i> Project Writeup</a>
                 </div>
               </div>
             </div>
@@ -165,19 +162,20 @@
 
                 When ready: remove the placeholder div below and uncomment the img block.
               -->
+              <!--  
               <div class="proj-asset-placeholder">
                 <div class="placeholder-icon"><i class="fa fa-sitemap"></i></div>
                 <p class="placeholder-label">Architecture Diagram</p>
                 <p class="placeholder-desc">Encrypt &rarr; Sign &rarr; Store &rarr; Verify &rarr; Decrypt flow<br>Storage layer marked &ldquo;Untrusted&rdquo; &middot; Annotated with AES-GCM, RSA-PSS, HMAC</p>
               </div>
-              <!--
+              -->
               <div style="margin:28px 0;">
                 <img src="meetme/assets/img/projects/rsa-cryptography-architecture.png"
                      alt="RSA Cryptography system architecture — encrypt to sign to store to verify to decrypt"
                      class="img-fluid"
                      style="border-radius:6px; border:1px solid rgba(28,28,30,.08); box-shadow:0 1px 4px rgba(0,0,0,.07),0 4px 18px rgba(0,0,0,.06);">
               </div>
-              -->
+              
 
               <p>The architecture assumes a compromised storage layer, ensuring confidentiality under full read access. Every operation is logged in a tamper-evident HMAC-SHA256 audit trail (RFC 2104) — enabling detection of unauthorised modifications and satisfying a core SOC visibility requirement.</p>
             </div>
