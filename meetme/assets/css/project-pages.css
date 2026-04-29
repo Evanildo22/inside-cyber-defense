@@ -538,3 +538,195 @@
     right: 10px;
   }
 }
+
+/* ---------------------------------------------------------------
+   PROJECT OVERVIEW HEADLINE
+--------------------------------------------------------------- */
+.project-section .proj-headline {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: #1D2D4A;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+/* ---------------------------------------------------------------
+   PROJECT LINKS ROW
+--------------------------------------------------------------- */
+.proj-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.proj-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 4px;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: background-color 0.2s ease, color 0.2s ease,
+              border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.proj-link-btn.github {
+  background-color: #1D2D4A;
+  color: #F0EDE8;
+  border: 1px solid #1D2D4A;
+}
+.proj-link-btn.github:hover {
+  background-color: #263f6b;
+  border-color: #263f6b;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(29,45,74,0.28);
+  text-decoration: none;
+}
+
+.proj-link-btn.demo {
+  background-color: transparent;
+  color: #B8860B;
+  border: 1.5px solid rgba(184,134,11,0.5);
+}
+.proj-link-btn.demo:hover {
+  background-color: #B8860B;
+  border-color: #B8860B;
+  color: #fff;
+  text-decoration: none;
+}
+
+.proj-link-btn.writeup {
+  background-color: transparent;
+  color: #6B7280;
+  border: 1.5px solid rgba(107,114,128,0.38);
+}
+.proj-link-btn.writeup:hover {
+  background-color: #6B7280;
+  border-color: #6B7280;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------------------
+   ASSET PLACEHOLDER  (replace when diagram / screenshot is ready)
+--------------------------------------------------------------- */
+.proj-asset-placeholder {
+  margin: 28px 0;
+  padding: 44px 24px;
+  border: 2px dashed rgba(184,134,11,0.3);
+  border-radius: 8px;
+  background: rgba(29,45,74,0.025);
+  text-align: center;
+}
+
+.proj-asset-placeholder .placeholder-icon {
+  font-size: 34px;
+  color: rgba(184,134,11,0.38);
+  margin-bottom: 12px;
+}
+
+.proj-asset-placeholder .placeholder-label {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: #B8860B;
+  margin-bottom: 8px;
+}
+
+.proj-asset-placeholder .placeholder-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #9CA3AF;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------
+   METRICS LIST
+--------------------------------------------------------------- */
+.project-section .proj-metrics {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+}
+
+.project-section .proj-metrics li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(28,28,30,0.07);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #374151;
+}
+
+.project-section .proj-metrics li:last-child {
+  border-bottom: none;
+}
+
+.proj-metrics .metric-icon {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(184,134,11,0.08);
+  border: 1px solid rgba(184,134,11,0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3px;
+}
+
+.proj-metrics .metric-icon i {
+  font-size: 12px;
+  color: #B8860B;
+}
+
+/* ---------------------------------------------------------------
+   SKILL TAGS
+--------------------------------------------------------------- */
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.proj-tag {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 5px 13px;
+  border-radius: 100px;
+  background: rgba(29,45,74,0.06);
+  border: 1px solid rgba(29,45,74,0.16);
+  color: #374151;
+}
+
+.proj-tag.crypto {
+  background: rgba(184,134,11,0.07);
+  border-color: rgba(184,134,11,0.28);
+  color: #7a5500;
+}
+
+@media (max-width: 575px) {
+  .proj-link-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

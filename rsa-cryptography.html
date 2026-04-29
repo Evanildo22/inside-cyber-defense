@@ -111,12 +111,13 @@
               <div class="contents">
                 <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">RSA Cryptography</h2>
                 <div class="hero-rule wow fadeInUp" data-wow-delay="0.35s"></div>
-                <p class="script-font wow fadeInUp" data-wow-delay="0.6s">Implementation and analysis of public-key cryptographic systems</p>
+                <p class="script-font wow fadeInUp" data-wow-delay="0.6s">Encrypted file sharing resilient to full storage-layer compromise</p>
                 <div class="header-button wow fadeInUp" data-wow-delay="1s">
-                  <!-- PLACEHOLDER: replace # with GitHub repo URL for this project -->
-                  <a href="#" class="btn btn-common" target="_blank" rel="noopener"><i class="fa fa-github"></i> GitHub Repository</a>
-                  <!-- PLACEHOLDER: replace # with PDF writeup or GitHub writeup URL for this project -->
-                  <a href="#" class="btn btn-border ml-3" target="_blank" rel="noopener"><i class="fa fa-file-text-o"></i> Project Writeup</a>
+                  <a href="https://github.com/Evanildo22/CRYPTOGRAPHY" class="btn btn-common" target="_blank" rel="noopener"><i class="fa fa-github"></i> View Code</a>
+                  <!-- Live Demo button — uncomment and add href when deployed -->
+                  <!-- <a href="DEMO_URL" class="btn btn-border ml-3" target="_blank" rel="noopener"><i class="fa fa-external-link"></i> Live Demo</a> -->
+                  <!-- Write-up button — uncomment and add href when published -->
+                  <!-- <a href="WRITEUP_URL" class="btn btn-border ml-3" target="_blank" rel="noopener"><i class="fa fa-file-text-o"></i> Write-up</a> -->
                 </div>
               </div>
             </div>
@@ -125,16 +126,129 @@
       </div>
     </header>
 
-    <section class="coming-soon-section">
+    <!-- PROJECT CONTENT -->
+    <section class="project-content">
       <div class="container">
-        <div class="coming-soon-card wow fadeInUp" data-wow-delay="0.1s">
-          <span class="coming-soon-badge"><i class="fa fa-clock-o"></i>&nbsp; In Progress</span>
-          <div class="coming-soon-icon">
-            <i class="fa fa-lock"></i>
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+
+            <!-- 1. Overview -->
+            <div class="project-section wow fadeInUp" data-wow-delay="0.1s">
+              <h3><i class="fa fa-info-circle"></i> Overview</h3>
+              <p class="proj-headline">Cryptographically secure file sharing that stays safe under full storage compromise</p>
+              <p>A secure file-sharing web app that encrypts data before storage and verifies integrity before decryption. Built to remain confidential even if the storage layer is fully breached — using the same cryptographic controls found in production security systems.</p>
+
+              <!-- Links row — add Demo / Write-up hrefs when ready, then uncomment those buttons -->
+              <div class="proj-links">
+                <a href="https://github.com/Evanildo22/CRYPTOGRAPHY" class="proj-link-btn github" target="_blank" rel="noopener">
+                  <i class="fa fa-github"></i> View Code
+                </a>
+                <!-- <a href="DEMO_URL" class="proj-link-btn demo" target="_blank" rel="noopener"><i class="fa fa-external-link"></i> Live Demo</a> -->
+                <!-- <a href="WRITEUP_URL" class="proj-link-btn writeup" target="_blank" rel="noopener"><i class="fa fa-file-text-o"></i> Read Write-up</a> -->
+              </div>
+            </div>
+
+            <!-- 2. Technical Deep-Dive -->
+            <div class="project-section wow fadeInUp" data-wow-delay="0.15s">
+              <h3><i class="fa fa-cogs"></i> Technical Deep-Dive</h3>
+              <p>Built a Flask-based system enforcing a verify-then-decrypt model to eliminate decryption oracle risks (aligned with OWASP cryptographic best practices). Implements AES-256-GCM (NIST SP 800-38D) for authenticated encryption, RSA-OAEP / RSA-PSS (RFC 8017) for secure key transport and digital signatures, and ECDH P-256 + HKDF (RFC 5869) to achieve Perfect Forward Secrecy — mirroring the TLS 1.3 key exchange model.</p>
+
+              <!--
+                ARCHITECTURE DIAGRAM
+                ─────────────────────────────────────────────────────────────
+                File location : meetme/assets/img/projects/rsa-cryptography-architecture.png  (or .svg)
+                Dimensions    : 1200×675 px (16:9), high-res
+                Content       : encrypt → sign → store → verify → decrypt flow;
+                                storage layer labelled "Untrusted";
+                                each arrow annotated with primitive (AES-GCM, RSA-PSS, HMAC)
+                Tools         : Excalidraw, draw.io, or similar — monochrome or on-brand
+
+                When ready: remove the placeholder div below and uncomment the img block.
+              -->
+              <div class="proj-asset-placeholder">
+                <div class="placeholder-icon"><i class="fa fa-sitemap"></i></div>
+                <p class="placeholder-label">Architecture Diagram</p>
+                <p class="placeholder-desc">Encrypt &rarr; Sign &rarr; Store &rarr; Verify &rarr; Decrypt flow<br>Storage layer marked &ldquo;Untrusted&rdquo; &middot; Annotated with AES-GCM, RSA-PSS, HMAC</p>
+              </div>
+              <!--
+              <div style="margin:28px 0;">
+                <img src="meetme/assets/img/projects/rsa-cryptography-architecture.png"
+                     alt="RSA Cryptography system architecture — encrypt to sign to store to verify to decrypt"
+                     class="img-fluid"
+                     style="border-radius:6px; border:1px solid rgba(28,28,30,.08); box-shadow:0 1px 4px rgba(0,0,0,.07),0 4px 18px rgba(0,0,0,.06);">
+              </div>
+              -->
+
+              <p>The architecture assumes a compromised storage layer, ensuring confidentiality under full read access. Every operation is logged in a tamper-evident HMAC-SHA256 audit trail (RFC 2104) — enabling detection of unauthorised modifications and satisfying a core SOC visibility requirement.</p>
+            </div>
+
+            <!-- 3. Impact & Metrics -->
+            <div class="project-section wow fadeInUp" data-wow-delay="0.2s">
+              <h3><i class="fa fa-bar-chart"></i> Impact &amp; Metrics</h3>
+              <ul class="proj-metrics">
+                <li>
+                  <span class="metric-icon"><i class="fa fa-exchange"></i></span>
+                  <span>Engineered <strong>dual encryption modes</strong> (RSA key transport + ECDH PFS), demonstrating real-world trade-offs between long-term key exposure and forward secrecy across documented attack scenarios.</span>
+                </li>
+                <li>
+                  <span class="metric-icon"><i class="fa fa-check"></i></span>
+                  <span>Validated cryptographic guarantees with <strong>83 unit tests</strong> covering tamper detection, key misuse, IV reuse, signature forgery, and forward secrecy failure conditions.</span>
+                </li>
+                <li>
+                  <span class="metric-icon"><i class="fa fa-shield"></i></span>
+                  <span>Designed a <strong>storage-compromise-resilient architecture</strong> enforcing signature verification before any decryption path — stress-tested against four simulated adversarial attack classes.</span>
+                </li>
+              </ul>
+
+              <!--
+                CODE / TEST SCREENSHOT
+                ─────────────────────────────────────────────────────────────
+                File location : meetme/assets/img/projects/rsa-cryptography-tests.png
+                Dimensions    : 1200×675 px (16:9) or 1200×800 px
+                Content       : Either the verify-then-decrypt function OR
+                                pytest output showing 83 passing tests
+                Style         : Dark theme · use Carbon (carbon.now.sh) or ray.so
+                                One image only — do not stack screenshots
+
+                When ready: remove the placeholder div below and uncomment the gallery block.
+              -->
+              <div class="proj-asset-placeholder" style="margin-top:24px;">
+                <div class="placeholder-icon"><i class="fa fa-terminal"></i></div>
+                <p class="placeholder-label">Code / Test Screenshot</p>
+                <p class="placeholder-desc">verify-then-decrypt function or pytest output showing 83 passing tests<br>Dark theme &middot; Carbon (carbon.now.sh) or ray.so recommended</p>
+              </div>
+              <!--
+              <div class="gallery-item" style="max-width:720px; margin:24px auto 0;">
+                <a href="meetme/assets/img/projects/rsa-cryptography-tests.png"
+                   class="lightbox" title="83 unit tests passing">
+                  <img src="meetme/assets/img/projects/rsa-cryptography-tests.png"
+                       alt="pytest output showing 83 unit tests passing">
+                </a>
+                <p>pytest output — 83 unit tests passing</p>
+              </div>
+              -->
+            </div>
+
+            <!-- 4. Skills & Technologies -->
+            <div class="project-section wow fadeInUp" data-wow-delay="0.25s">
+              <h3><i class="fa fa-tags"></i> Skills &amp; Technologies</h3>
+              <div class="proj-tags">
+                <span class="proj-tag crypto">AES-256-GCM</span>
+                <span class="proj-tag crypto">ECDH P-256</span>
+                <span class="proj-tag crypto">RSA-OAEP</span>
+                <span class="proj-tag crypto">RSA-PSS</span>
+                <span class="proj-tag crypto">HKDF</span>
+                <span class="proj-tag">Cryptographic Threat Modelling</span>
+                <span class="proj-tag">Secure Key Management</span>
+                <span class="proj-tag">Tamper Detection (HMAC-SHA256)</span>
+                <span class="proj-tag">Flask Security Architecture</span>
+                <span class="proj-tag">Python (cryptography library)</span>
+                <span class="proj-tag">Decryption Oracle Defence</span>
+                <span class="proj-tag">Analytical Thinking</span>
+              </div>
+            </div>
+
           </div>
-          <h2 class="coming-soon-title">Content Coming Soon</h2>
-          <p class="coming-soon-text">This project is currently being documented. The full write-up, screenshots, and video walkthrough will be published here once ready.</p>
-          <a href="index.html#portfolios" class="btn btn-common"><i class="fa fa-th-large"></i>&nbsp; View All Projects</a>
         </div>
       </div>
     </section>
