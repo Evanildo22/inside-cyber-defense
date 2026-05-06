@@ -1233,7 +1233,7 @@
           </div>
 
           <!-- Frameworks & Standards -->
-          <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay="0.5s">
+          <div class="col-lg-4 col-md-6 col-12 wow fadeInUp skill-card-extra" data-wow-delay="0.5s">
             <div class="skills-category">
               <p class="skills-category-title">Frameworks &amp; Standards</p>
               <span class="skill-tag">NIST CSF</span>
@@ -1246,7 +1246,7 @@
           </div>
 
           <!-- Operating Systems & Platforms -->
-          <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay="0.6s">
+          <div class="col-lg-4 col-md-6 col-12 wow fadeInUp skill-card-extra" data-wow-delay="0.6s">
             <div class="skills-category">
               <p class="skills-category-title">Operating Systems &amp; Platforms</p>
               <span class="skill-tag">Kali Linux</span>
@@ -1258,7 +1258,7 @@
           </div>
 
           <!-- Threat Intelligence & OSINT -->
-          <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay="0.7s">
+          <div class="col-lg-4 col-md-6 col-12 wow fadeInUp skill-card-extra" data-wow-delay="0.7s">
             <div class="skills-category">
               <p class="skills-category-title">Threat Intelligence &amp; OSINT</p>
               <span class="skill-tag">VirusTotal</span>
@@ -1273,6 +1273,12 @@
           </div>
 
         </div><!-- /.row -->
+
+        <div class="skills-toggle-controls">
+          <button class="skills-toggle-btn" id="skillsShowMore">Show More</button>
+          <button class="skills-toggle-btn" id="skillsShowLess" style="display:none">Show Less</button>
+        </div>
+
       </div>
     </section>
     <!-- Skills Section End -->
@@ -1285,79 +1291,103 @@
           <p class="resume-subtitle">Academic background, professional experience &amp; continuous development</p>
         </div>
         <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="col-12 col-lg-6">
             <div class="education wow fadeInRight" data-wow-delay="0.3s">
-              <ul class="timeline">
-                <li>
-                  <i class="icon-graduation"></i>
-                  <h2 class="timelin-title">Education</h2>
-                </li>
-                <li>
-                  <div class="content-text">
-                    <div class="edu-card-header">
-                      <h3 class="line-title">BSc (Hons) In Cybersecurity - University Of West London</h3>
-                      <!-- PLACEHOLDER: save the UWL logo as meetme/assets/img/logo-uwl.png (transparent PNG, ~200px wide) -->
-                      <img src="meetme/assets/img/logo-uwl.png" alt="University of West London" class="edu-logo">
+              <!-- Header — always visible, outside the scroll container -->
+              <div class="timeline-header">
+                <span class="timeline-header-icon"><i class="icon-graduation"></i></span>
+                <h2 class="timelin-title">Education</h2>
+              </div>
+              <!-- Scrollable cards area — shows 3 at a time -->
+              <div class="timeline-scroll-area">
+                <ul class="timeline">
+                  <li>
+                    <div class="content-text">
+                      <h3 class="line-title">Additional Learning & Certifications</h3>
+                      <span>2026 - 2026</span>
+                      <p class="line-text">Actively preparing for industry-recognised certifications and developing hands-on skills through labs, research, and practical exercises aligned with SOC and analyst roles.</p>
                     </div>
-                    <p>London, UK</p>
-                    <span>2020 - 2024</span>
-                    <p class="line-text">Focused on core cybersecurity principles including network security, risk management, cryptography, secure systems, and security analysis, with practical labs and academic research.</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="content-text">
-                    <div class="edu-card-header">
-                      <h3 class="line-title">CMI Level 3 Award in First Line Management (QCF)</h3>
-                      <!-- PLACEHOLDER: save the CMI logo as meetme/assets/img/logo-cmi.png (transparent PNG, ~300px wide) -->
-                      <img src="meetme/assets/img/logo-cmi.png" alt="Chartered Management Institute" class="edu-logo">
+                  </li>
+                  <li>
+                    <div class="content-text">
+                      <div class="edu-card-header">
+                        <h3 class="line-title">BSc (Hons) In Cybersecurity - University Of West London</h3>
+                        <!-- PLACEHOLDER: save the UWL logo as meetme/assets/img/logo-uwl.png (transparent PNG, ~200px wide) -->
+                        <img src="meetme/assets/img/logo-uwl.png" alt="University of West London" class="edu-logo">
+                      </div>
+                      <p>London, UK</p>
+                      <span>Sep 2020 - Jul 2024</span>
+                      <p class="line-text">Focused on core cybersecurity principles including network security, risk management, cryptography, secure systems, and security analysis, with practical labs and academic research.</p>
                     </div>
-                    <p>Chartered Management Institute, London, UK</p>
-                    <span>2013 - 2014</span>
-                    <p class="line-text">Professional qualification focused on first-line management principles, communication, and organisational awareness, supporting effective teamwork and structured working environments.</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="content-text">
-                    <h3 class="line-title">Additional Learning & Certifications</h3>
-                    <span>2025 - 2025</span>
-                    <p class="line-text">Actively preparing for industry-recognised certifications and developing hands-on skills through labs, research, and practical exercises aligned with SOC and analyst roles.</p>
-                  </div>
-                </li>
-              </ul>
+                  </li>
+                  <li>
+                    <div class="content-text">
+                      <div class="edu-card-header">
+                        <h3 class="line-title">CMI Level 3 Award in First Line Management (QCF)</h3>
+                        <!-- PLACEHOLDER: save the CMI logo as meetme/assets/img/logo-cmi.png (transparent PNG, ~300px wide) -->
+                        <img src="meetme/assets/img/logo-cmi.png" alt="Chartered Management Institute" class="edu-logo">
+                      </div>
+                      <p>Chartered Management Institute, London, UK</p>
+                      <span>May 2014 - Jul 2014</span>
+                      <p class="line-text">Professional qualification focused on first-line management principles, communication, and organisational awareness, supporting effective teamwork and structured working environments.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="col-12 col-lg-6">
             <div class="experience wow fadeInRight" data-wow-delay="0.6s">
-              <ul class="timeline">
-                <li>
-                  <i class="icon-briefcase"></i>
-                  <h2 class="timelin-title">Experience</h2>
-                </li>
-                <li>
-                  <div class="content-text">
-                    <h3 class="line-title">Research Assistant in Cybersecurity (Internship).</h3>
-                    <p>UWL - London, UK</p>
-                    <span>Jun 2025 - Dec 2025</span>
-                    <p class="line-text">Supported cybersecurity research activities, security analysis, and structured investigation tasks. Gained hands-on exposure to defensive security concepts, threat awareness, and analytical methodologies.</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="content-text">
-                    <h3 class="line-title">Cybersecurity Projects & Labs</h3>
-                    <p>Academic & Independent Work - Ongoing</p>
-                    <span>2023 - 2024</span>
-                    <p class="line-text">Completed practical cybersecurity labs and projects focused on monitoring, analysis, system security, and defensive techniques aligned with SOC environments.</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="content-text">
-                    <h3 class="line-title">IT Support & Systems Technician</h3>
-                    <p>Gráfica Rio LTDA - Linhares, Brazil</p>
-                    <span>Mar 2015 - Oct 2019</span>
-                    <p class="line-text">Managed internal network infrastructure and workstations across Windows and macOS, serving as the sole IT point of contact to resolve hardware, software, and production system issues while standardising configurations and documentation to improve reliability.</p>
-                  </div>
-                </li>
-              </ul>
+              <!-- Header — always visible, outside the scroll container -->
+              <div class="timeline-header">
+                <span class="timeline-header-icon"><i class="icon-briefcase"></i></span>
+                <h2 class="timelin-title">Experience</h2>
+              </div>
+              <!-- Scrollable cards area — shows 3 at a time -->
+              <div class="timeline-scroll-area">
+                <ul class="timeline">
+                  <li>
+                    <div class="content-text">
+                      <h3 class="line-title">RSA Cryptography — Secure File Sharing System</h3>
+                      <p>Independent Security Project</p>
+                      <span>Dec 2025 - Mar 2026</span>
+                      <p class="line-text">Built a Flask-based encrypted file-sharing system enforcing a verify-then-decrypt model to eliminate decryption oracle risks. Implemented AES-256-GCM, RSA-OAEP/RSA-PSS, and ECDH P-256 + HKDF for Perfect Forward Secrecy, validated by 83 unit tests covering tamper detection, key misuse, and signature forgery.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="content-text">
+                      <h3 class="line-title">Research Assistant in Cybersecurity (Internship).</h3>
+                      <p>UWL - London, UK</p>
+                      <span>Jun 2025 - Dec 2025</span>
+                      <p class="line-text">Supported cybersecurity research activities, security analysis, and structured investigation tasks. Gained hands-on exposure to defensive security concepts, threat awareness, and analytical methodologies.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="content-text">
+                      <h3 class="line-title">IoT Anomaly Detection</h3>
+                      <p>Final Year Project - University of West London</p>
+                      <span>Sep 2023 - Jun 2024</span>
+                      <p class="line-text">Built a machine learning-based anomaly detection system for IoT network traffic as the BSc final year project. Applied Python and scikit-learn to classify malicious patterns in captured traffic, with results visualised through Splunk and Kibana dashboards aligned with SOC monitoring workflows.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="content-text">
+                      <h3 class="line-title">IT Support & Systems Technician</h3>
+                      <p>Gráfica Rio LTDA - Linhares, Brazil</p>
+                      <span>Mar 2015 - Oct 2019</span>
+                      <p class="line-text">Managed internal network infrastructure and workstations across Windows and macOS, serving as the sole IT point of contact to resolve hardware, software, and production system issues while standardising configurations and documentation to improve reliability.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="content-text">
+                      <h3 class="line-title">Manager</h3>
+                      <p>Headmasters Ltd - London, UK</p>
+                      <span>Nov 2010 - Sep 2014</span>
+                      <p class="line-text">Managed a team of 18 and improved operational efficiency by 35% through workflow redesign and structured coaching. Delivered health and safety training and maintained zero compliance infractions over a three-year period.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -2248,6 +2278,8 @@
         var currentFilter = 'all';
         var extraExpanded = false;
 
+        function isMobile() { return $(window).width() <= 767; }
+
         /* Snapshot all 11 items in DOM order — this order determines
            which items fill each row.  Bootstrap's 3-column grid means the
            first 3 matching items form row 1, the next 3 form row 2, etc.,
@@ -2291,17 +2323,24 @@
           }
         }
 
-        /* ── Show the ALL view (items 1–6 visible; 7–11 behind toggle) ── */
+        /* ── Show the ALL view ── */
         function showAllView() {
           $unified.hide().empty();
-          $portfolio.children('.mix').show();
           $portfolio.show();
+          var $mixItems = $portfolio.children('.mix');
 
-          if (extraExpanded) {
+          if (isMobile() && !extraExpanded) {
+            /* Mobile collapsed: show first 3 only */
+            $mixItems.each(function (i) { $(this).toggle(i < 3); });
+            $extra.hide();
+            $toggleBtn.show().html('<i class="fa fa-plus-circle"></i> Show more Projects');
+          } else if (extraExpanded) {
+            $mixItems.show();
             $extra.children('.extra-item').show();
             $extra.show();
             $toggleBtn.show().html('<i class="fa fa-minus-circle"></i> Hide extra Projects');
           } else {
+            $mixItems.show();
             $extra.hide();
             $toggleBtn.show().html('<i class="fa fa-plus-circle"></i> Show more Projects');
           }
@@ -2333,11 +2372,15 @@
           if (currentFilter === 'all') {
             if (!extraExpanded) {
               extraExpanded = true;
+              if (isMobile()) { $portfolio.children('.mix').show(); }
               $extra.children('.extra-item').show();
               $extra.show();
               $(this).html('<i class="fa fa-minus-circle"></i> Hide extra Projects');
             } else {
               extraExpanded = false;
+              if (isMobile()) {
+                $portfolio.children('.mix').each(function (i) { $(this).toggle(i < 3); });
+              }
               $extra.hide();
               $(this).html('<i class="fa fa-plus-circle"></i> Show more Projects');
               $('html, body').animate({
@@ -2358,6 +2401,13 @@
                 scrollTop: $('#portfolios').offset().top - 70
               }, 400);
             }
+          }
+        });
+
+        /* ── Restore full grid when resizing out of mobile ── */
+        $(window).on('resize', function () {
+          if (currentFilter === 'all' && !isMobile()) {
+            $portfolio.children('.mix').show();
           }
         });
 
@@ -2392,6 +2442,23 @@
           });
         }
       })();
+    </script>
+
+    <script>
+      document.getElementById('skillsShowMore').addEventListener('click', function() {
+        document.querySelectorAll('.skill-card-extra').forEach(function(el) {
+          el.classList.add('visible');
+        });
+        this.style.display = 'none';
+        document.getElementById('skillsShowLess').style.display = 'inline-block';
+      });
+      document.getElementById('skillsShowLess').addEventListener('click', function() {
+        document.querySelectorAll('.skill-card-extra').forEach(function(el) {
+          el.classList.remove('visible');
+        });
+        this.style.display = 'none';
+        document.getElementById('skillsShowMore').style.display = 'inline-block';
+      });
     </script>
 
   </body>

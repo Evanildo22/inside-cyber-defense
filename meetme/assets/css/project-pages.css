@@ -730,3 +730,46 @@
     justify-content: center;
   }
 }
+
+/* ---------------------------------------------------------------
+   SKILL TAGS — SHOW MORE / SHOW LESS (mobile only)
+--------------------------------------------------------------- */
+.proj-tags-controls {
+  display: none; /* hidden on desktop */
+}
+
+@media (max-width: 767px) {
+  .proj-tag-extra {
+    display: none;
+  }
+
+  .proj-tag-extra.visible {
+    display: inline-block;
+  }
+
+  .proj-tags-controls {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+  }
+}
+
+.proj-tags-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 100px;
+  border: 1.5px solid var(--navy, #1D2D4A);
+  background: transparent;
+  color: var(--navy, #1D2D4A);
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+
+.proj-tags-btn:hover {
+  background: var(--navy, #1D2D4A);
+  color: #fff;
+}

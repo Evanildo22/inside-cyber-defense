@@ -234,15 +234,19 @@
                 <span class="proj-tag crypto">AES-256-GCM</span>
                 <span class="proj-tag crypto">ECDH P-256</span>
                 <span class="proj-tag crypto">RSA-OAEP</span>
-                <span class="proj-tag crypto">RSA-PSS</span>
-                <span class="proj-tag crypto">HKDF</span>
-                <span class="proj-tag">Cryptographic Threat Modelling</span>
-                <span class="proj-tag">Secure Key Management</span>
-                <span class="proj-tag">Tamper Detection (HMAC-SHA256)</span>
-                <span class="proj-tag">Flask Security Architecture</span>
-                <span class="proj-tag">Python (cryptography library)</span>
-                <span class="proj-tag">Decryption Oracle Defence</span>
-                <span class="proj-tag">Analytical Thinking</span>
+                <span class="proj-tag proj-tag-extra crypto">RSA-PSS</span>
+                <span class="proj-tag proj-tag-extra crypto">HKDF</span>
+                <span class="proj-tag proj-tag-extra">Cryptographic Threat Modelling</span>
+                <span class="proj-tag proj-tag-extra">Secure Key Management</span>
+                <span class="proj-tag proj-tag-extra">Tamper Detection (HMAC-SHA256)</span>
+                <span class="proj-tag proj-tag-extra">Flask Security Architecture</span>
+                <span class="proj-tag proj-tag-extra">Python (cryptography library)</span>
+                <span class="proj-tag proj-tag-extra">Decryption Oracle Defence</span>
+                <span class="proj-tag proj-tag-extra">Analytical Thinking</span>
+              </div>
+              <div class="proj-tags-controls">
+                <button class="proj-tags-btn" id="tagsShowMore">Show More</button>
+                <button class="proj-tags-btn" id="tagsShowLess" style="display:none">Show Less</button>
               </div>
             </div>
 
@@ -320,6 +324,22 @@
             item.classList.add('active');
           }
         });
+      });
+    </script>
+    <script>
+      document.getElementById('tagsShowMore').addEventListener('click', function() {
+        document.querySelectorAll('.proj-tag-extra').forEach(function(el) {
+          el.classList.add('visible');
+        });
+        this.style.display = 'none';
+        document.getElementById('tagsShowLess').style.display = 'inline-block';
+      });
+      document.getElementById('tagsShowLess').addEventListener('click', function() {
+        document.querySelectorAll('.proj-tag-extra').forEach(function(el) {
+          el.classList.remove('visible');
+        });
+        this.style.display = 'none';
+        document.getElementById('tagsShowMore').style.display = 'inline-block';
       });
     </script>
   </body>

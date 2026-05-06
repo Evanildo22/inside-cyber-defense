@@ -1369,6 +1369,50 @@ section.services .services-item { flex: 1; }
 }
 
 
+/* Skills show-more / show-less (mobile only) */
+.skills-toggle-controls {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .skill-card-extra {
+    display: none;
+  }
+
+  .skill-card-extra.visible {
+    display: block;
+  }
+
+  .skills-toggle-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+}
+
+.skills-toggle-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  text-transform: none;
+  padding: 11px 26px;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--navy);
+  background-color: var(--navy);
+  color: var(--text-on-navy);
+  cursor: pointer;
+  transition: background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.skills-toggle-btn:hover {
+  background-color: var(--navy-dark);
+  border-color: var(--navy-dark);
+  color: var(--text-on-navy);
+}
+
 /* ================================================================
    RESUME
 ================================================================ */
@@ -1502,6 +1546,106 @@ section.services .services-item { flex: 1; }
   flex-shrink: 0;
   border-radius: 4px;
   opacity: 0.82;
+}
+
+/* ---------------------------------------------------------------
+   TIMELINE SCROLL — fixed 3-card viewport, cards-only scroll
+   The header (icon + title) lives OUTSIDE .timeline-scroll-area
+   so overflow clipping never touches the large-margin icon.
+--------------------------------------------------------------- */
+
+/* Header row — always visible, never inside the scroll container */
+.timeline-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.timeline-header-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.timeline-header-icon i {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+  margin: 0;
+  float: none;
+  width: auto;
+  height: auto;
+  background: none;
+  border-radius: 0;
+}
+
+.timeline-header .timelin-title {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.1px !important;
+  text-transform: uppercase !important;
+  color: var(--text-main) !important;
+  margin-bottom: 0 !important;
+}
+
+/* Cards-only scrollable area — padding-left gives the absolute-
+   positioned dot markers (at ~-5px from ul edge) room to render */
+.timeline-scroll-area {
+  max-height: 700px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-left: 8px;
+  margin-left: -8px;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(184,134,11,0.35) transparent;
+}
+
+.timeline-scroll-area::-webkit-scrollbar { width: 3px; }
+.timeline-scroll-area::-webkit-scrollbar-track { background: transparent; }
+.timeline-scroll-area::-webkit-scrollbar-thumb {
+  background: rgba(184,134,11,0.4);
+  border-radius: 2px;
+}
+.timeline-scroll-area::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Stack Education above Experience on mobile */
+@media (max-width: 991px) {
+  .experience { margin-top: 48px; }
+}
+
+/* Widen the gutter between Education and Experience on desktop */
+@media (min-width: 992px) {
+  #resume .row > .col-lg-6:first-child { padding-right: 40px; }
+  #resume .row > .col-lg-6:last-child  { padding-left: 40px;  }
+}
+
+/* The first card li is now li:first-child — restore its dot
+   (normally suppressed because header used li:first-child) */
+.timeline-scroll-area .timeline li:first-child:before {
+  border: solid 2px var(--gold) !important;
+  background: var(--white) !important;
+  position: absolute !important;
+  width: 8px;
+  height: 8px;
+  border-radius: 50px;
+  content: "";
+  margin-left: -35px;
+  margin-top: 18px;
+  box-shadow: none !important;
+  animation: none !important;
 }
 
 
@@ -1645,6 +1789,16 @@ section.services .services-item { flex: 1; }
 @media (max-width: 575px) {
   #certifications { padding: 64px 0; }
   .cert-card { padding: 22px 14px 18px; }
+}
+
+/* Equal-height cert cards on desktop */
+@media (min-width: 992px) {
+  #certifications .row > [class*="col-"] {
+    display: flex;
+  }
+  #certifications .cert-card {
+    width: 100%;
+  }
 }
 
 
