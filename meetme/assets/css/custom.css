@@ -671,22 +671,22 @@ ul li, ol li { list-style: none; }
   color: var(--gold) !important;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  margin-bottom: 28px !important;
+  margin-bottom: 20px !important;
 }
 
 .about-bio {
   font-family: 'Inter', sans-serif;
-  font-size: 15.5px !important;
+  font-size: 15px !important;
   color: var(--text-body) !important;
-  line-height: 1.78 !important;
-  margin-bottom: 14px !important;
+  line-height: 1.70 !important;
+  margin-bottom: 10px !important;
 }
 
 .about-info-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin: 28px 0 32px;
+  gap: 9px;
+  margin: 20px 0 24px;
 }
 
 .about-info-tile {
@@ -696,7 +696,7 @@ ul li, ol li { list-style: none; }
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 13px 15px;
+  padding: 11px 14px;
   transition: border-color 0.18s ease;
 }
 
