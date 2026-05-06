@@ -18,7 +18,7 @@
 
 ## Overview
 
-A secure file-sharing web app that encrypts data before storage and verifies integrity before decryption. Built to remain confidential even if the storage layer is fully breached — using the same cryptographic controls found in production security systems.
+A secure file-sharing web app that encrypts data before storage and verifies integrity before decryption. Built to remain confidential even if the storage layer is fully breached, using the same cryptographic controls found in production security systems.
 
 ---
 
@@ -33,7 +33,7 @@ Built a Flask-based system enforcing a **verify-then-decrypt model** to eliminat
 | ECDH P-256 + HKDF | RFC 5869 | Perfect Forward Secrecy (TLS 1.3 model) |
 | HMAC-SHA256 | RFC 2104 | Tamper-evident audit trail |
 
-The architecture assumes a compromised storage layer, ensuring confidentiality under full read access. Every operation is logged in a tamper-evident audit trail — enabling detection of unauthorised modifications and satisfying a core SOC visibility requirement.
+The architecture assumes a compromised storage layer, ensuring confidentiality under full read access. Every operation is logged in a tamper-evident audit trail, enabling detection of unauthorised modifications and satisfying a core SOC visibility requirement.
 
 **System flow:** `Encrypt → Sign → Store → Verify → Decrypt`
 The storage layer is treated as **Untrusted** throughout this flow.
