@@ -954,6 +954,13 @@ section.services .services-item { flex: 1; }
   display: block;
 }
 
+@media (max-width: 767px) {
+  .svc-subtitle {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 .services-item {
   background: var(--off-white) !important;
   border: 1px solid var(--border) !important;
