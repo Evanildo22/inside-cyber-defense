@@ -1371,7 +1371,13 @@ section.services .services-item { flex: 1; }
 
 /* Skills show-more / show-less (mobile only) */
 .skills-toggle-controls {
-  display: none;
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .skills-toggle-controls {
+    display: none !important;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1384,7 +1390,9 @@ section.services .services-item { flex: 1; }
   }
 
   .skills-toggle-controls {
-    display: flex;
+    display: -webkit-flex !important;
+    display: flex !important;
+    -webkit-justify-content: center;
     justify-content: center;
     gap: 10px;
     margin-top: 32px;
@@ -1556,7 +1564,9 @@ section.services .services-item { flex: 1; }
 
 /* Header row — always visible, never inside the scroll container */
 .timeline-header {
+  display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
   align-items: center;
   gap: 14px;
   margin-bottom: 14px;
@@ -1567,25 +1577,35 @@ section.services .services-item { flex: 1; }
 .timeline-header-icon {
   width: 42px;
   height: 42px;
+  min-width: 42px;
+  min-height: 42px;
   border-radius: 50%;
+  background: #1D2D4A; /* Safari fallback */
   background: var(--navy);
   color: #fff;
+  display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
   align-items: center;
+  -webkit-justify-content: center;
   justify-content: center;
   flex-shrink: 0;
+  -webkit-flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .timeline-header-icon i {
-  color: #fff;
-  font-size: 16px;
-  line-height: 1;
-  margin: 0;
-  float: none;
-  width: auto;
-  height: auto;
-  background: none;
-  border-radius: 0;
+  color: #fff !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  float: none !important;
+  width: auto !important;
+  height: auto !important;
+  background: none !important;
+  border-radius: 0 !important;
+  text-align: center;
+  display: block;
 }
 
 .timeline-header .timelin-title {
@@ -1602,13 +1622,13 @@ section.services .services-item { flex: 1; }
    positioned dot markers (at ~-5px from ul edge) room to render */
 .timeline-scroll-area {
   max-height: 700px;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow-y: scroll; /* explicit scroll — avoids Safari overflow-x/y conflict */
   padding-left: 8px;
   margin-left: -8px;
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: rgba(184,134,11,0.35) transparent;
+  -webkit-overflow-scrolling: touch;
 }
 
 .timeline-scroll-area::-webkit-scrollbar { width: 3px; }
