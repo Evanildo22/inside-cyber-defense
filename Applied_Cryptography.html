@@ -206,48 +206,49 @@
             <!-- 3. Impact & Metrics -->
             <div class="project-section wow fadeInUp" data-wow-delay="0.2s">
               <h3><i class="fa fa-bar-chart"></i> Impact &amp; Metrics</h3>
-              <ul class="proj-metrics">
-                <li>
-                  <span class="metric-icon"><i class="fa fa-exchange"></i></span>
-                  <span>Engineered <strong>dual encryption modes</strong> (RSA key transport + ECDH PFS), demonstrating real-world trade-offs between long-term key exposure and forward secrecy across documented attack scenarios.</span>
-                </li>
-                <li>
-                  <span class="metric-icon"><i class="fa fa-check"></i></span>
-                  <span>Validated cryptographic guarantees with <strong>83 unit tests</strong> covering tamper detection, key misuse, IV reuse, signature forgery, and forward secrecy failure conditions.</span>
-                </li>
-                <li>
-                  <span class="metric-icon"><i class="fa fa-shield"></i></span>
-                  <span>Designed a <strong>storage-compromise-resilient architecture</strong> enforcing signature verification before any decryption path — stress-tested against four simulated adversarial attack classes.</span>
-                </li>
+
+              <!-- Stat callouts -->
+              <div class="impact-metrics-grid">
+                <div class="impact-stat">
+                  <span class="impact-number">83</span>
+                  <span class="impact-label">Unit tests</span>
+                </div>
+                <div class="impact-stat">
+                  <span class="impact-number">4</span>
+                  <span class="impact-label">Attack classes tested</span>
+                </div>
+                <div class="impact-stat">
+                  <span class="impact-number">2</span>
+                  <span class="impact-label">Encryption modes</span>
+                </div>
+                <div class="impact-stat impact-stat-zero">
+                  <span class="impact-number">0</span>
+                  <span class="impact-label">Plaintext stored on disk</span>
+                </div>
+              </div>
+
+              <!-- Screenshots -->
+              <div class="proj-screenshot">
+                <img src="meetme/assets/img/projects/Side-by-side_image.png"
+                     alt="Encrypted .enc file next to decrypted secureshare_test.txt"
+                     class="img-fluid">
+                <p class="proj-caption">"The same file, before and after decryption. The ciphertext on the left is what an attacker with full storage access sees. The plaintext on the right is what the authorised recipient receives."</p>
+              </div>
+
+              <div class="proj-screenshot">
+                <img src="meetme/assets/img/projects/SHA-256_fingerprint.png"
+                     alt="Terminal output showing SHA-256 fingerprint verification"
+                     class="img-fluid">
+                <p class="proj-caption">"Independent integrity verification — the SHA-256 fingerprint computed locally matches the value stored by the server at upload time, proving the file survived encryption and decryption byte-perfect."</p>
+              </div>
+
+              <!-- Supporting detail -->
+              <ul class="impact-bullets">
+                <li>Every cryptographic guarantee is verified, tamper detection, key rejection, signature forgery, and round-trip integrity, with the test suite and live results available in the repository. Failure modes are tested as rigorously as the happy path.</li>
+                <li>Two encryption modes demonstrate real-world key management trade-offs: RSA key transport for compatibility with existing PKI infrastructure, and ECDH with Perfect Forward Secrecy for environments where long-term key exposure is a credible threat, each backed by documented attack scenarios and residual risk analysis.</li>
+                <li>The architecture was stress-tested against four adversarial attack classes: wrong key injection, ciphertext tampering, IV reuse under the same key, and signature forgery. Each attack was constructed, executed, and verified to fail at the correct point in the pipeline before any plaintext was released.</li>
+                <li>The audit log integrity system detects both modification and deletion of log entries, using per-entry HMAC verification combined with a hash chain, surfacing two independent tamper signals without cascading false positives across unaffected rows.</li>
               </ul>
-
-              <!--
-                CODE / TEST SCREENSHOT
-                ─────────────────────────────────────────────────────────────
-                File location : meetme/assets/img/projects/rsa-cryptography-tests.png
-                Dimensions    : 1200×675 px (16:9) or 1200×800 px
-                Content       : Either the verify-then-decrypt function OR
-                                pytest output showing 83 passing tests
-                Style         : Dark theme · use Carbon (carbon.now.sh) or ray.so
-                                One image only — do not stack screenshots
-
-                When ready: remove the placeholder div below and uncomment the gallery block.
-              -->
-              <div class="proj-asset-placeholder" style="margin-top:24px;">
-                <div class="placeholder-icon"><i class="fa fa-terminal"></i></div>
-                <p class="placeholder-label">Code / Test Screenshot</p>
-                <p class="placeholder-desc">verify-then-decrypt function or pytest output showing 83 passing tests<br>Dark theme &middot; Carbon (carbon.now.sh) or ray.so recommended</p>
-              </div>
-              <!--
-              <div class="gallery-item" style="max-width:720px; margin:24px auto 0;">
-                <a href="meetme/assets/img/projects/rsa-cryptography-tests.png"
-                   class="lightbox" title="83 unit tests passing">
-                  <img src="meetme/assets/img/projects/rsa-cryptography-tests.png"
-                       alt="pytest output showing 83 unit tests passing">
-                </a>
-                <p>pytest output — 83 unit tests passing</p>
-              </div>
-              -->
             </div>
 
             <!-- 4. Skills & Technologies -->
