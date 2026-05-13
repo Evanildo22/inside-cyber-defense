@@ -237,9 +237,9 @@
 
               <!-- Gallery preview — click to open full-screen image gallery -->
               <div class="gallery-preview" id="galleryOpen" role="button" tabindex="0"
-                   aria-label="Open image gallery, 2 images">
+                   aria-label="Open image gallery, 3 images">
                 <div class="gallery-preview-media">
-                  <img src="meetme/assets/img/projects/Side-by-side_image.png"
+                  <img src="meetme/assets/img/projects/UI_front.png"
                        alt=""
                        aria-hidden="true"
                        class="gallery-preview-img">
@@ -248,7 +248,7 @@
                       <div class="gallery-cta-icon"><i class="fa fa-eye"></i></div>
                       <span class="gallery-cta-label">See images</span>
                     </div>
-                    <span class="gallery-preview-badge">2 images</span>
+                    <span class="gallery-preview-badge">3 images</span>
                   </div>
                 </div>
                 <p class="gallery-preview-hint">
@@ -386,6 +386,11 @@
       /* Image gallery — preview block + full-screen modal with keyboard & swipe navigation */
       (function () {
         var images = [
+          {
+            src: 'meetme/assets/img/projects/UI_front.png',
+            alt: 'SecureShare application front-end interface',
+            caption: 'The SecureShare front-end — the user-facing interface for encrypting, uploading, and sharing files securely over an untrusted storage layer.'
+          },
           {
             src: 'meetme/assets/img/projects/Side-by-side_image.png',
             alt: 'Encrypted .enc file next to decrypted secureshare_test.txt',
