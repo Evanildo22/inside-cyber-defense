@@ -5,6 +5,11 @@
    Used by all 11 cybersecurity project detail pages.
    ============================================================= */
 
+/* Hero buttons: override theme's global text-transform: uppercase */
+.page-project .header-button .btn {
+  text-transform: none;
+}
+
 /* ---------------------------------------------------------------
    COMING SOON / IN-PROGRESS STATE
    Applied to project/lab pages while content is being written.
