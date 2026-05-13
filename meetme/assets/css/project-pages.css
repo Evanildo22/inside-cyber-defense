@@ -43,6 +43,12 @@
   margin-bottom: 20px;
 }
 
+@media (max-width: 767px) {
+  .mode-cards .col-md-6:first-child {
+    margin-bottom: 20px;
+  }
+}
+
 .mode-card-pfs {
   border-top-color: var(--gold, #B8860B);
 }
