@@ -235,35 +235,50 @@
                 <li>The audit log integrity system detects both modification and deletion of log entries, using per-entry HMAC verification combined with a hash chain, surfacing two independent tamper signals without cascading false positives across unaffected rows.</li>
               </ul>
 
-              <!-- Image gallery — click any thumbnail to open full-size; lightbox allows prev/next navigation -->
-              <div class="row proj-gallery">
-                <div class="col-sm-6">
-                  <a href="meetme/assets/img/projects/Side-by-side_image.png"
-                     class="lightbox proj-gallery-link"
-                     data-lightbox-gallery="impact-gallery"
-                     title="The same file, before and after decryption. The ciphertext on the left is what an attacker with full storage access sees. The plaintext on the right is what the authorised recipient receives.">
-                    <div class="proj-gallery-thumb">
-                      <img src="meetme/assets/img/projects/Side-by-side_image.png"
-                           alt="Encrypted .enc file next to decrypted secureshare_test.txt"
-                           class="img-fluid">
-                      <div class="proj-gallery-overlay"><i class="fa fa-expand"></i></div>
+              <!-- Gallery preview — click to open full-screen image gallery -->
+              <div class="gallery-preview" id="galleryOpen" role="button" tabindex="0"
+                   aria-label="Open image gallery, 2 images">
+                <div class="gallery-preview-media">
+                  <img src="meetme/assets/img/projects/Side-by-side_image.png"
+                       alt=""
+                       aria-hidden="true"
+                       class="gallery-preview-img">
+                  <div class="gallery-preview-overlay">
+                    <div class="gallery-preview-cta">
+                      <div class="gallery-cta-icon"><i class="fa fa-eye"></i></div>
+                      <span class="gallery-cta-label">See images</span>
                     </div>
-                  </a>
-                  <p class="proj-caption">"The same file, before and after decryption. The ciphertext on the left is what an attacker with full storage access sees. The plaintext on the right is what the authorised recipient receives."</p>
+                    <span class="gallery-preview-badge">2 images</span>
+                  </div>
                 </div>
-                <div class="col-sm-6">
-                  <a href="meetme/assets/img/projects/SHA-256_fingerprint.png"
-                     class="lightbox proj-gallery-link"
-                     data-lightbox-gallery="impact-gallery"
-                     title="Independent integrity verification — SHA-256 fingerprint computed locally matches the value stored by the server at upload time.">
-                    <div class="proj-gallery-thumb">
-                      <img src="meetme/assets/img/projects/SHA-256_fingerprint.png"
-                           alt="Terminal output showing SHA-256 fingerprint verification"
-                           class="img-fluid">
-                      <div class="proj-gallery-overlay"><i class="fa fa-expand"></i></div>
+                <p class="gallery-preview-hint">
+                  <i class="fa fa-picture-o"></i> Click to browse all screenshots with descriptions
+                </p>
+              </div>
+
+              <!-- Gallery modal -->
+              <div class="gallery-modal" id="galleryModal" role="dialog" aria-modal="true"
+                   aria-label="Image gallery">
+                <div class="gallery-modal-backdrop" id="galleryModalBackdrop"></div>
+                <div class="gallery-modal-inner">
+                  <button class="gallery-modal-close" id="galleryModalClose" aria-label="Close gallery">
+                    <i class="fa fa-times"></i>
+                  </button>
+                  <div class="gallery-modal-stage">
+                    <button class="gallery-nav gallery-nav-prev" id="galleryPrev" aria-label="Previous image">
+                      <i class="fa fa-chevron-left"></i>
+                    </button>
+                    <div class="gallery-modal-frame">
+                      <img src="" alt="" class="gallery-modal-img" id="galleryModalImg">
                     </div>
-                  </a>
-                  <p class="proj-caption">"Independent integrity verification — the SHA-256 fingerprint computed locally matches the value stored by the server at upload time, proving the file survived encryption and decryption byte-perfect."</p>
+                    <button class="gallery-nav gallery-nav-next" id="galleryNext" aria-label="Next image">
+                      <i class="fa fa-chevron-right"></i>
+                    </button>
+                  </div>
+                  <div class="gallery-modal-meta">
+                    <span class="gallery-modal-counter" id="galleryModalCounter"></span>
+                    <p class="gallery-modal-caption" id="galleryModalCaption"></p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -368,6 +383,80 @@
       });
     </script>
     <script>
+      /* Image gallery — preview block + full-screen modal with keyboard & swipe navigation */
+      (function () {
+        var images = [
+          {
+            src: 'meetme/assets/img/projects/Side-by-side_image.png',
+            alt: 'Encrypted .enc file next to decrypted secureshare_test.txt',
+            caption: 'The same file, before and after decryption. The ciphertext on the left is what an attacker with full storage access sees. The plaintext on the right is what the authorised recipient receives.'
+          },
+          {
+            src: 'meetme/assets/img/projects/SHA-256_fingerprint.png',
+            alt: 'Terminal output showing SHA-256 fingerprint verification',
+            caption: 'Independent integrity verification — the SHA-256 fingerprint computed locally matches the value stored by the server at upload time, proving the file survived encryption and decryption byte-perfect.'
+          }
+        ];
+
+        var current = 0;
+        var modal      = document.getElementById('galleryModal');
+        var modalImg   = document.getElementById('galleryModalImg');
+        var caption    = document.getElementById('galleryModalCaption');
+        var counter    = document.getElementById('galleryModalCounter');
+        var prevBtn    = document.getElementById('galleryPrev');
+        var nextBtn    = document.getElementById('galleryNext');
+        var openTrigger = document.getElementById('galleryOpen');
+
+        function show(index) {
+          current = (index + images.length) % images.length;
+          var item = images[current];
+          modalImg.src = item.src;
+          modalImg.alt = item.alt;
+          caption.textContent = item.caption;
+          counter.textContent = (current + 1) + ' – ' + images.length;
+          prevBtn.disabled = false;
+          nextBtn.disabled = false;
+        }
+
+        function openModal(index) {
+          show(index || 0);
+          modal.classList.add('is-open');
+          document.body.style.overflow = 'hidden';
+          document.getElementById('galleryModalClose').focus();
+        }
+
+        function closeModal() {
+          modal.classList.remove('is-open');
+          document.body.style.overflow = '';
+          openTrigger.focus();
+        }
+
+        openTrigger.addEventListener('click', function () { openModal(0); });
+        openTrigger.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(0); }
+        });
+        document.getElementById('galleryModalClose').addEventListener('click', closeModal);
+        document.getElementById('galleryModalBackdrop').addEventListener('click', closeModal);
+        prevBtn.addEventListener('click', function () { show(current - 1); });
+        nextBtn.addEventListener('click', function () { show(current + 1); });
+
+        document.addEventListener('keydown', function (e) {
+          if (!modal.classList.contains('is-open')) return;
+          if (e.key === 'Escape')     closeModal();
+          if (e.key === 'ArrowLeft')  show(current - 1);
+          if (e.key === 'ArrowRight') show(current + 1);
+        });
+
+        var touchStartX = 0;
+        modal.addEventListener('touchstart', function (e) {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        modal.addEventListener('touchend', function (e) {
+          var dx = e.changedTouches[0].screenX - touchStartX;
+          if (Math.abs(dx) > 48) { dx < 0 ? show(current + 1) : show(current - 1); }
+        }, { passive: true });
+      }());
+
       document.getElementById('tagsShowMore').addEventListener('click', function() {
         document.querySelectorAll('.proj-tag-extra').forEach(function(el) {
           el.classList.add('visible');
