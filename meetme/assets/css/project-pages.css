@@ -175,6 +175,15 @@
   width: 100%;
 }
 
+.proj-screenshot-img {
+  cursor: zoom-in;
+  transition: opacity 0.18s ease;
+}
+
+.proj-screenshot a:hover .proj-screenshot-img {
+  opacity: 0.88;
+}
+
 .proj-caption {
   font-family: 'Inter', sans-serif;
   font-size: 12.5px;
