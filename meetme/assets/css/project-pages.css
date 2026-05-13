@@ -162,26 +162,60 @@
 }
 
 /* ---------------------------------------------------------------
-   IMPACT & METRICS — screenshots + captions
+   IMPACT & METRICS — image gallery
 --------------------------------------------------------------- */
-.proj-screenshot {
-  margin: 28px 0;
+.proj-gallery {
+  margin-top: 28px;
 }
 
-.proj-screenshot .img-fluid {
+.proj-gallery-link {
+  display: block;
+  text-decoration: none;
+}
+
+.proj-gallery-thumb {
+  position: relative;
   border-radius: 6px;
+  overflow: hidden;
   border: 1px solid rgba(28,28,30,.08);
   box-shadow: 0 1px 4px rgba(0,0,0,.07), 0 4px 18px rgba(0,0,0,.06);
-  width: 100%;
-}
-
-.proj-screenshot-img {
   cursor: zoom-in;
-  transition: opacity 0.18s ease;
 }
 
-.proj-screenshot a:hover .proj-screenshot-img {
-  opacity: 0.88;
+.proj-gallery-thumb .img-fluid {
+  display: block;
+  width: 100%;
+  transition: opacity 0.2s ease;
+}
+
+.proj-gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(29, 45, 74, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.proj-gallery-overlay i {
+  color: #fff;
+  font-size: 26px;
+}
+
+.proj-gallery-link:hover .proj-gallery-overlay {
+  opacity: 1;
+}
+
+.proj-gallery-link:hover .proj-gallery-thumb .img-fluid {
+  opacity: 0.85;
+}
+
+@media (max-width: 575px) {
+  .proj-gallery .col-sm-6:first-child {
+    margin-bottom: 20px;
+  }
 }
 
 .proj-caption {

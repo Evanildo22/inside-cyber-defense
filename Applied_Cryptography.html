@@ -227,27 +227,6 @@
                 </div>
               </div>
 
-              <!-- Screenshots -->
-              <div class="proj-screenshot">
-                <a href="meetme/assets/img/projects/Side-by-side_image.png"
-                   class="lightbox" title="The same file, before and after decryption">
-                  <img src="meetme/assets/img/projects/Side-by-side_image.png"
-                       alt="Encrypted .enc file next to decrypted secureshare_test.txt"
-                       class="img-fluid proj-screenshot-img">
-                </a>
-                <p class="proj-caption">"The same file, before and after decryption. The ciphertext on the left is what an attacker with full storage access sees. The plaintext on the right is what the authorised recipient receives."</p>
-              </div>
-
-              <div class="proj-screenshot">
-                <a href="meetme/assets/img/projects/SHA-256_fingerprint.png"
-                   class="lightbox" title="Independent integrity verification — SHA-256 fingerprint">
-                  <img src="meetme/assets/img/projects/SHA-256_fingerprint.png"
-                       alt="Terminal output showing SHA-256 fingerprint verification"
-                       class="img-fluid proj-screenshot-img">
-                </a>
-                <p class="proj-caption">"Independent integrity verification — the SHA-256 fingerprint computed locally matches the value stored by the server at upload time, proving the file survived encryption and decryption byte-perfect."</p>
-              </div>
-
               <!-- Supporting detail -->
               <ul class="impact-bullets">
                 <li>Every cryptographic guarantee is verified, tamper detection, key rejection, signature forgery, and round-trip integrity, with the test suite and live results available in the repository. Failure modes are tested as rigorously as the happy path.</li>
@@ -255,6 +234,38 @@
                 <li>The architecture was stress-tested against four adversarial attack classes: wrong key injection, ciphertext tampering, IV reuse under the same key, and signature forgery. Each attack was constructed, executed, and verified to fail at the correct point in the pipeline before any plaintext was released.</li>
                 <li>The audit log integrity system detects both modification and deletion of log entries, using per-entry HMAC verification combined with a hash chain, surfacing two independent tamper signals without cascading false positives across unaffected rows.</li>
               </ul>
+
+              <!-- Image gallery — click any thumbnail to open full-size; lightbox allows prev/next navigation -->
+              <div class="row proj-gallery">
+                <div class="col-sm-6">
+                  <a href="meetme/assets/img/projects/Side-by-side_image.png"
+                     class="lightbox proj-gallery-link"
+                     data-lightbox-gallery="impact-gallery"
+                     title="The same file, before and after decryption. The ciphertext on the left is what an attacker with full storage access sees. The plaintext on the right is what the authorised recipient receives.">
+                    <div class="proj-gallery-thumb">
+                      <img src="meetme/assets/img/projects/Side-by-side_image.png"
+                           alt="Encrypted .enc file next to decrypted secureshare_test.txt"
+                           class="img-fluid">
+                      <div class="proj-gallery-overlay"><i class="fa fa-expand"></i></div>
+                    </div>
+                  </a>
+                  <p class="proj-caption">"The same file, before and after decryption. The ciphertext on the left is what an attacker with full storage access sees. The plaintext on the right is what the authorised recipient receives."</p>
+                </div>
+                <div class="col-sm-6">
+                  <a href="meetme/assets/img/projects/SHA-256_fingerprint.png"
+                     class="lightbox proj-gallery-link"
+                     data-lightbox-gallery="impact-gallery"
+                     title="Independent integrity verification — SHA-256 fingerprint computed locally matches the value stored by the server at upload time.">
+                    <div class="proj-gallery-thumb">
+                      <img src="meetme/assets/img/projects/SHA-256_fingerprint.png"
+                           alt="Terminal output showing SHA-256 fingerprint verification"
+                           class="img-fluid">
+                      <div class="proj-gallery-overlay"><i class="fa fa-expand"></i></div>
+                    </div>
+                  </a>
+                  <p class="proj-caption">"Independent integrity verification — the SHA-256 fingerprint computed locally matches the value stored by the server at upload time, proving the file survived encryption and decryption byte-perfect."</p>
+                </div>
+              </div>
             </div>
 
             <!-- 4. Skills & Technologies -->
