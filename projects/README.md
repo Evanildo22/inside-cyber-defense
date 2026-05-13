@@ -17,7 +17,7 @@ Each project folder contains a `README.md` writeup and a `screenshots/` director
 | [Network Setup & Config](./network-setup/README.md) | [View](https://www.evanildoribeiro.com/network-setup.html) | ⏳ Coming Soon | Cisco, VLANs, GNS3 |
 | [Packet Analysis](./packet-analysis/README.md) | [View](https://www.evanildoribeiro.com/packet-analysis.html) | ⏳ Coming Soon | Wireshark, tshark |
 | [Pentesting & Ethical Hacking](./pentesting/README.md) | [View](https://www.evanildoribeiro.com/pentesting.html) | ⏳ Coming Soon | Kali, Metasploit, Nmap |
-| [RSA Cryptography](./rsa-cryptography/README.md) | [View](https://www.evanildoribeiro.com/rsa-cryptography.html) | ⏳ Coming Soon | Python, OpenSSL |
+| [RSA Cryptography](./rsa-cryptography/README.md) | [View](https://www.evanildoribeiro.com/Applied_Cryptography.html) | ⏳ Coming Soon | Python, OpenSSL |
 | [Automated Threat Enrichment](./threat-enrichment/README.md) | [View](https://www.evanildoribeiro.com/threat-enrichment.html) | ⏳ Coming Soon | MISP, VirusTotal API |
 | [Vulnerability Assessment](./vulnerability-assessment/README.md) | [View](https://www.evanildoribeiro.com/vulnerability-assessment.html) | ⏳ Coming Soon | Nessus, OpenVAS |
 

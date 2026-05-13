@@ -3,10 +3,10 @@
 [![Status](https://img.shields.io/badge/Status-Complete-2D9D5F?style=flat-square)]()
 [![Language](https://img.shields.io/badge/Language-Python-3776AB?style=flat-square&logo=python&logoColor=white)]()
 [![Framework](https://img.shields.io/badge/Framework-Flask-000000?style=flat-square&logo=flask&logoColor=white)]()
-[![Live Page](https://img.shields.io/badge/Live%20Page-View%20on%20Portfolio-1D2D4A?style=flat-square)](https://www.evanildoribeiro.com/rsa-cryptography.html)
+[![Live Page](https://img.shields.io/badge/Live%20Page-View%20on%20Portfolio-1D2D4A?style=flat-square)](https://www.evanildoribeiro.com/Applied_Cryptography.html)
 [![GitHub](https://img.shields.io/badge/Source%20Code-GitHub-181717?style=flat-square&logo=github)](https://github.com/Evanildo22/CRYPTOGRAPHY)
 
-[← Back to Projects](../README.md) · [Styled writeup on site](https://www.evanildoribeiro.com/rsa-cryptography.html)
+[← Back to Projects](../README.md) · [Styled writeup on site](https://www.evanildoribeiro.com/Applied_Cryptography.html)
 
 ---
 
@@ -78,5 +78,5 @@ Visual evidence is stored in [`screenshots/`](./screenshots/):
 
 ---
 
-**Live writeup:** [www.evanildoribeiro.com/rsa-cryptography.html](https://www.evanildoribeiro.com/rsa-cryptography.html)  
+**Live writeup:** [www.evanildoribeiro.com/Applied_Cryptography.html](https://www.evanildoribeiro.com/Applied_Cryptography.html)  
 **Source code:** [github.com/Evanildo22/CRYPTOGRAPHY](https://github.com/Evanildo22/CRYPTOGRAPHY)
