@@ -132,8 +132,15 @@
             <!-- 1. Overview -->
             <div class="project-section wow fadeInUp" data-wow-delay="0.1s">
               <h3><i class="fa fa-info-circle"></i> Overview</h3>
-              <p class="proj-headline">Cryptographically secure file sharing that stays safe under full storage compromise</p>
-              <p>A secure file-sharing web app that encrypts data before storage and verifies integrity before decryption. Built to remain confidential even if the storage layer is fully breached — using the same cryptographic controls found in production security systems.</p>
+              <p class="proj-headline">Built to stay secure even when the storage layer is fully breached</p>
+
+              <p>Most systems treat encryption as a boundary — once an attacker reaches the storage layer, the data is exposed. SecureShare assumes that boundary has already been crossed. Every file is encrypted before it ever touches disk, every ciphertext is signed to prove sender identity, and every security event is written to a tamper-evident audit trail — so the system remains trustworthy even under adversarial conditions.</p>
+
+              <p>This project implements the same cryptographic controls found in production-grade secure systems: the key exchange mechanisms behind TLS 1.3, the signature model used in secure messaging protocols, and the audit integrity patterns required by SOC 2 compliance frameworks.</p>
+
+              <blockquote class="proj-pullquote">
+                "If an attacker can read every file on the server, they still cannot read a single encrypted file without the recipient's private key."
+              </blockquote>
 
               <!-- Links row — add Demo / Write-up hrefs when ready, then uncomment those buttons -->
               <div class="proj-links">
