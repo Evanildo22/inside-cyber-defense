@@ -285,23 +285,46 @@
             <!-- 4. Skills & Technologies -->
             <div class="project-section wow fadeInUp" data-wow-delay="0.25s">
               <h3><i class="fa fa-tags"></i> Skills &amp; Technologies</h3>
-              <div class="proj-tags">
-                <span class="proj-tag crypto">AES-256-GCM</span>
-                <span class="proj-tag crypto">ECDH P-256</span>
-                <span class="proj-tag crypto">RSA-OAEP</span>
-                <span class="proj-tag proj-tag-extra crypto">RSA-PSS</span>
-                <span class="proj-tag proj-tag-extra crypto">HKDF</span>
-                <span class="proj-tag proj-tag-extra">Cryptographic Threat Modelling</span>
-                <span class="proj-tag proj-tag-extra">Secure Key Management</span>
-                <span class="proj-tag proj-tag-extra">Tamper Detection (HMAC-SHA256)</span>
-                <span class="proj-tag proj-tag-extra">Flask Security Architecture</span>
-                <span class="proj-tag proj-tag-extra">Python (cryptography library)</span>
-                <span class="proj-tag proj-tag-extra">Decryption Oracle Defence</span>
-                <span class="proj-tag proj-tag-extra">Analytical Thinking</span>
-              </div>
-              <div class="proj-tags-controls">
-                <button class="proj-tags-btn" id="tagsShowMore">Show More</button>
-                <button class="proj-tags-btn" id="tagsShowLess" style="display:none">Show Less</button>
+              <div class="proj-tag-groups">
+
+                <div class="proj-tag-group">
+                  <span class="proj-tag-group-label">Cryptographic primitives</span>
+                  <div class="proj-tags">
+                    <span class="proj-tag crypto">AES-256-GCM</span>
+                    <span class="proj-tag crypto">ECDH P-256</span>
+                    <span class="proj-tag crypto">RSA-2048 OAEP</span>
+                    <span class="proj-tag crypto">RSA-PSS</span>
+                    <span class="proj-tag crypto">HKDF-SHA256</span>
+                    <span class="proj-tag crypto">PBKDF2-HMAC-SHA256</span>
+                    <span class="proj-tag crypto">HMAC-SHA256</span>
+                  </div>
+                </div>
+
+                <div class="proj-tag-group">
+                  <span class="proj-tag-group-label">Security engineering</span>
+                  <div class="proj-tags">
+                    <span class="proj-tag">Verify-Then-Decrypt</span>
+                    <span class="proj-tag">Perfect Forward Secrecy</span>
+                    <span class="proj-tag">Decryption Oracle Defence</span>
+                    <span class="proj-tag">Tamper-Evident Audit Log</span>
+                    <span class="proj-tag">Threat Modelling</span>
+                    <span class="proj-tag">Storage-Layer Compromise Resilience</span>
+                  </div>
+                </div>
+
+                <div class="proj-tag-group">
+                  <span class="proj-tag-group-label">Stack &amp; tooling</span>
+                  <div class="proj-tags">
+                    <span class="proj-tag tool">Python</span>
+                    <span class="proj-tag tool">Flask</span>
+                    <span class="proj-tag tool">PyCA cryptography</span>
+                    <span class="proj-tag tool">pytest</span>
+                    <span class="proj-tag tool">NIST SP 800-38D</span>
+                    <span class="proj-tag tool">RFC 8017</span>
+                    <span class="proj-tag tool">RFC 5869</span>
+                  </div>
+                </div>
+
               </div>
             </div>
 
@@ -461,20 +484,6 @@
         }, { passive: true });
       }());
 
-      document.getElementById('tagsShowMore').addEventListener('click', function() {
-        document.querySelectorAll('.proj-tag-extra').forEach(function(el) {
-          el.classList.add('visible');
-        });
-        this.style.display = 'none';
-        document.getElementById('tagsShowLess').style.display = 'inline-block';
-      });
-      document.getElementById('tagsShowLess').addEventListener('click', function() {
-        document.querySelectorAll('.proj-tag-extra').forEach(function(el) {
-          el.classList.remove('visible');
-        });
-        this.style.display = 'none';
-        document.getElementById('tagsShowMore').style.display = 'inline-block';
-      });
     </script>
   </body>
 </html>
