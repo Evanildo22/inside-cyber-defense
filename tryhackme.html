@@ -176,7 +176,7 @@
           <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.2s">
             <div class="lab-stat-card">
               <div class="stat-icon" style="color:#C11111;">&#9650;</div>
-              <div class="stat-number stat-number-thm" id="thm-stat-rank">Top 100%</div>
+              <div class="stat-number stat-number-thm" id="thm-stat-rank">Top 50%</div>
               <div class="stat-label">Global Rank</div>
             </div>
           </div>
@@ -194,7 +194,7 @@
           <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
             <div class="lab-stat-card">
               <div class="stat-icon" style="color:#C11111;"><i class="icon-home"></i></div>
-              <div class="stat-number stat-number-thm" id="thm-stat-rooms">2</div>
+              <div class="stat-number stat-number-thm" id="thm-stat-rooms">4</div>
               <div class="stat-label">Rooms Completed</div>
             </div>
           </div>
@@ -228,7 +228,7 @@
              onmouseover="this.style.borderColor='rgba(193,17,17,0.75)';this.style.boxShadow='0 4px 20px rgba(193,17,17,0.18)'"
              onmouseout="this.style.borderColor='rgba(193,17,17,0.35)';this.style.boxShadow='none'">
             <span style="width:10px;height:10px;border-radius:50%;background:#C11111;box-shadow:0 0 0 0 rgba(193,17,17,0.5);animation:thm-pulse 2s ease-out infinite;flex-shrink:0;"></span>
-            <span>Evan.cyber &nbsp;·&nbsp; [0x1] NEOPHYTE &nbsp;·&nbsp; View Profile on TryHackMe &nbsp;<i class="fa fa-external-link" style="font-size:12px;opacity:0.6;"></i></span>
+            <span>Evan.cyber &nbsp;·&nbsp; [0x2] APPRENTICE &nbsp;·&nbsp; View Profile on TryHackMe &nbsp;<i class="fa fa-external-link" style="font-size:12px;opacity:0.6;"></i></span>
           </a>
           <style>@keyframes thm-pulse{0%{box-shadow:0 0 0 0 rgba(193,17,17,0.5)}70%{box-shadow:0 0 0 8px rgba(193,17,17,0)}100%{box-shadow:0 0 0 0 rgba(193,17,17,0)}}</style>
         </div>
@@ -266,9 +266,9 @@
               <!-- API: set width % to actual progress from THM API -->
               <!-- PLACEHOLDER: replace 0% with real progress value once API is connected -->
               <div class="path-progress-bar">
-                <div class="path-progress-fill" id="thm-path-soc" style="width: 2%;"></div>
+                <div class="path-progress-fill" id="thm-path-soc" style="width: 4%;"></div>
               </div>
-              <small class="text-muted">2% complete (2 of 65 rooms)</small>
+              <small class="text-muted">4% complete (4 of 65 rooms)</small>
               <p class="path-card-description text-muted" style="font-size:13px; margin-top:8px;">
                 SIEM, log analysis, incident response, threat intelligence
               </p>
@@ -384,12 +384,49 @@
             </div>
           </div>
 
-          <!-- Room 2: SOC Role in Blue Team -->
+          <!-- Room 2: Humans as Attack Vectors -->
           <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
             <div class="room-card">
               <div class="room-card-thumb-placeholder">
-                <!-- PLACEHOLDER: replace with actual room icon 144×144px PNG from TryHackMe -->
                 <i class="icon-people"></i>
+              </div>
+              <div class="room-card-info">
+                <p class="room-card-name">Humans as Attack Vectors</p>
+                <p class="room-card-meta">
+                  <span class="badge badge-easy">Easy</span>
+                  &nbsp;<span class="badge badge-pill badge-info">SOC</span>
+                  &nbsp;<span class="badge badge-pill badge-secondary">Walkthrough</span>
+                  &nbsp;<span class="badge badge-pill badge-warning">Premium</span>
+                </p>
+                <p class="text-muted" style="font-size:12px; margin-top:6px;">Understand why and how people are targeted in cyber attacks and how the SOC helps defend them.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room 3: Systems as Attack Vectors -->
+          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="room-card">
+              <div class="room-card-thumb-placeholder">
+                <i class="icon-layers"></i>
+              </div>
+              <div class="room-card-info">
+                <p class="room-card-name">Systems as Attack Vectors</p>
+                <p class="room-card-meta">
+                  <span class="badge badge-easy">Easy</span>
+                  &nbsp;<span class="badge badge-pill badge-info">SOC</span>
+                  &nbsp;<span class="badge badge-pill badge-secondary">Walkthrough</span>
+                  &nbsp;<span class="badge badge-pill badge-warning">Premium</span>
+                </p>
+                <p class="text-muted" style="font-size:12px; margin-top:6px;">Learn how attackers exploit vulnerable and misconfigured systems, and how you can protect them.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room 4: SOC Role in Blue Team -->
+          <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="room-card">
+              <div class="room-card-thumb-placeholder">
+                <i class="icon-shield"></i>
               </div>
               <div class="room-card-info">
                 <p class="room-card-name">SOC Role in Blue Team</p>
