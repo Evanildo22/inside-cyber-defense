@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Anomaly Detection - Evanildo Portfolio</title>
+    <title>IoT Anomaly Detection - Evanildo Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
@@ -109,14 +109,12 @@
           <div class="row">
             <div class="col-md-12 col-sm-12">
               <div class="contents">
-                <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">Anomaly Detection</h2>
+                <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">IoT Anomaly Detection</h2>
                 <div class="hero-rule wow fadeInUp" data-wow-delay="0.35s"></div>
-                <p class="script-font wow fadeInUp" data-wow-delay="0.6s">Machine learning-based anomaly detection system for security monitoring</p>
+                <p class="script-font wow fadeInUp" data-wow-delay="0.6s">Deep learning detection of IoT botnet traffic at the network level</p>
                 <div class="header-button wow fadeInUp" data-wow-delay="1s">
-                  <!-- PLACEHOLDER: replace # with GitHub repo URL for this project -->
-                  <a href="#" class="btn btn-common" target="_blank" rel="noopener"><i class="fa fa-github"></i> GitHub Repository</a>
-                  <!-- PLACEHOLDER: replace # with PDF writeup or GitHub writeup URL for this project -->
-                  <a href="#" class="btn btn-border ml-3" target="_blank" rel="noopener"><i class="fa fa-file-text-o"></i> Project Writeup</a>
+                  <a href="https://github.com/Evanildo22/iot-anomaly-detector" class="btn btn-common" target="_blank" rel="noopener"><i class="fa fa-github"></i> GitHub Repository</a>
+                  <a href="https://github.com/Evanildo22/iot-anomaly-detector/blob/main/TECHNICAL_WRITEUP.md" class="btn btn-border ml-3" target="_blank" rel="noopener"><i class="fa fa-file-text-o"></i> Project Writeup</a>
                 </div>
               </div>
             </div>
@@ -125,16 +123,157 @@
       </div>
     </header>
 
-    <section class="coming-soon-section">
+    <!-- PROJECT CONTENT -->
+    <section class="project-content">
       <div class="container">
-        <div class="coming-soon-card wow fadeInUp" data-wow-delay="0.1s">
-          <span class="coming-soon-badge"><i class="fa fa-clock-o"></i>&nbsp; In Progress</span>
-          <div class="coming-soon-icon">
-            <i class="fa fa-lock"></i>
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+
+            <!-- 1. Overview -->
+            <div class="project-section wow fadeInUp" data-wow-delay="0.1s">
+              <h3><i class="fa fa-info-circle"></i> Overview</h3>
+              <p class="proj-headline">Detecting botnet-infected IoT devices from network behaviour alone</p>
+
+              <p>IoT devices are the blind spot of most security monitoring programmes: they cannot run endpoint agents, they rarely receive patches, and they sit on the network for years. What they cannot do, however, is hide their traffic. This project detects botnet infections, including the Mirai and BASHLITE families behind some of the largest DDoS attacks on record, by learning what normal traffic looks like for a device and flagging sessions that deviate from it.</p>
+
+              <p>The system uses a two-phase deep learning approach built for how SOC environments actually work. A convolutional autoencoder first learns a compact representation of device behaviour from unlabeled traffic, which is abundant in any real network. A supervised classifier with temporal self-attention is then fine-tuned on top of it, so the model benefits from labeled attack data where it exists without depending on it everywhere. Developed as the BSc Cybersecurity final-year project at the University of West London.</p>
+
+              <blockquote class="proj-pullquote">
+                "An IoT device cannot run an endpoint agent, but it cannot hide its network behaviour either. Every botnet infection leaves a statistical fingerprint in the traffic."
+              </blockquote>
+
+              <div class="proj-links">
+                <a href="https://github.com/Evanildo22/iot-anomaly-detector" class="proj-link-btn github" target="_blank" rel="noopener">
+                  <i class="fa fa-github"></i> View Code
+                </a>
+                <a href="https://github.com/Evanildo22/iot-anomaly-detector/blob/main/TECHNICAL_WRITEUP.md" class="proj-link-btn writeup" target="_blank" rel="noopener">
+                  <i class="fa fa-file-text-o"></i> Read Write-up
+                </a>
+              </div>
+            </div>
+
+            <!-- 2. Technical Deep-Dive -->
+            <div class="project-section wow fadeInUp" data-wow-delay="0.15s">
+              <h3><i class="fa fa-cogs"></i> Technical Deep-Dive</h3>
+
+              <p>A single pipeline handles two very different data sources: raw PCAP captures from infected devices (CTU IoT malware captures), parsed with dpkt into bidirectional sessions keyed on the 5-tuple and labeled from Zeek <code>conn.log</code> files, and the N-BaIoT benchmark of pre-extracted statistical features from nine commercial IoT devices. Both feed the same preprocessing and model code, so results are comparable across datasets.</p>
+
+              <!-- Phase 1 / Phase 2 comparison cards -->
+              <div class="row mode-cards">
+                <div class="col-md-6">
+                  <div class="mode-card">
+                    <div class="mode-card-header">
+                      <span class="mode-label">Phase 1</span>
+                      <h4 class="mode-title">Unsupervised Pretraining</h4>
+                    </div>
+                    <p class="mode-desc">A convolutional autoencoder is trained to reconstruct normalised traffic features, with no labels required.</p>
+                    <ul class="mode-bullets">
+                      <li>Learns a compact encoding of what normal device behaviour looks like</li>
+                      <li>Uses the data SOC environments actually have in abundance: unlabeled traffic</li>
+                      <li>High reconstruction error itself signals unknown, never-seen behaviour</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mode-card mode-card-pfs">
+                    <div class="mode-card-header">
+                      <span class="mode-label">Phase 2</span>
+                      <h4 class="mode-title">Supervised Fine-Tuning</h4>
+                    </div>
+                    <p class="mode-desc">The pretrained encoder is combined with a temporal self-attention layer and a regularised classifier head.</p>
+                    <ul class="mode-bullets">
+                      <li>Attention weights the time steps that matter most in each session</li>
+                      <li>Dropout and L1/L2 regularisation guard against overfitting the attack set</li>
+                      <li>The decision threshold is tuned for best F1 on validation, not fixed at 0.5</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <p class="mode-arch-caption">Before any training, the feature space is reduced and balanced with the same rigour applied to the model itself: Random Forest feature importance ranking, correlation pruning at a 0.80 threshold, median imputation, standard scaling, and PCA retaining 95% of variance, followed by SMOTE oversampling and random under-sampling to balance the classes.</p>
+
+              <p>One methodological decision matters more than any architecture choice: the 15% test split is held out before preprocessing or resampling is applied. Synthetic SMOTE samples never leak into evaluation, so the reported metrics reflect what the model would see in production, not an inflated score against its own synthetic data. Hyperparameters were selected by Bayesian optimisation, and every run is reproducible from a fixed seed and a versioned YAML configuration.</p>
+            </div>
+
+            <!-- 3. Impact & Metrics -->
+            <div class="project-section wow fadeInUp" data-wow-delay="0.2s">
+              <h3><i class="fa fa-bar-chart"></i> Impact &amp; Metrics</h3>
+
+              <!-- Stat callouts -->
+              <div class="impact-metrics-grid">
+                <div class="impact-stat">
+                  <span class="impact-number">99.41%</span>
+                  <span class="impact-label">Detection accuracy</span>
+                </div>
+                <div class="impact-stat">
+                  <span class="impact-number">99.54%</span>
+                  <span class="impact-label">Recall, attacks caught</span>
+                </div>
+                <div class="impact-stat">
+                  <span class="impact-number">99.97%</span>
+                  <span class="impact-label">AUC-ROC</span>
+                </div>
+                <div class="impact-stat impact-stat-zero">
+                  <span class="impact-number">2</span>
+                  <span class="impact-label">Botnet families: Mirai &amp; BASHLITE</span>
+                </div>
+              </div>
+
+              <!-- Supporting detail -->
+              <ul class="impact-bullets">
+                <li>Evaluated on the N-BaIoT benchmark with a 99.46% F1-score, on a test set isolated before any resampling or preprocessing, so no synthetic data contaminates the reported results. In security evaluation, an honest metric is worth more than an impressive one.</li>
+                <li>Recall was treated as the metric that matters most: a false positive costs an analyst minutes of triage, but a false negative is a live botnet infection that goes unnoticed. The 99.54% recall means fewer than 5 in 1,000 attack sessions slip through.</li>
+                <li>The two-phase design reflects a real SOC constraint: labeled attack traffic is scarce, but unlabeled traffic is unlimited. Pretraining on unlabeled data means the detector improves from exactly the data a monitoring environment already collects.</li>
+                <li>The pipeline operates purely at the network level, requiring nothing installed on the monitored devices, which is the only deployment model that works for resource-constrained IoT hardware such as cameras, doorbells, and thermostats.</li>
+              </ul>
+            </div>
+
+            <!-- 4. Skills & Technologies -->
+            <div class="project-section wow fadeInUp" data-wow-delay="0.25s">
+              <h3><i class="fa fa-tags"></i> Skills &amp; Technologies</h3>
+              <div class="proj-tag-groups">
+
+                <div class="proj-tag-group">
+                  <span class="proj-tag-group-label">Machine learning</span>
+                  <div class="proj-tags">
+                    <span class="proj-tag crypto">Convolutional Autoencoder</span>
+                    <span class="proj-tag crypto">Temporal Self-Attention</span>
+                    <span class="proj-tag crypto">Two-Phase Training</span>
+                    <span class="proj-tag crypto">Bayesian Optimisation</span>
+                    <span class="proj-tag crypto">SMOTE</span>
+                    <span class="proj-tag crypto">PCA</span>
+                  </div>
+                </div>
+
+                <div class="proj-tag-group">
+                  <span class="proj-tag-group-label">Security engineering</span>
+                  <div class="proj-tags">
+                    <span class="proj-tag">Botnet Detection</span>
+                    <span class="proj-tag">Network Traffic Analysis</span>
+                    <span class="proj-tag">PCAP Session Extraction</span>
+                    <span class="proj-tag">Zeek Log Labelling</span>
+                    <span class="proj-tag">Mirai &amp; BASHLITE</span>
+                    <span class="proj-tag">Data Leakage Prevention</span>
+                  </div>
+                </div>
+
+                <div class="proj-tag-group">
+                  <span class="proj-tag-group-label">Stack &amp; tooling</span>
+                  <div class="proj-tags">
+                    <span class="proj-tag tool">Python</span>
+                    <span class="proj-tag tool">TensorFlow / Keras</span>
+                    <span class="proj-tag tool">scikit-learn</span>
+                    <span class="proj-tag tool">dpkt</span>
+                    <span class="proj-tag tool">pytest</span>
+                    <span class="proj-tag tool">N-BaIoT</span>
+                    <span class="proj-tag tool">CTU IoT Dataset</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
           </div>
-          <h2 class="coming-soon-title">Content Coming Soon</h2>
-          <p class="coming-soon-text">This project is currently being documented. The full write-up, screenshots, and video walkthrough will be published here once ready.</p>
-          <a href="index.html#portfolios" class="btn btn-common"><i class="fa fa-th-large"></i>&nbsp; View All Projects</a>
         </div>
       </div>
     </section>
